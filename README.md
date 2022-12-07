@@ -9,3 +9,6 @@ e-commerce Patt'sberry
 6. Gabriela C
 7. Alonso E
 8. Jonathan B
+
+
+Pattsberry es una marca  familiar de articulos hechos de manera artesanal
