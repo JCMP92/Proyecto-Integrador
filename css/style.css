@@ -1,0 +1,171 @@
+* {
+  box-sizing: border-box;
+}
+html {
+  width: 100%;
+  height: 100%;
+}
+body {
+  width: 100%;
+  height: 100%;
+}
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 70px;
+  padding: 12px;
+  background-color: #b2b2b2;
+}
+.imageContainer {
+  width: 153px;
+  height: 42px;
+}
+.container {
+  width: 100%;
+  height: calc(100% - 70px);
+  padding: 10px;
+}
+
+/* menu styles ---------------------------------------------------------------------------------------------------------------------------------*/
+
+.hamburger {
+  background-color: transparent;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transition: -webkit-transform 0.25s
+    cubic-bezier(0.05, 1.04, 0.72, 0.98);
+  transition: transform 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+  z-index: 1002;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.hamburger.is-active {
+  background-color: none;
+}
+._layer {
+  background: #333333;
+  margin-bottom: 4px;
+  border-radius: 2px;
+  width: 28px;
+  height: 4px;
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transition: all 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+  transition: all 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+}
+.hamburger:hover .-top {
+  -webkit-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
+.hamburger:hover .-bottom {
+  -webkit-transform: translateY(50%);
+  -ms-transform: translateY(100%);
+  transform: translateY(100%);
+}
+.hamburger.is-active .-top {
+  -webkit-transform: translateY(200%) rotate(45deg) !important;
+  -ms-transform: translateY(200%) rotate(45deg) !important;
+  transform: translateY(200%) rotate(45deg) !important;
+}
+.hamburger.is-active .-mid {
+  opacity: 0;
+}
+.hamburger.is-active .-bottom {
+  -webkit-transform: translateY(-200%) rotate(135deg) !important;
+  -ms-transform: translateY(-200%) rotate(135deg) !important;
+  transform: translateY(-200%) rotate(135deg) !important;
+}
+
+.menuppal.is_active {
+  transform: translate3d(0px, 0px, 0px);
+}
+.menuppal {
+  background-color: rgba(255, 255, 255, 0.95);
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  overflow-y: scroll;
+  position: fixed;
+  top: 0;
+  transform: translate3d(0px, -100%, 0px);
+  transition: transform 0.35s cubic-bezier(0.05, 1.04, 0.72, 0.98) 0s;
+  width: 100%;
+  z-index: 1001;
+}
+.menuppal ul {
+  margin: 0;
+  padding: 0;
+}
+.menuppal ul li {
+  list-style: none;
+  text-align: center;
+  font-family: Verdadna, Arial, Helvetica;
+  color: red;
+  font-size: 1.5rem;
+  line-height: 3em;
+  height: 3em;
+  color: #369;
+  text-transform: none;
+  font-weight: bold;
+}
+.menuppal ul li a {
+  text-decoration: none;
+  color: #369;
+}
+.menuppal ul li a:hover {
+  text-decoration: none;
+  color: #333;
+}
+
+/* grid styles ---------------------------------------------------------------------------------------------------------------------------------*/
+
+.div-alon {
+  grid-area: alon;
+  background-color: yellow;
+}
+.div-juan {
+  grid-area: juan;
+  background-color: rgb(255, 0, 0);
+}
+.div-gaby {
+  grid-area: gaby;
+  background-color: rgb(231, 134, 215);
+}
+.div-tannya {
+  grid-area: tannya;
+  background-color: rgb(116, 7, 189);
+}
+.div-carlos {
+  grid-area: carlos;
+  background-color: rgb(108, 83, 219);
+}
+.div-jonathan {
+  grid-area: jonathan;
+  background-color: rgb(2, 110, 25);
+}
+.div-mildred {
+  grid-area: mildred;
+  background-color: rgb(0, 225, 255);
+}
+
+.myGrid {
+  display: grid;
+
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    'alon alon juan juan'
+    'gaby gaby tannya tannya'
+    'carlos carlos jonathan jonathan'
+    '. mildred mildred .';
+
+  gap: 5px;
+  height: 100%;
+}
