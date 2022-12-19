@@ -137,7 +137,7 @@ body {
 }
 .container .card:hover
 {
-    height: 650px;
+    height: auto;
 }
 .container .card .imgContainer
 {
@@ -159,6 +159,7 @@ body {
     position: relative;
     margin-top: -140px;
     padding: 10px 15px;
+    height: auto;
     text-align: center;
     color:#111;
     visibility: hidden;
@@ -174,7 +175,7 @@ body {
     transition-delay: 0.3s;
 }
 
-@media (max-width: 330px){
+ @media (max-width: 330px){
     .container .card .imgContainer{
         left: -2px;
     }
@@ -230,9 +231,28 @@ body {
 
   gap: 5px;
   height: 100%;
-} */
+} 
+
+@media (min-width: 370px) {
+  .container .card
+{
+    margin: 30px 18px;
+    
+}
+}
+
+@media (min-width: 420px) {
+  .container .card
+{ 
+    margin: 30px 47px;
+}
+}
 
 @media (min-width: 600px) {
+  .container .card
+{ 
+  margin: 30px 10px;
+}
   .myGrid {
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -245,7 +265,8 @@ body {
   }
 }
 
-@media (min-width: 900px) {
+
+/* @media (min-width: 900px) {
   .navBar {
     height: 100px;
   }
@@ -263,4 +284,58 @@ body {
   }
 }
 
+@media (min-width: 1380px) {
+   .imageContainer {
+    width: 311px;
+    height: 86px;
+  } 
+  .myGrid {
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      '. desc desc desc desc .'
+      'alon alon juan juan gaby gaby '
+      'carlos carlos jonathan jonathan tannya tannya'
+      '. . mildred mildred . .';
+  }
+} */
 
+@media (min-width: 1000px) {
+  .navBar {
+    height: 100px;
+  }
+  .container .card
+{ 
+  margin: 30px 0px;
+}
+  .imageContainer {
+    width: 311px;
+    height: 86px;
+  }
+  .myGrid {
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      '. desc desc desc desc .'
+      'alon alon juan juan gaby gaby '
+      'carlos carlos jonathan jonathan tannya tannya'
+      '. . mildred mildred . .';
+  }
+}
+
+@media (min-width: 1380px) {
+  /* .imageContainer {
+    width: 311px;
+    height: 86px;
+  } */
+  .myGrid {
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      '. . desc desc desc desc . .'
+      'alon alon juan juan gaby gaby tannya tannya'
+      '.carlos carlos jonathan jonathan mildred mildred .';
+  }
+  
+  
+}
