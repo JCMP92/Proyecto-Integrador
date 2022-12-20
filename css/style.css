@@ -16,17 +16,39 @@ body {
   width: 100%;
   height: 70px;
   padding: 12px;
-  background-color: #b2b2b2;
+  background-color: rgba(244, 200, 227, 0.56);
 }
 .imageContainer {
-  width: 153px;
-  height: 42px;
+  width: 115px;
+  height: 32px;
 }
 .container {
   width: 100%;
   height: calc(100% - 70px);
   padding: 10px;
 }
+
+/* navbar modification--------------------------------------------------------------------------------------------------------------------------*/
+
+.navBtns {
+  display: none;
+}
+a {
+  text-decoration: none;
+  color: #676767;
+  font-weight: 600;
+  margin: 0 10px;
+  font-size: 18px;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #bc0e73;
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+/* navbar modification--------------------------------------------------------------------------------------------------------------------------*/
 
 /* menu styles ---------------------------------------------------------------------------------------------------------------------------------*/
 
@@ -233,6 +255,17 @@ body {
   height: 100%;
 } 
 
+
+.linkGit{
+  z-index: 1002;
+}
+
+
+
+
+
+
+
 @media (min-width: 370px) {
   .container .card
 {
@@ -266,40 +299,6 @@ body {
 }
 
 
-/* @media (min-width: 900px) {
-  .navBar {
-    height: 100px;
-  }
-  .imageContainer {
-    width: 311px;
-    height: 86px;
-  }
-  .myGrid {
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas:
-      '. . desc desc desc desc . .'
-      'alon alon juan juan gaby gaby tannya tannya'
-      '.carlos carlos jonathan jonathan mildred mildred .';
-  }
-}
-
-@media (min-width: 1380px) {
-   .imageContainer {
-    width: 311px;
-    height: 86px;
-  } 
-  .myGrid {
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas:
-      '. desc desc desc desc .'
-      'alon alon juan juan gaby gaby '
-      'carlos carlos jonathan jonathan tannya tannya'
-      '. . mildred mildred . .';
-  }
-} */
-
 @media (min-width: 1000px) {
   .navBar {
     height: 100px;
@@ -309,9 +308,9 @@ body {
   margin: 30px 0px;
 }
   .imageContainer {
-    width: 311px;
-    height: 86px;
-  }
+  width: 234px;
+  height: 65px;
+}
   .myGrid {
     grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -321,13 +320,20 @@ body {
       'carlos carlos jonathan jonathan tannya tannya'
       '. . mildred mildred . .';
   }
+  .hamburger {
+    display: none;
+  }
+  .navBtns {
+    display: flex;
+  }
 }
-
+@media (min-width: 1200px) {
+  a {
+    margin: 0 15px;
+  }
+}
 @media (min-width: 1380px) {
-  /* .imageContainer {
-    width: 311px;
-    height: 86px;
-  } */
+
   .myGrid {
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;

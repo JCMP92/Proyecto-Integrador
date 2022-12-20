@@ -1,0 +1,91 @@
+* {
+    box-sizing: border-box;
+  }
+
+  h2 {
+    font-family: 'Elsie', cursive;
+    font-size: 25px;
+  }
+  
+  #contacto {
+    width: 100%;
+    height: calc(100% - 70px);
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-height: 100%;
+    max-width: 100%;
+    background-image: url(/Images/fotos/fototemp.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  #tarjetaContacto {
+    font-family: 'Roboto', sans-serif;
+    top: 50px;
+    width: 292px;
+    height: 316px;
+    background-color: #b2b2b2;
+    color: #bc0e73;
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
+    justify-content: flex-start;
+  }
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .card-text {
+    width: 218px;
+  }
+  .icons-container {
+    display: flex;
+  }
+  .indiv-icons {
+    display: flex;
+    flex-direction: column;
+  }
+  .icon-text {
+    font-size: 14px;
+  }
+  
+  /* Mediaquery ------------------------------------------------------------------------------------------------------------------------*/
+  @media (min-width: 770px) {
+    #tarjetaContacto {
+      top: 80px;
+      width: 932px;
+      height: 500px;
+      font-size: 20px;
+    }
+    .card-text {
+      width: 759px;
+    }
+    h2 {
+      font-size: 35px;
+    }
+  }
+  
+  @media (min-width: 900px) {
+    #contacto {
+      height: calc(100% - 100px);
+    }
+    #tarjetaContacto {
+      top: 100px;
+    }
+    h2 {
+      font-size: 50px;
+    }
+    .card-text {
+      width: 759px;
+      margin-bottom: 50px;
+    }
+    .icons-container {
+      display: flex;
+      width: 400px;
+      justify-content: space-between;
+    }
+  }
