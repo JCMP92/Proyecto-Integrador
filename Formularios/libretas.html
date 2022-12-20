@@ -26,26 +26,40 @@
         </ul>
       </nav>
     </nav>
-    <h1>Cotiza tus libretas</h1>
-    <main class="mainContainer" id="mainContainer">
-        <div>
-            <div class="input-group mb-3">
+    
+<main class="mainContainer" id="mainContainer">
+  <h1>Cotiza tus libretas</h1>
+<form class="needs-validation" novalidate>
+  <div class="alert alert-danger" role="alert" style="display:none;" id="alertError">
+  </div>
+  <div class="mb-3">
+        
+            <div class="row mb-3">
                 <label class="input-group-text" for="inputGroupSelect01"><strong>Tamaño de hoja</strong></label>
-                <select class="form-select" id="inputGroupSelect01">
-                  <option selected>-Seleccione el tamaño de la hoja-</option>
+                <select class="form-select" id="validationCustom04" required>
+                  <option selected disabled value="">-Seleccione el tamaño de la hoja-</option>
                   <option value="1">Carta</option>
                   <option value="2">1/2 carta</option>
                   <option value="3">1/4 de carta</option>
                 </select>
+              <div class="invalid-feedback">
+                Por favor seleccione un tamaño.
               </div>
-              <div class="alert alert-light" role="alert" style="color: red;" id="alertSizeHoja">
+            </div>
+              <!-- <div class="alert alert-light" role="alert" style="color: red;" id="alertSizeHoja">
                 Selecciona un tamaño de hoja.
-              </div>
+              </div> -->
         <h3>Tipo de hoja</h3>
     <div class="form-check">
         <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault01">
         <label class="form-check-label" for="flexRadioDefault1">
-          Cuadro de 5 o 7
+          Cuadrícula de 5 mm
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault01">
+        <label class="form-check-label" for="flexRadioDefault1">
+          Cuadrícula de 7 mm
         </label>
       </div>
       <div class="form-check">
@@ -62,17 +76,20 @@
             </div>
 <div class="input-group mb-3">
     <label class="input-group-text" for="inputGroupSelect01"><strong>Número de hojas</strong></label>
-    <select class="form-select" id="inputGroupSelect01">
-      <option selected>-Seleccione el número de hojas-</option>
+    <select class="form-select" id="validationCustom04" required>
+      <option selected disabled value="">-Seleccione el número de hojas-</option>
       <option value="1">50 hojas</option>
       <option value="2">100 hojas</option>
       <option value="3">150 hojas</option>
       <option value="4">200 hojas</option>
     </select>
+    <div class="invalid-feedback">
+      Por favor seleccione un tamaño.
+    </div>
   </div>
-  <div class="alert alert-light" role="alert" style="color: red;" id="alertNoHojas">
+  <!-- <div class="alert alert-light" role="alert" style="color: red;" id="alertNoHojas">
     Selecciona un número de hojas. 
-  </div>
+  </div> -->
   <h3>Tipo de espiral</h3>
   <div class="form-check">
     <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault04">
@@ -83,20 +100,46 @@
   <div class="form-check">
     <input class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault04" checked>
     <label class="form-check-label" for="flexRadioDefault2">
-      Cocido
+      Cosido
 </div>
     </div>
-    <h3>Sube tu referencia</h3>
+    <!-- <h3>Sube tu referencia</h3>
      <div class="input-group mb-3">
         <input type="file" class="form-control" id="inputGroupFile01">
-      </div>
-      <div class="alert alert-light" role="alert" style="color: red;" id="alertImg">
+      </div> -->
+      <!-- <div class="alert alert-light" role="alert" style="color: red;" id="alertImg">
         Por favor ingresa un formato de imagen válido. (png/jpg) 
-      </div>
-      <button type="button" class="btn btn-outline-dark">Enviar</button id=btnEnviar>
-        </div>
+      </div> -->
 
+        <label for="nombre" class="form-label"><h3>Nombre</h3></label>
+        <input type="text" class="form-control" id="nombre" placeholder="John Doe">
+      </div>
+      <div class="mb-3">
+        <label for="correo" class="form-label"><h3>Correo</h3></label>
+        <input type="email" class="form-control" id="correo" placeholder="name@example.com">
+      </div>
+      <div class="mb-3">
+        <label for="telefono" class="form-label"><h3>Teléfono</h3></label>
+        <input type="tel" class="form-control" id="telefono" placeholder="+52 65 6192 0273">
+      </div>
+      <div class="mb-3">
+        <label for="especificaciones" class="form-label"><h3>Especificaciones</h3></label>
+        <textarea class="form-control" id="especificaciones" rows="3"></textarea>
+      </div>
+
+      <!-- <div class="input-group mb-3">
+        <label class="input-group-text" for="imagen">Imagen</label>
+        <input type="file" class="form-control" id="imagen">
+      </div> -->
+
+      </div>
+
+      <button type="button"id="btnEnviar" class="btn btn-outline-dark">Enviar</button>
+        </div>
+     
+      </form>
 </main>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+<script src="../js/validation.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
   </body>
 </html>
