@@ -1,3 +1,24 @@
+/* Boton rosa */
+.btn-new {
+  color: #fff;
+  background-color: #E32F89;
+  border-color: #E32F89;
+  border-radius: 50px;
+} 
+
+.btn-new:hover, .btn-new:active {
+  color: #fff;
+  background-color: #c5116b;
+  border-color: #c5116b;
+}
+
+.btn-new.focus, .btn-new:focus {
+  color: #fff;
+  background-color: #c5116b;
+  border-color: #c5116b;
+  box-shadow: 0 0 0 0.2rem rgb(227 47 137 / 50%);
+}
+/*
 * {
     box-sizing: border-box;
   }
@@ -29,7 +50,7 @@
   }
   
   /* menu styles ---------------------------------------------------------------------------------------------------------------------------------*/
-  
+  /*
   .hamburger {
     background-color: transparent;
     -webkit-transform: translate3d(0, 0, 0);
@@ -123,3 +144,4 @@
     text-decoration: none;
     color: #333;
   }
+*/
