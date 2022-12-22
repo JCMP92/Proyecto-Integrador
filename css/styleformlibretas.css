@@ -9,7 +9,7 @@ body {
   width: 100%;
   height: 100%;
 }
-#mainContainerAmig {
+#mainContainerLib {
   display: flex;
   flex-direction: column;
   margin: 15px;
