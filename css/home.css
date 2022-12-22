@@ -1,0 +1,32 @@
+.row {
+    float: left;
+    position: relative;
+    box-sizing: border-box;
+    width: 24%;
+    padding-left: 10px;
+ }
+     
+ .col1 {
+    left: 5px;
+    border: 2px solid black;
+    margin-bottom: 10px;
+ }
+         
+ .col2 {
+    left: 15px;
+    border: 2px solid black;
+    margin-bottom: 20px;
+ }
+         
+ .col3 {
+     left: 25px;
+     border: 2px solid black;
+ }
+         
+ body {
+     border-width: 0px;
+     padding: 0px;
+     margin: 0px;
+     font-size: 90%;
+     background-color: #e7e7de
+ }
