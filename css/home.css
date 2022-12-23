@@ -1,0 +1,66 @@
+
+#LogoPatts{
+    display: flex;
+    place-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#patts{
+    width: 48%;
+    height: auto;
+}
+
+
+section{
+    margin:auto;
+    border-radius: 20px;
+	display: flex;
+	flex-flow: wrap;
+	padding:20px;
+	justify-content: center;
+	max-width: 70%;
+}
+
+img{
+    width: 230px;
+    height: 230px;
+	max-width: 300px;
+	justify-content: center;
+	opacity: 1;
+    border-radius: 20px;
+    margin: 10px;
+    transition: all 1s;
+}
+
+.pic{
+	position: relative;
+	transition: all 1s;
+}
+
+.pic:hover img{
+	opacity: .3;
+	transform: scale(.9, .9);
+}
+
+
+
+.textHome {
+    font-family: 'Roboto', sans-serif;
+    color: #676767;
+    font-size: 120%;
+    font-weight: bolder;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+@keyframes text{
+from {right: 50%}
+to {right:50%}
+}
+
+/* Mediaquery ------------------------------------------------------------------------------------------------------------------------*/
