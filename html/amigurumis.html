@@ -61,7 +61,7 @@
 
     <main class="mainContainer" id="mainContainerAmig">
       <h1 class="titleForm">Cotiza tus Amigurumis</h1>
-      <form class="needs-validation" novalidate>
+      <form class="needs-validation">
         <div
           class="alert alert-danger"
           role="alert"
@@ -73,15 +73,14 @@
             <label for="validationCustom04" class="form-label">
               <h3 class="subtitleForm">Escoge un tamaño</h3>
             </label>
-            <select class="form-select" id="validationCustom04" required>
-              <option selected disabled value="">-Tamaño-</option>
-              <option value="1">10 cm</option>
+            <select class="form-select" id="validationCustom04" required id="tamhoja">
+              <option disabled value="">-Tamaño-</option>
+              <option selected value="1">10 cm</option>
               <option value="2">15 cm</option>
               <option value="3">20 cm</option>
               <option value="4">25 cm</option>
               <option value="5">30 cm</option>
             </select>
-            <div class="invalid-feedback">Por favor seleccione un tamaño.</div>
           </div>
         </fieldset>
         <!-- <div class="alert alert-light" role="alert" style="color: red;" id="alertSizeAmig">

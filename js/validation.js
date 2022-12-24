@@ -9,6 +9,7 @@ btnenviar.addEventListener('click', function (event) {
   let inputMensaje = document.getElementById('especificaciones');
   let alertError = document.getElementById('alertError');
   let inputImagen = document.getElementById('imagen');
+
   let email =
     /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   inputMensaje.value = inputMensaje.value.trim();
@@ -16,8 +17,10 @@ btnenviar.addEventListener('click', function (event) {
   alertError.innerHTML = '';
   validos = 0;
 
+  
+  
   if (inputMensaje.value.trim().replaceAll('  ', '').length < 20) {
-    alertError.innerHTML += 'El mensaje debe contener 20 caracteres o mas';
+    alertError.innerHTML += 'El mensaje debe contener 20 caracteres o más';
     alertError.style.display = 'block';
     inputMensaje.focus();
     inputMensaje.select();
@@ -26,8 +29,9 @@ btnenviar.addEventListener('click', function (event) {
     inputMensaje.style.border = 'solid green 1px';
     validos++;
   }
+
   if (inputNombre.value.trim().replaceAll('  ', '').length < 3) {
-    alertError.innerHTML += '<br/>El nombre debe contener 3 caracteres o mas';
+    alertError.innerHTML += '<br/>El nombre debe contener 3 caracteres o más';
     alertError.style.display = 'block';
     inputNombre.focus();
     inputNombre.select();
@@ -39,7 +43,7 @@ btnenviar.addEventListener('click', function (event) {
 
   if (inputMail.value.match(email) == null) {
     alertError.style.display = 'block';
-    alertError.innerHTML += '<br/>El correo electronico no es valido.';
+    alertError.innerHTML += '<br/>El correo electrónico no es válido.';
     inputMail.style.border = 'solid red 1px';
   } else {
     inputMail.style.border = 'solid green 1px';
@@ -49,12 +53,15 @@ btnenviar.addEventListener('click', function (event) {
   if (inputTel.value.match(telefonorex) == null) {
     alertError.style.display = 'block';
     alertError.innerHTML +=
-      '<br/>El formato de telefono no es valido ejemplo: +52 65 6192 0273';
+      '<br/>El formato de teléfono no es válido ejemplo: +52 65 6192 0273';
     inputTel.style.border = 'solid red 1px';
   } else {
     inputTel.style.border = 'solid green 1px';
     validos++;
   }
+
+  
+
   if (idTimeout != undefined && idTimeout != null) {
     clearTimeout(idTimeout);
   }
