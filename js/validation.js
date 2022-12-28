@@ -45,7 +45,7 @@ btnenviar.addEventListener('click', function (event) {
   validos = 0;
 
   if (inputNombre.value.trim().replaceAll('  ', '').length < 3) {
-    alertError.innerHTML += 'El nombre debe contener 3 caracteres o más';
+    alertError.innerHTML += 'El nombre debe contener 3 caracteres o más.';
     alertError.style.display = 'block';
     inputNombre.focus();
     inputNombre.select();
@@ -76,7 +76,7 @@ btnenviar.addEventListener('click', function (event) {
  
 
   if (inputMensaje.value.trim().replaceAll('  ', '').length < 20) {
-    alertError.innerHTML += '<br/>El mensaje debe contener 20 caracteres o más';
+    alertError.innerHTML += '<br/>El mensaje debe contener 20 caracteres o más.';
     alertError.style.display = 'block';
     inputMensaje.focus();
     inputMensaje.select();
