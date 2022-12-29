@@ -56,15 +56,55 @@ section {
 }
 
 .pic {
+  position: relative;
   width: 230px;
   height: 230px;
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  padding: 10%;
+}
+.indexAnchor {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+.img {
+  opacity: 1;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: hidden;
+  -webkit-transition: 1s all;
+  -moz-transition: 1s all;
+  -ms-transition: 1s all;
+  -o-transition: 1s all;
   transition: all 1s;
   border-radius: 20px;
-  padding: 15px;
 }
+.pic:hover .img {
+  opacity: 0.3;
+  transform: scale(0.9, 0.9);
+}
+
+.textHome {
+  font-family: 'Roboto', sans-serif;
+  color: #676767;
+  font-size: 20px;
+  font-weight: bolder;
+  text-align: center;
+}
+.pic:hover .textHome {
+  opacity: 1;
+  transform: scale(1, 1);
+}
+
 #imgUno {
   background-image: url('/Images/fotos/babyblue\ \(1\).jpg');
   background-size: cover;
@@ -90,7 +130,7 @@ section {
   background-image: url('/Images/fotos/blue\ \(1\).jpg');
   background-size: cover;
 }
-.pic:hover {
+/* .pic:hover {
   opacity: 0.3;
   transform: scale(0.9, 0.9);
 }
@@ -103,10 +143,7 @@ section {
   text-align: center;
 }
 
-.pic:hover .textHome {
-  opacity: 1;
-  transform: scale(1, 1);
-}
+ */
 /* @keyframes text {
   from {
     right: 50%;
@@ -147,12 +184,18 @@ section {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
   }
+  .pic {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 @media (min-width: 1024px) {
   .container-Tablet-Desktop {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
+    max-width: 1000px;
+    max-height: 735px;
   }
   #patts {
     height: auto;

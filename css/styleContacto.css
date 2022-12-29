@@ -28,6 +28,7 @@ h2 {
   width: 290px;
   height: 310px;
   background-color: #b2b2b2;
+  /* background-color: rgb(178, 178, 178, 0.5); Cambio tentativo para fondo de tarjeta*/
   color: #bc0e73;
   text-align: center;
   font-weight: bold;
