@@ -56,8 +56,8 @@ a:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 35px;
-  height: 35px;
+  width: 40px;
+  height: 40px;
   background-color: #bc0e73;
   padding: 2px;
   -webkit-transform: translate3d(0, 0, 0);

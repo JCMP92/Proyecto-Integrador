@@ -40,13 +40,27 @@
     <nav class="navBar">
       <div class="imageContainer">
         <a href="/index.html">
-        <img src="/Logo-Iconos/LOGO PATTSBERRY.svg" alt="logo Pattsberry" />
+          <img src="/Logo-Iconos/LOGO PATTSBERRY.svg" alt="logo Pattsberry" />
         </a>
       </div>
       <div class="navBtns">
         <a href="/html/aboutUs.html">Nosotros</a>
         <a href="/html/Tienda.html">Tienda</a>
-        <a href="/html/amigurumis.html">Pedidos</a>
+        <button
+          class="btn dropdown-toggle"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Pedidos
+        </button>
+        <ul class="dropdown-menu">
+          <li>
+            <a href="/html/amigurumis.html" class="dropdown-item">Amigurumis</a>
+          </li>
+          <li>
+            <a href="/html/libretas.html" class="dropdown-item">Libretas</a>
+          </li>
+        </ul>
         <a href="/html/carrito_compra.html">Carrito</a>
         <a href="/html/contacto.html">Contacto</a>
         <a href="/html/login.html">Mi Cuenta</a>
@@ -61,7 +75,8 @@
         <ul>
           <li><a href="/html/aboutUs.html">Nosotros</a></li>
           <li><a href="/html/Tienda.html">Tienda</a></li>
-          <li><a href="/html/amigurumis.html">Pedidos</a></li>
+          <li><a href="/html/amigurumis.html">Pedidos Amigurumis</a></li>
+          <li><a href="/html/libretas.html">Pedidos Libretas</a></li>
           <li><a href="/html/carrito_compra.html">Carrito</a></li>
           <li><a href="/html/contacto.html">Contacto</a></li>
           <li><a href="/html/login.html">Mi Cuenta</a></li>
@@ -73,204 +88,242 @@
     <!-- CONTAINER -------------------------------------------------------------------------------------------------------------------------->
 
     <div class="containerTech">
-        <div class="div-description" >
-          <h3 id="EquipoTech">Equipo TechQuila</h3>
-          <p id="descripcionTech">
-            El equipo Techquila, a cargo de este proyecto está conformado por
-            personas multidisciplinarias con un interés en común, la
-            tecnología. Nos une la pasión por los videojuegos, los animales, el
-            diseño y desarrollo de páginas web interactivas que satisfagan las
-            necesidades del cliente y cumplan con los estándares de calidad.
-          </p>
-        </div>
+      <div class="div-description">
+        <h3 id="EquipoTech">Equipo TechQuila</h3>
+        <p id="descripcionTech">
+          El equipo Techquila, a cargo de este proyecto está conformado por
+          personas multidisciplinarias con un interés en común, la tecnología.
+          Nos une la pasión por los videojuegos, los animales, el diseño y
+          desarrollo de páginas web interactivas que satisfagan las necesidades
+          del cliente y cumplan con los estándares de calidad.
+        </p>
+      </div>
 
-        <!-- CARD -------------------------------------------------------------------------------------------------------------------------->
+      <!-- CARD -------------------------------------------------------------------------------------------------------------------------->
       <div class="myGrid">
         <div class="div-alon">
           <div class="card" id="alon">
-              <img src="/Images/Alon.jpg" class="card-img-top" alt="Foto Alon"/>
-              <div class="card-body">
+            <img src="/Images/Alon.jpg" class="card-img-top" alt="Foto Alon" />
+            <div class="card-body">
               <h4>Alonso Escobar Acosta - Scrum Master | Scrum team</h4>
-                  <p class="card-text">
-                    Programador Java FullStak Jr. Preparado para los problemas y apasionado por programar y diseñar, amante de los gatos, los videojuegos y de las maravillas de la tecnología, huelo a flan.
-                  </p>
-                  <a href="https://github.com/AlonEscobar">
-                    <img
-                      src="/Logo-Iconos/github.svg"
-                      alt="git"
-                      style="width: 30px; height: auto"
-                    />
-                  </a>
-                  <a href="https://www.linkedin.com/in/alon-escobar/">
-                    <img
-                      src="/Logo-Iconos/linkedin.svg"
-                      alt="linkedin"
-                      style="width: 30px; height: auto"
-                    />
-                  </a>
-              </div>
+              <p class="card-text">
+                Programador Java FullStak Jr. Preparado para los problemas y
+                apasionado por programar y diseñar, amante de los gatos, los
+                videojuegos y de las maravillas de la tecnología, huelo a flan.
+              </p>
+              <a href="https://github.com/AlonEscobar">
+                <img
+                  src="/Logo-Iconos/github.svg"
+                  alt="git"
+                  style="width: 30px; height: auto"
+                />
+              </a>
+              <a href="https://www.linkedin.com/in/alon-escobar/">
+                <img
+                  src="/Logo-Iconos/linkedin.svg"
+                  alt="linkedin"
+                  style="width: 30px; height: auto"
+                />
+              </a>
+            </div>
           </div>
         </div>
 
         <div class="div-juan">
           <div class="card" id="juan">
-              <img src="/Images/Foto Juan.jpg" class="card-img-top" alt="Foto Juan"/>
-              <div class="card-body">
+            <img
+              src="/Images/Foto Juan.jpg"
+              class="card-img-top"
+              alt="Foto Juan"
+            />
+            <div class="card-body">
               <h4>Juan Carlos Montes Pesquera -Scrum Master | Scrum team</h4>
-                  <p class="card-text">
-                    Desarrollador Full Stack, Front End y diseño UX, con pasión por aprender nuevas habilidades y tecnologías. Orgulloso de ver cómo mis proyectos cobran vida. Tengo interés en la jardinería, la cultura, los videojuegos y las historias de fantasía.
-                  </p>
-                  <a class="linkGit" href="https://github.com/JCMP92">
-                    <img
-                      src="/Logo-Iconos/github.svg"
-                      alt="git"
-                      style="width: 30px; height: auto"
-                    />
-                  </a>
-                  <a href="https://www.linkedin.com/in/juanmontespesquera/">
-                    <img
-                      src="/Logo-Iconos/linkedin.svg"
-                      alt="linkedin"
-                      style="width: 30px; height: auto"
-                    />
-                  </a>  
-              </div>
+              <p class="card-text">
+                Desarrollador Full Stack, Front End y diseño UX, con pasión por
+                aprender nuevas habilidades y tecnologías. Orgulloso de ver cómo
+                mis proyectos cobran vida.
+              </p>
+              <a class="linkGit" href="https://github.com/JCMP92">
+                <img
+                  src="/Logo-Iconos/github.svg"
+                  alt="git"
+                  style="width: 30px; height: auto"
+                />
+              </a>
+              <a href="https://www.linkedin.com/in/juanmontespesquera/">
+                <img
+                  src="/Logo-Iconos/linkedin.svg"
+                  alt="linkedin"
+                  style="width: 30px; height: auto"
+                />
+              </a>
+            </div>
           </div>
         </div>
 
         <div class="div-gaby">
           <div class="card" id="gaby">
-              <img src="/Images/gaby.jpeg" class="card-img-top" alt="Foto Gaby"/>
-              <div class="card-body">
+            <img src="/Images/gaby.jpeg" class="card-img-top" alt="Foto Gaby" />
+            <div class="card-body">
               <h4>Gabriela Cortés Patiño - Product Owner | Scrum team</h4>
-                  <p class="card-text">
-                    Desarrolladora web front end. Disfruto del trabajo en equipo, la organización y planeación, así como de aprender nuevas cosas. Amante de los animales, especialmente de los pandas, de la naturaleza y de pasar tiempo con mis seres queridos.
-                  </p>
-                  <a href="https://github.com/gabpatt">
-                    <img
-                      src="/Logo-Iconos/github.svg"
-                      alt="git"
-                      style="width: 30px; height: auto"
-                    />
-                  </a>
-                  <a href="https://www.linkedin.com/in/gabriela-cpat/">
-                    <img
-                      src="/Logo-Iconos/linkedin.svg"
-                      alt="linkedin"
-                      style="width: 30px; height: auto"
-                    /> </a>
-              </div>
+              <p class="card-text">
+                Desarrolladora web front end. Disfruto del trabajo en equipo, la
+                organización y planeación, así como de aprender nuevas cosas.
+                Amante de los animales, especialmente de los pandas, de la
+                naturaleza y de pasar tiempo con mis seres queridos.
+              </p>
+              <a href="https://github.com/gabpatt">
+                <img
+                  src="/Logo-Iconos/github.svg"
+                  alt="git"
+                  style="width: 30px; height: auto"
+                />
+              </a>
+              <a href="https://www.linkedin.com/in/gabriela-cpat/">
+                <img
+                  src="/Logo-Iconos/linkedin.svg"
+                  alt="linkedin"
+                  style="width: 30px; height: auto"
+                />
+              </a>
+            </div>
           </div>
         </div>
 
         <div class="div-tannya">
           <div class="card" id="tannya">
-              <img src="/Images/tannya.jpg" class="card-img-top" alt="Foto Tannya"/>
-              <div class="card-body">
+            <img
+              src="/Images/tannya.jpg"
+              class="card-img-top"
+              alt="Foto Tannya"
+            />
+            <div class="card-body">
               <h4>Tannya Barbiaux Reyes - Product Owner | Scrum team</h4>
-                  <p class="card-text">
-                    Full Stack Developer Jr. Soy una persona apasionada con la tecnología. Decidí emprender en el mundo de la programación de manera autodidacta, me encuentro en el proceso de crecimiento dentro del área de TI.
-                  </p>
-                  <a href="https://github.com/TBarbiauxR">
-                    <img
-                      src="/Logo-Iconos/github.svg"
-                      alt="git"
-                      style="width: 30px; height: auto"
-                    />
-                  </a>
-                  <a href="https://www.linkedin.com/in/tbarbiauxr/">
-                    <img
-                      src="/Logo-Iconos/linkedin.svg"
-                      alt="linkedin"
-                      style="width: 30px; height: auto"
-                    />
-                  </a>
-              </div>
+              <p class="card-text">
+                Full Stack Developer Jr. Soy una persona apasionada con la
+                tecnología. Decidí emprender en el mundo de la programación de
+                manera autodidacta, me encuentro en el proceso de crecimiento
+                dentro del área de TI.
+              </p>
+              <a href="https://github.com/TBarbiauxR">
+                <img
+                  src="/Logo-Iconos/github.svg"
+                  alt="git"
+                  style="width: 30px; height: auto"
+                />
+              </a>
+              <a href="https://www.linkedin.com/in/tbarbiauxr/">
+                <img
+                  src="/Logo-Iconos/linkedin.svg"
+                  alt="linkedin"
+                  style="width: 30px; height: auto"
+                />
+              </a>
+            </div>
           </div>
         </div>
 
         <div class="div-carlos">
           <div class="card" id="carlos">
-              <img src="/Images/carlos.png" class="card-img-top" alt="Foto Carlos"/>
-              <div class="card-body">
+            <img
+              src="/Images/carlos.png"
+              class="card-img-top"
+              alt="Foto Carlos"
+            />
+            <div class="card-body">
               <h4>Juan Carlos Rodríguez Ibarra -Scrum Master | Scrum team</h4>
-                  <p class="card-text">
-                    Persona entusiasta por la música, el arte y el entretenimiento digital, amante de la gastronomía y la mixología.
-                    “La experiencia no es lo que te sucede, sino lo que haces con lo que te sucede.”
-                    -Aldous Huxley
-                  </p>
-                  <a href="https://github.com/VerumGrimoire">
-                    <img
-                      src="/Logo-Iconos/github.svg"
-                      alt="git"
-                      style="width: 30px; height: auto"
-                    />
-                  </a>
-                  <a href="https://www.linkedin.com/in/jcri/">
-                    <img
-                      src="/Logo-Iconos/linkedin.svg"
-                      alt="linkedin"
-                      style="width: 30px; height: auto"
-                    />
-                  </a>
-              </div>
+              <p class="card-text">
+                Persona entusiasta por la música, el arte y el entretenimiento
+                digital, amante de la gastronomía y la mixología. “La
+                experiencia no es lo que te sucede, sino lo que haces con lo que
+                te sucede.” -Aldous Huxley
+              </p>
+              <a href="https://github.com/VerumGrimoire">
+                <img
+                  src="/Logo-Iconos/github.svg"
+                  alt="git"
+                  style="width: 30px; height: auto"
+                />
+              </a>
+              <a href="https://www.linkedin.com/in/jcri/">
+                <img
+                  src="/Logo-Iconos/linkedin.svg"
+                  alt="linkedin"
+                  style="width: 30px; height: auto"
+                />
+              </a>
+            </div>
           </div>
         </div>
 
         <div class="div-jonathan">
           <div class="card" id="jonathan">
-              <img src="/Images/jonathan.jpg" class="card-img-top" alt="Foto Jonathan"/>
-              <div class="card-body">
+            <img
+              src="/Images/jonathan.jpg"
+              class="card-img-top"
+              alt="Foto Jonathan"
+            />
+            <div class="card-body">
               <h4>Jonathan Bautista Acosta - Scrum Master | Scrum team</h4>
-                  <p class="card-text">
-                    Desarrollador Full Stack Java Jr. con especialización en back end, con gusto por la tecnología, videojuegos, cinéfilo, lector de libros, conocimiento en inteligencia artificial y chatbots por medio de plataformas en la nube.  
-                  </p>
-                  <a href="https://github.com/DexterNos">
-                    <img
-                      src="/Logo-Iconos/github.svg"
-                      alt="git"
-                      style="width: 30px; height: auto"
-                    />
-                  </a>
-                  <a href="https://www.linkedin.com/in/jon-bau-aco/">
-                    <img
-                      src="/Logo-Iconos/linkedin.svg"
-                      alt="linkedin"
-                      style="width: 30px; height: auto"
-                    />
-                  </a>
-              </div>
+              <p class="card-text">
+                Desarrollador Full Stack Java Jr. con especialización en back
+                end, con gusto por la tecnología, videojuegos, cinéfilo, lector
+                de libros, conocimiento en inteligencia artificial y chatbots
+                por medio de plataformas en la nube.
+              </p>
+              <a href="https://github.com/DexterNos">
+                <img
+                  src="/Logo-Iconos/github.svg"
+                  alt="git"
+                  style="width: 30px; height: auto"
+                />
+              </a>
+              <a href="https://www.linkedin.com/in/jon-bau-aco/">
+                <img
+                  src="/Logo-Iconos/linkedin.svg"
+                  alt="linkedin"
+                  style="width: 30px; height: auto"
+                />
+              </a>
+            </div>
           </div>
         </div>
 
         <div class="div-mildred">
           <div class="card" id="mildred">
-              <img src="/Images/mildred.jpeg" class="card-img-top" alt="Foto Mildred" />
-              <div class="card-body">
+            <img
+              src="/Images/mildred.jpeg"
+              class="card-img-top"
+              alt="Foto Mildred"
+            />
+            <div class="card-body">
               <h4>Mildred Martínez Méndez - Product Owner | Scrum team</h4>
-                  <p class="card-text">
-                    Siempre he sido alguien creativa pero lógica, me gusta como se conecta con la programación. Trabajé con el equipo Tech-quila para crear un sitio web para el ecommerce Pattsberry, todos los servicios que ofrece, con un enfoque divertido, pero profesional.
-                  </p>
-                  <a href="https://github.com/Mimame23">
-                    <img
-                      src="/Logo-Iconos/github.svg"
-                      alt="git"
-                      style="width: 30px; height: auto"
-                    />
-                  </a>
-                  <a href="https://www.linkedin.com/in/mildred-martinezm/">
-                    <img
-                      src="/Logo-Iconos/linkedin.svg"
-                      alt="linkedin"
-                      style="width: 30px; height: auto"
-                    />
-                  </a>
-              </div>
+              <p class="card-text">
+                Siempre he sido alguien creativa pero lógica, me gusta como se
+                conecta con la programación. Trabajé con el equipo Tech-quila
+                para crear un sitio web para el ecommerce Pattsberry, todos los
+                servicios que ofrece, con un enfoque divertido, pero
+                profesional.
+              </p>
+              <a href="https://github.com/Mimame23">
+                <img
+                  src="/Logo-Iconos/github.svg"
+                  alt="git"
+                  style="width: 30px; height: auto"
+                />
+              </a>
+              <a href="https://www.linkedin.com/in/mildred-martinezm/">
+                <img
+                  src="/Logo-Iconos/linkedin.svg"
+                  alt="linkedin"
+                  style="width: 30px; height: auto"
+                />
+              </a>
+            </div>
           </div>
         </div>
-  </div>
-</div>
-
+      </div>
+    </div>
 
     <!-- CONTAINER -------------------------------------------------------------------------------------------------------------------------->
     <script

@@ -32,6 +32,7 @@ body {
 
 .navBtns {
   display: none;
+  align-items: center;
 }
 a {
   text-decoration: none;
@@ -47,13 +48,53 @@ a:hover {
   cursor: pointer;
   transform: scale(1.1);
 }
+/*Dropdown menu styles----------------------modificated from the bootstrap default--------------------------------------------------------------*/
+.dropdown-toggle {
+  background-color: transparent;
+  text-decoration: none;
+  color: #676767;
+  font-weight: 600;
+  margin: 0 10px;
+  font-size: 18px;
+}
+.dropdown-toggle {
+  border: none;
+}
+.dropdown-toggle:hover {
+  text-decoration: none;
+  color: #bc0e73;
+  cursor: pointer;
+  transform: scale(1.1);
+}
+.dropdown-toggle:focus {
+  color: #bc0e73;
+}
+.dropdown-item {
+  margin: 0;
+  color: #bc0e73;
+}
+.dropdown-item:hover {
+  background-color: #ffffff;
+  color: #bc0e73;
+}
+.dropdown-menu {
+  background-color: rgba(249, 224, 239);
+}
+/*Dropdown menu styles----------------------modificated from the bootstrap default--------------------------------------------------------------*/
 
 /* navbar modification--------------------------------------------------------------------------------------------------------------------------*/
 
 /* menu styles ---------------------------------------------------------------------------------------------------------------------------------*/
 
 .hamburger {
-  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: #bc0e73;
+  padding: 2px;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
   -webkit-transition: -webkit-transform 0.25s
@@ -70,7 +111,7 @@ a:hover {
   background-color: none;
 }
 ._layer {
-  background: #333333;
+  background: #ffffff;
   margin-bottom: 4px;
   border-radius: 2px;
   width: 28px;
@@ -145,51 +186,6 @@ a:hover {
   text-decoration: none;
   color: #333;
 }
-
-/* Hover
-
-.container .card {
-  max-width: 300px;
-  height: 215px;
-  margin: 30px 10px;
-  padding: 20px 15px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
-  transition: 0.3s ease-in-out;
-}
-.container .card:hover {
-  height: auto;
-}
-.container .card .imgContainer {
-  position: relative;
-  width: 250px;
-  height: 250px;
-  top: -50px;
-  left: 10px;
-  z-index: 1;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-}
-.container .card .imgContainer img {
-  max-width: 100%;
-  border-radius: 4px;
-}
-.container .card .content {
-  position: relative;
-  margin-top: -140px;
-  padding: 10px 15px;
-  height: auto;
-  text-align: center;
-  color: #111;
-  visibility: hidden;
-  opacity: 0;
-  pointer-events: none;
-  transition: 0.3s ease-in-out;
-}
-.container .card:hover .content {
-  visibility: visible;
-  opacity: 1;
-  margin-top: -40px;
-  transition-delay: 0.3s;
-} */
 
 @media (min-width: 1000px) {
   .navBar {

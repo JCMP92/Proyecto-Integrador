@@ -1,6 +1,5 @@
 * {
   box-sizing: border-box;
-
 }
 html {
   width: 100%;
@@ -152,60 +151,85 @@ a:hover {
   height: calc(100% - 70px);
   padding: 10px;
 }
-#EquipoTech{
+#EquipoTech {
   font-family: 'Elsie', cursive;
   color: #bc0e73;
   text-align: center;
 }
-#descripcionTech{
-
+#descripcionTech {
   text-align: center;
 }
 .div-alon {
   grid-area: alon;
-  
 }
 .div-juan {
   grid-area: juan;
-  
 }
 .div-gaby {
   grid-area: gaby;
-  
 }
 .div-tannya {
   grid-area: tannya;
-  
 }
 .div-carlos {
   grid-area: carlos;
-  
 }
 .div-jonathan {
   grid-area: jonathan;
-  
 }
 .div-mildred {
   grid-area: mildred;
-  
 }
 
 .myGrid {
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-template-areas:
-    'alon alon juan juan'
-    'gaby gaby tannya tannya'
-    'carlos carlos jonathan jonathan'
-    '. mildred mildred .';
+    'desc desc'
+    'alon alon'
+    'juan juan'
+    'gaby gaby'
+    'tannya tannya'
+    'carlos carlos'
+    'jonathan jonathan'
+    'mildred mildred';
   gap: 5px;
   height: 100%;
 }
 
+@media (min-width: 600px) {
+  .myGrid {
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      'desc desc desc desc'
+      'alon alon juan juan'
+      'gaby gaby tannya tannya'
+      'carlos carlos  jonathan jonathan'
+      '. mildred mildred .';
+  }
+}
 
+@media (min-width: 900px) {
+  .navBar {
+    height: 100px;
+  }
+  .imageContainer {
+    width: 311px;
+    height: 86px;
+  }
+  .myGrid {
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      '. . desc desc desc desc . .'
+      'alon alon juan juan gaby gaby tannya tannya'
+      '.carlos carlos jonathan jonathan mildred mildred .';
+  }
+}
 
-@media (max-width: 330px) {
+/* @media (max-width: 330px) {
   .container .card .imgContainer {
     left: -2px;
   }
@@ -297,4 +321,4 @@ a:hover {
       'alon alon juan juan gaby gaby tannya tannya'
       '.carlos carlos jonathan jonathan mildred mildred .';
   }
-}
+} */

@@ -37,7 +37,21 @@
       <div class="navBtns">
         <a href="/html/aboutUs.html">Nosotros</a>
         <a href="/html/Tienda.html">Tienda</a>
-        <a href="/html/amigurumis.html">Pedidos</a>
+        <button
+          class="btn dropdown-toggle"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Pedidos
+        </button>
+        <ul class="dropdown-menu">
+          <li>
+            <a href="/html/amigurumis.html" class="dropdown-item">Amigurumis</a>
+          </li>
+          <li>
+            <a href="/html/libretas.html" class="dropdown-item">Libretas</a>
+          </li>
+        </ul>
         <a href="/html/carrito_compra.html">Carrito</a>
         <a href="/html/contacto.html">Contacto</a>
         <a href="/html/login.html">Mi Cuenta</a>
@@ -52,7 +66,8 @@
         <ul>
           <li><a href="/html/aboutUs.html">Nosotros</a></li>
           <li><a href="/html/Tienda.html">Tienda</a></li>
-          <li><a href="/html/amigurumis.html">Pedidos</a></li>
+          <li><a href="/html/amigurumis.html">Pedidos Amigurumis</a></li>
+          <li><a href="/html/libretas.html">Pedidos Libretas</a></li>
           <li><a href="/html/carrito_compra.html">Carrito</a></li>
           <li><a href="/html/contacto.html">Contacto</a></li>
           <li><a href="/html/login.html">Mi Cuenta</a></li>
@@ -75,7 +90,12 @@
             <label for="validationCustom04" class="form-label">
               <h3 class="subtitleForm">Escoge un tamaño</h3>
             </label>
-            <select class="form-select" id="validationCustom04" required id="tamhoja">
+            <select
+              class="form-select"
+              id="validationCustom04"
+              required
+              id="tamhoja"
+            >
               <option disabled value="">-Tamaño-</option>
               <option selected value="1">10 cm</option>
               <option value="2">15 cm</option>
