@@ -41,15 +41,25 @@ a {
   margin: 0 10px;
   font-size: 18px;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 097e1709bfd76c5817a65894c54165f0016a6521
 a:hover {
   text-decoration: none;
   color: #bc0e73;
   cursor: pointer;
   transform: scale(1.1);
 }
+<<<<<<< HEAD
 /* navbar modification--------------------------------------------------------------------------------------------------------------------------*/
 
 
+=======
+
+/* navbar modification--------------------------------------------------------------------------------------------------------------------------*/
+
+>>>>>>> 097e1709bfd76c5817a65894c54165f0016a6521
 /* menu styles ---------------------------------------------------------------------------------------------------------------------------------*/
 
 .hamburger {
@@ -148,34 +158,37 @@ a:hover {
 
 /* Hover */
 
-.container .card
-{
-    max-width: 300px;
-    height: 215px;
-    margin: 30px 10px;
-    padding: 20px 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
-    transition: 0.3s ease-in-out;
+.container .card {
+  max-width: 300px;
+  height: 215px;
+  margin: 30px 10px;
+  padding: 20px 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+  transition: 0.3s ease-in-out;
 }
+<<<<<<< HEAD
 .container .card:hover
 {
     height: 650px;
+=======
+.container .card:hover {
+  height: auto;
+>>>>>>> 097e1709bfd76c5817a65894c54165f0016a6521
 }
-.container .card .imgContainer
-{
-    position: relative;
-    width:250px;
-    height:250px;
-    top:-50px;
-    left:10px;
-    z-index: 1;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+.container .card .imgContainer {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  top: -50px;
+  left: 10px;
+  z-index: 1;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
 }
-.container .card .imgContainer img
-{
-    max-width: 100%;
-    border-radius: 4px;
+.container .card .imgContainer img {
+  max-width: 100%;
+  border-radius: 4px;
 }
+<<<<<<< HEAD
 .container .card .content
 {
     position: relative;
@@ -187,23 +200,39 @@ a:hover {
     opacity: 0;
     pointer-events: none;
     transition: 0.3s ease-in-out;
+=======
+.container .card .content {
+  position: relative;
+  margin-top: -140px;
+  padding: 10px 15px;
+  height: auto;
+  text-align: center;
+  color: #111;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s ease-in-out;
+>>>>>>> 097e1709bfd76c5817a65894c54165f0016a6521
 }
-.container .card:hover .content
-{
-    visibility: visible;
-    opacity: 1;
-    margin-top: -40px;
-    transition-delay: 0.3s;
+.container .card:hover .content {
+  visibility: visible;
+  opacity: 1;
+  margin-top: -40px;
+  transition-delay: 0.3s;
 }
 
+<<<<<<< HEAD
 @media (max-width: 330px){
     .container .card .imgContainer{
         left: -2px;
     }
+=======
+@media (max-width: 330px) {
+  .container .card .imgContainer {
+    left: -2px;
+  }
+>>>>>>> 097e1709bfd76c5817a65894c54165f0016a6521
 }
-
-
-
 
 /* grid styles ---------------------------------------------------------------------------------------------------------------------------------*/
 .div-description {
@@ -234,7 +263,6 @@ a:hover {
   grid-area: mildred;
 }
 
-
 .myGrid {
   display: grid;
 
@@ -252,10 +280,35 @@ a:hover {
 
   gap: 5px;
   height: 100%;
+<<<<<<< HEAD
 } */
 
 
 @media(min-width: 600px) {
+=======
+}
+
+.linkGit {
+  z-index: 1002;
+}
+
+@media (min-width: 370px) {
+  .container .card {
+    margin: 30px 18px;
+  }
+}
+
+@media (min-width: 420px) {
+  .container .card {
+    margin: 30px 47px;
+  }
+}
+
+@media (min-width: 600px) {
+  .container .card {
+    margin: 30px 10px;
+  }
+>>>>>>> 097e1709bfd76c5817a65894c54165f0016a6521
   .myGrid {
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -268,6 +321,7 @@ a:hover {
   }
 }
 
+<<<<<<< HEAD
 @media (min-width: 900px) {
   .navBar {
     height: 100px;
@@ -276,6 +330,41 @@ a:hover {
     width: 311px;
     height: 86px;
   }
+=======
+@media (min-width: 1000px) {
+  .navBar {
+    height: 100px;
+  }
+  .container .card {
+    margin: 30px 0px;
+  }
+  .imageContainer {
+    width: 234px;
+    height: 65px;
+  }
+  .myGrid {
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      '. desc desc desc desc .'
+      'alon alon juan juan gaby gaby '
+      'carlos carlos jonathan jonathan tannya tannya'
+      '. . mildred mildred . .';
+  }
+  .hamburger {
+    display: none;
+  }
+  .navBtns {
+    display: flex;
+  }
+}
+@media (min-width: 1200px) {
+  a {
+    margin: 0 15px;
+  }
+}
+@media (min-width: 1380px) {
+>>>>>>> 097e1709bfd76c5817a65894c54165f0016a6521
   .myGrid {
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -285,4 +374,7 @@ a:hover {
       '.carlos carlos jonathan jonathan mildred mildred .';
   }
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 097e1709bfd76c5817a65894c54165f0016a6521
