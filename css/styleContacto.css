@@ -22,10 +22,11 @@ h2 {
 }
 
 #tarjetaContacto {
+  border-radius: 40px;
   font-family: 'Roboto', sans-serif;
   top: 50px;
-  width: 292px;
-  height: 316px;
+  width: 290px;
+  height: 310px;
   background-color: #b2b2b2;
   color: #bc0e73;
   text-align: center;
@@ -40,7 +41,7 @@ h2 {
   align-items: center;
 }
 .card-text {
-  width: 218px;
+  width: 219px;
 }
 .icons-container {
   display: flex;
