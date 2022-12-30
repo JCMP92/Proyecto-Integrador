@@ -145,11 +145,17 @@ a:hover {
   color: #bc0e73;
 }
 
-/* Hover */
+
 .containerTech {
   width: 100%;
   height: calc(100% - 70px);
   padding: 10px;
+}
+
+.div-description{
+  padding-left: 15%;
+  padding-right: 15%;
+  margin: 5% 0;
 }
 #EquipoTech {
   font-family: 'Elsie', cursive;
@@ -235,6 +241,11 @@ a:hover {
   }
 }
 
+@media (min-width: 1700px){
+  .card{
+    min-height: 845px;
+  }
+}
 /* @media (max-width: 330px) {
   .container .card .imgContainer {
     left: -2px;
