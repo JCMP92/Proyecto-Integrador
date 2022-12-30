@@ -199,6 +199,9 @@ a:hover {
 }
 
 @media (min-width: 600px) {
+  .card{
+    min-height: 657px;
+  }
   .myGrid {
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -212,6 +215,9 @@ a:hover {
 }
 
 @media (min-width: 900px) {
+  .card{
+    min-height: 664px;
+  }
   .navBar {
     height: 100px;
   }
