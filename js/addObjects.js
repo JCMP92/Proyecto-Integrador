@@ -119,10 +119,9 @@ function addItem(item){
               <p class="card-text">${item.description}</p>\n
               <a href="#" class="btn btn-primary">Add</a>\n
           </div>\n
-      </div>\n 
-      <br/>`;
+      </div>\n`;
   const itemsContainer = document.getElementById("list-items");
-  itemsContainer.innerHTML += itemHTML;
+  itemsContainer.insertAdjacentHTML("beforeend",itemHTML);
 }
 
 addItem(libreta01);
