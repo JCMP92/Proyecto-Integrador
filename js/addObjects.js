@@ -18,7 +18,7 @@ const libreta02 = {
   // Descripción de la libreta (tamaño, tipo de hoja, número de hojas, tipo de encuadernación)
   description: 'Libreta de arillo, tamaño media carta, 100 hojas rayadas',
   // Ubicación de la imagen de la libreta
-  image: 'libretasImg/girasoles.jpg',
+  image: '/Images/libretasImg/girasoles.jpg',
 };
 
 const libreta03 = {
@@ -29,7 +29,7 @@ const libreta03 = {
   // Descripción de la libreta (tamaño, tipo de hoja, número de hojas, tipo de encuadernación)
   description: 'Libreta cosida, tamaño media carta, 100 hojas rayadas',
   // Ubicación de la imagen de la libreta
-  image: 'libretasImg/gravity.jpg',
+  image: '/Images/libretasImg/gravity.jpg',
 };
 
 const libreta04 = {
@@ -40,7 +40,7 @@ const libreta04 = {
   // Descripción de la libreta (tamaño, tipo de hoja, número de hojas, tipo de encuadernación)
   description: 'Libreta de arillo, tamaño media carta, 100 hojas rayadas',
   // Ubicación de la imagen de la libreta
-  image: 'libretasImg/pinkfloyd.jpg',
+  image: '/Images/libretasImg/pinkfloyd.jpg',
 };
 
 const libreta05 = {
@@ -51,7 +51,7 @@ const libreta05 = {
   // Descripción de la libreta (tamaño, tipo de hoja, número de hojas, tipo de encuadernación)
   description: 'Libreta cosida, tamaño media carta, 100 hojas rayadas',
   // Ubicación de la imagen de la libreta
-  image: 'libretasImg/principito.jpg',
+  image: '/Images/libretasImg/principito.jpg',
 };
 
 const amigu01 = {
@@ -62,7 +62,7 @@ const amigu01 = {
   // Descripción
   description: 'Dos aguacates tejidos de 15 cm de altura',
   // Ubicación de la imagen
-  image: 'Images/amiguImg/aguacates.jpg',
+  image: '/Images/amiguImg/aguacates.jpg',
 };
 
 const amigu02 = {
@@ -73,7 +73,7 @@ const amigu02 = {
   // Descripción
   description: 'Conejo tejido de 15 cm de altura',
   // Ubicación de la imagen
-  image: 'images/amiguImg/conejoEvan.jpg',
+  image: '/Images/amiguImg/conejoEvan.jpg',
 };
 
 const amigu03 = {
@@ -84,7 +84,7 @@ const amigu03 = {
   // Descripción
   description: 'Mono tejido de 15 cm de altura',
   // Ubicación de la imagen
-  image: 'images/amiguImg/monkey.jpg',
+  image: '/Images/amiguImg/monkey.jpg',
 };
 
 const amigu04 = {
@@ -96,7 +96,7 @@ const amigu04 = {
   description:
     'figuras tejidas de Mike y Sully de Monsters Inc, 15 cm de altura',
   // Ubicación de la imagen
-  image: 'images/amiguImg/monster.jpg',
+  image: '/Images/amiguImg/monster.jpg',
 };
 
 const amigu05 = {
@@ -107,7 +107,7 @@ const amigu05 = {
   // Descripción
   description: 'Spiderman tejido de 15 cm de altura',
   // Ubicación de la imagen
-  image: 'images/amiguImg/spiderman.jpg',
+  image: '/Images/amiguImg/spiderman.jpg',
 };
 
 function addItem(item){
@@ -125,4 +125,13 @@ function addItem(item){
   itemsContainer.innerHTML += itemHTML;
 }
 
-
+addItem(libreta01);
+addItem(libreta02);
+addItem(libreta03);
+addItem(libreta04);
+addItem(libreta05);
+addItem(amigu01);
+addItem(amigu02);
+addItem(amigu03);
+addItem(amigu04);
+addItem(amigu05);
