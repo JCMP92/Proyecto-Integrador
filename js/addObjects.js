@@ -94,7 +94,7 @@ const amigu04 = {
   price: 250,
   // Descripción
   description:
-    'figuras tejidas de Mike y Sully de Monsters Inc, 15 cm de altura',
+    'Figuras tejidas de Mike y Sully de Monsters Inc, 15 cm de altura',
   // Ubicación de la imagen
   image: '/Images/amiguImg/monster.jpg',
 };
@@ -115,9 +115,9 @@ function addItem(item) {
          <img src=${item.image} class="card-img-top" alt="image">\n 
           <div class="card-body">\n
               <h5 class="card-title">${item.name}</h5>\n
-                <p class="card-text">$ ${item.price} pesos</p>\n
+                <p class="card-price">$ ${item.price} MXN</p>\n
               <p class="card-text">${item.description}</p>\n
-              <a href="#" class="btn btn-primary">Add</a>\n
+              <a href="#" class="btn btn-primary">Añadir</a>\n
           </div>\n
       </div>\n`;
   const itemsContainer = document.getElementById('list-items');

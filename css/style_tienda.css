@@ -38,6 +38,43 @@ h1 {
   transition-duration: 250ms;
 }
 
+.card-title {
+  font-size: 14px;
+}
+
+.card-price{
+  margin-bottom: 5px;
+  font-size: 13px;
+}
+
+.card-text{
+  margin-bottom: 5px;
+  font-size: 10px;
+
+}
+.card-body{
+  padding: 5px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+
+.btn-primary{
+  width: 80px;
+  height: 30px;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  padding: 0;
+  margin: 0;
+  line-height: 30px;
+  background-color: #bc0e73;
+  border: none;
+}
+
 .card:hover {
   transform: scale(1.02);
   transition-duration: 250ms;
@@ -65,6 +102,23 @@ h1 {
     width: 380px;
     height: 250px;
   }
+  .card-title {
+    font-size: 16px;
+  }
+  
+  .card-price{
+    font-size: 14px;
+  }
+  
+  .card-text{
+   font-size: 12px;
+  
+  }
+  .card-body{
+    padding: 7px;
+
+  }
+  
 }
 @media (min-width: 1300px) {
   #list-items {
@@ -75,4 +129,21 @@ h1 {
     width: 420px;
     height: 280px;
   }
+  .card-title {
+    font-size: 18px;
+  }
+  
+  .card-price{
+    font-size: 16px;
+  }
+  
+  .card-text{
+   font-size: 14px;
+  
+  }
+  .card-body{
+    padding: 9px;
+
+  }
+  
 }
