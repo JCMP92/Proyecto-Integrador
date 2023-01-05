@@ -2,6 +2,7 @@ let btnenviar = document.getElementById('btnEnviar');
 let idTimeout;
 let validos = 0;
 const priceRegex = /^\$\d+(\.\d{2})?$/;
+const regexImg = new RegExp(/[^\s]+(.*?).(jpg|jpeg|png|JPG|JPEG|PNG)$/);
 
 
 
@@ -45,6 +46,8 @@ btnenviar.addEventListener('click', function (event) {
   alertError.innerHTML = '';
   validos = 0;
 
+  if(inputNombre.value.trim().replaceAll('  ', '').length < 3 || inputPrice.value.match(priceRegex) == null || inputDescripcion.value.trim().replaceAll('  ', '').length < 20 || validos == 4 || inputImg.value.match(regexImg)==null ){
+
   //Nombre
   if (inputNombre.value.trim().replaceAll('  ', '').length < 3) {
     alertError.innerHTML += 'El nombre debe contener 3 caracteres o más.';
@@ -63,7 +66,7 @@ btnenviar.addEventListener('click', function (event) {
     alertError.innerHTML += '<br/>El formato de precio no es válido.';
     inputPrice.style.border = 'solid red 1px';
   } else {
-    inputMail.style.border = 'solid green 1px';
+    inputPrice.style.border = 'solid green 1px';
     validos++;
   }
 
@@ -79,6 +82,15 @@ btnenviar.addEventListener('click', function (event) {
     inputDescripcion.style.border = 'solid green 1px';
     validos++;
   }
+ //imagen
+  if (inputImg.value.match(regexImg)==null) {
+    alertError.style.display = 'block';
+    alertError.innerHTML += '<br/>Tipo inválido de imagen.';
+    inputImg.style.border = 'solid red 1px';
+  } else {
+    inputImg.style.border = 'solid green 1px';
+    validos++;
+  }
 
   if (idTimeout != undefined && idTimeout != null) {
     clearTimeout(idTimeout);
@@ -92,15 +104,13 @@ btnenviar.addEventListener('click', function (event) {
     }, 3000);
     console.log('ready');
   }
-  //imagen
-  let regexImg = new RegExp(/[^\s]+(.*?).(jpg|jpeg|png|JPG|JPEG|PNG)$/);
-if (inputImg.value.match(regexImg)==null) {
-  alertError.style.display = 'block';
-  alertError.innerHTML += '<br/>Tipo invalido de imagen.';
-  inputImg.style.border = 'solid red 1px';
-} else {
-  inputImg.style.border = 'solid green 1px';
-  validos++;
+
+
+} else{
+  console.log("ok");
 }
 });
+
+
+
 
