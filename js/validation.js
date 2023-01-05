@@ -124,3 +124,4 @@ btnenviar.addEventListener('click', function (event) {
     }).then((message) => alert('E-mail sent'));
   }
 }); //JC validaciones
+

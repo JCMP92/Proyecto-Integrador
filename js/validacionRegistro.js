@@ -29,6 +29,9 @@ const priceRegex = /^\$\d+(\.\d{2})?$/;
 // } else {
 //   // La cadena tiene menos de 20 caracteres
 // }
+ 
+
+
 
 btnenviar.addEventListener('click', function (event) {
   event.preventDefault();
@@ -89,4 +92,15 @@ btnenviar.addEventListener('click', function (event) {
     }, 3000);
     console.log('ready');
   }
+  //imagen
+  let regexImg = new RegExp(/[^\s]+(.*?).(jpg|jpeg|png|JPG|JPEG|PNG)$/);
+if (inputImg.value.match(regexImg)==null) {
+  alertError.style.display = 'block';
+  alertError.innerHTML += '<br/>Tipo invalido de imagen.';
+  inputImg.style.border = 'solid red 1px';
+} else {
+  inputImg.style.border = 'solid green 1px';
+  validos++;
+}
 });
+
