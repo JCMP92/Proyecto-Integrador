@@ -5,6 +5,29 @@ const priceRegex = /^\$\d+(\.\d{2})?$/;
 const regexImg = new RegExp(/[^\s]+(.*?).(jpg|jpeg|png|JPG|JPEG|PNG)$/);
 let datos = [];
 
+function readURL(input) 
+{
+    if (input.files && input.files[0]) {
+        let reader = new FileReader();
+
+        reader.onload = function (e) {
+            document.getElementById('inputImg').src =  e.target.result;
+        }
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+bannerImage = document.getElementById('inputImg');
+imgData = getBase64Image(bannerImage);
+localStorage.setItem("datos", datos);
+
+function getBase64Image() {
+  let canvas = document.createElement("canvas");
+  let dataURL = canvas.toDataURL("image/png");
+
+  return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+}
+
 
 // //imagen
 // function isValidImage(filename) {
@@ -39,13 +62,13 @@ btnenviar.addEventListener('click', function (event) {
   let inputNombre = document.getElementById('name');
   let inputPrice = document.getElementById('price');
   let inputDescripcion = document.getElementById('description');
-  let inputImg = document.getElementById('imgproduct');
+  let inputImg = document.getElementById('inputImg');
   let alertError = document.getElementById('alertError');
 
   alertError.style.display = 'none';
   alertError.innerHTML = '';
   validos = 0;
-
+ 
   if(inputNombre.value.trim().replaceAll('  ', '').length < 3 || inputPrice.value.match(priceRegex) == null || inputDescripcion.value.trim().replaceAll('  ', '').length < 20 || validos == 4 || inputImg.value.match(regexImg)==null ){
 
   //Nombre
@@ -104,14 +127,15 @@ btnenviar.addEventListener('click', function (event) {
     }, 3000);
     console.log('ready');
   }
-
+ 
 }else{
 
   console.log("ok");
   let elemento = `{
     "name": "${inputNombre.value} ",
     "price": "${inputPrice.value}",
-    "description": "${inputDescripcion.value}"  
+    "description": "${inputDescripcion.value}",
+    "inputImg": "${getBase64Image(inputImg)}" 
     
     }`;
     console.log(elemento);

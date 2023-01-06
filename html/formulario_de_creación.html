@@ -120,12 +120,14 @@
         </div>
 
         <div class="input-group">
+          <img src="" id="tableBanner">
           <input
             type="file"
             class="form-control"
-            id="imgproduct"
+            id="inputImg"
             aria-describedby="imgproduct"
             aria-label="Upload"
+            onchange="readURL(this);"
           />
           <!--<button class="btn btn-outline-secondary" type="button" id="imgproduct">Button</button>-->
         </div>
