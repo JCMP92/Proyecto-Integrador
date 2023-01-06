@@ -3,7 +3,7 @@ let idTimeout;
 let validos = 0;
 const priceRegex = /^\$\d+(\.\d{2})?$/;
 const regexImg = new RegExp(/[^\s]+(.*?).(jpg|jpeg|png|JPG|JPEG|PNG)$/);
-
+let datos = [];
 
 
 // //imagen
@@ -105,9 +105,19 @@ btnenviar.addEventListener('click', function (event) {
     console.log('ready');
   }
 
+}else{
 
-} else{
   console.log("ok");
+  let elemento = `{
+    "name": "${inputNombre.value} ",
+    "price": "${inputPrice.value}",
+    "description": "${inputDescripcion.value}"  
+    
+    }`;
+    console.log(elemento);
+    datos .push( JSON.parse(elemento));
+    console.log(datos);
+    localStorage.setItem("datos", JSON.stringify(datos));
 }
 });
 
