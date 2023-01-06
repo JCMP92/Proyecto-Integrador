@@ -120,21 +120,33 @@
         </div>
 
         <div class="input-group">
-          <img src="" id="tableBanner">
-          <input
-            type="file"
-            class="form-control"
-            id="inputImg"
-            aria-describedby="imgproduct"
-            aria-label="Upload"
-            onchange="readURL(this);"
+          <input type="file" class="form-control" id="inputImg" />
+          <br />
+          <img
+            id="imageFile"
+            name="imageFile"
+            src=""
+            alt="Vista previa de la imagen"
+            title="Vista previa de la imagen"
           />
-          <!--<button class="btn btn-outline-secondary" type="button" id="imgproduct">Button</button>-->
         </div>
 
         <button type="submit" class="btn btn-primary" id="btnEnviar">
           Crear
         </button>
+
+        <textarea
+          rows="20"
+          class="form-control"
+          data-toggle="tooltip"
+          data-placement="bottom"
+          id="inputFile"
+          name="inputFile"
+          value=""
+          placehodler="Imagen del curso"
+          title="Imagen"
+          style="display: block"
+        ></textarea>
       </form>
     </main>
     <script

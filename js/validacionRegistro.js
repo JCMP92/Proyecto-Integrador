@@ -1,61 +1,39 @@
 let btnenviar = document.getElementById('btnEnviar');
 let idTimeout;
 let validos = 0;
+let datos = [];
+let base64 = '';
 const priceRegex = /^\$\d+(\.\d{2})?$/;
 const regexImg = new RegExp(/[^\s]+(.*?).(jpg|jpeg|png|JPG|JPEG|PNG)$/);
-let datos = [];
 
-function readURL(input) 
-{
-    if (input.files && input.files[0]) {
-        let reader = new FileReader();
+let fileImage = document.getElementById('inputImg');
+let imageFile = document.getElementById('imageFile');
 
-        reader.onload = function (e) {
-            document.getElementById('inputImg').src =  e.target.result;
-        }
+fileImage.addEventListener('change', function () {
+  previewFile('imageFile', 'inputImg', 'inputFile');
+  //previewFile(id imagen, input type file , textArea);
+});
 
-        reader.readAsDataURL(input.files[0]);
-    }
-}
-bannerImage = document.getElementById('inputImg');
-imgData = getBase64Image(bannerImage);
-localStorage.setItem("datos", datos);
+//previewFile(id imagen, input type file , textArea);
+function previewFile(img, inputFile, input) {
+  var preview = document.getElementById(img);
+  var file = document.getElementById(inputFile).files[0];
+  var reader = new FileReader();
 
-function getBase64Image() {
-  let canvas = document.createElement("canvas");
-  let dataURL = canvas.toDataURL("image/png");
+  reader.addEventListener(
+    'load',
+    function () {
+      document.getElementById(input).value = reader.result;
+      preview.src = reader.result;
+      base64 = reader.result;
+    },
+    false
+  );
 
-  return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
-}
-
-
-// //imagen
-// function isValidImage(filename) {
-//   const allowedExtensions = ['jpg', 'jpeg', 'png'];
-//   return allowedExtensions.some((ext) => filename.endsWith(ext));
-// }
-
-// if (isValidImage('my-image.jpg')) {
-//   // es una imagen válida
-// } else {
-//   // no es una imagen válida
-// } //if
-
-// function isValidImage(filename) {
-//   const allowedExtensions = ['jpg', 'jpeg', 'png'];
-//   const [, extension] = filename.split('.');
-//   return allowedExtensions.includes(extension);
-// } //if
-
-// //Descripción
-// if (string.length >= 20) {
-//   // La cadena tiene al menos 20 caracteres
-// } else {
-//   // La cadena tiene menos de 20 caracteres
-// }
- 
-
-
+  if (file) {
+    reader.readAsDataURL(file);
+  } // file
+} // previewFile
 
 btnenviar.addEventListener('click', function (event) {
   event.preventDefault();
@@ -68,83 +46,82 @@ btnenviar.addEventListener('click', function (event) {
   alertError.style.display = 'none';
   alertError.innerHTML = '';
   validos = 0;
- 
-  if(inputNombre.value.trim().replaceAll('  ', '').length < 3 || inputPrice.value.match(priceRegex) == null || inputDescripcion.value.trim().replaceAll('  ', '').length < 20 || validos == 4 || inputImg.value.match(regexImg)==null ){
 
-  //Nombre
-  if (inputNombre.value.trim().replaceAll('  ', '').length < 3) {
-    alertError.innerHTML += 'El nombre debe contener 3 caracteres o más.';
-    alertError.style.display = 'block';
-    inputNombre.focus();
-    inputNombre.select();
-    inputNombre.style.border = 'solid red 1px';
+  if (
+    inputNombre.value.trim().replaceAll('  ', '').length < 3 ||
+    inputPrice.value.match(priceRegex) == null ||
+    inputDescripcion.value.trim().replaceAll('  ', '').length < 20 ||
+    validos == 4 ||
+    inputImg.value.match(regexImg) == null
+  ) {
+    //Nombre
+    if (inputNombre.value.trim().replaceAll('  ', '').length < 3) {
+      alertError.innerHTML += 'El nombre debe contener 3 caracteres o más.';
+      alertError.style.display = 'block';
+      inputNombre.focus();
+      inputNombre.select();
+      inputNombre.style.border = 'solid red 1px';
+    } else {
+      inputNombre.style.border = 'solid green 1px';
+      validos++;
+    }
+
+    //Precio
+    if (inputPrice.value.match(priceRegex) == null) {
+      alertError.style.display = 'block';
+      alertError.innerHTML += '<br/>El formato de precio no es válido.';
+      inputPrice.style.border = 'solid red 1px';
+    } else {
+      inputPrice.style.border = 'solid green 1px';
+      validos++;
+    }
+
+    //Descripción
+    if (inputDescripcion.value.trim().replaceAll('  ', '').length < 20) {
+      alertError.innerHTML +=
+        '<br/>El mensaje debe contener 20 caracteres o más.';
+      alertError.style.display = 'block';
+      inputDescripcion.focus();
+      inputDescripcion.select();
+      inputDescripcion.style.border = 'solid red 1px';
+    } else {
+      inputDescripcion.style.border = 'solid green 1px';
+      validos++;
+    }
+    //imagen
+    if (inputImg.value.match(regexImg) == null) {
+      alertError.style.display = 'block';
+      alertError.innerHTML += '<br/>Tipo inválido de imagen.';
+      inputImg.style.border = 'solid red 1px';
+    } else {
+      inputImg.style.border = 'solid green 1px';
+      validos++;
+    }
+
+    if (idTimeout != undefined && idTimeout != null) {
+      clearTimeout(idTimeout);
+    }
+    if (validos == 4) {
+      setTimeout(function () {
+        inputMail.style.border = '';
+        inputMensaje.style.border = '';
+        inputTel.style.border = '';
+        inputNombre.style.border = '';
+      }, 3000);
+      console.log('ready');
+    }
   } else {
-    inputNombre.style.border = 'solid green 1px';
-    validos++;
-  }
-
-  //Precio
-  if (inputPrice.value.match(priceRegex) == null) {
-    alertError.style.display = 'block';
-    alertError.innerHTML += '<br/>El formato de precio no es válido.';
-    inputPrice.style.border = 'solid red 1px';
-  } else {
-    inputPrice.style.border = 'solid green 1px';
-    validos++;
-  }
-
-  //Descripción
-  if (inputDescripcion.value.trim().replaceAll('  ', '').length < 20) {
-    alertError.innerHTML +=
-      '<br/>El mensaje debe contener 20 caracteres o más.';
-    alertError.style.display = 'block';
-    inputDescripcion.focus();
-    inputDescripcion.select();
-    inputDescripcion.style.border = 'solid red 1px';
-  } else {
-    inputDescripcion.style.border = 'solid green 1px';
-    validos++;
-  }
- //imagen
-  if (inputImg.value.match(regexImg)==null) {
-    alertError.style.display = 'block';
-    alertError.innerHTML += '<br/>Tipo inválido de imagen.';
-    inputImg.style.border = 'solid red 1px';
-  } else {
-    inputImg.style.border = 'solid green 1px';
-    validos++;
-  }
-
-  if (idTimeout != undefined && idTimeout != null) {
-    clearTimeout(idTimeout);
-  }
-  if (validos == 4) {
-    setTimeout(function () {
-      inputMail.style.border = '';
-      inputMensaje.style.border = '';
-      inputTel.style.border = '';
-      inputNombre.style.border = '';
-    }, 3000);
-    console.log('ready');
-  }
- 
-}else{
-
-  console.log("ok");
-  let elemento = `{
+    console.log('ok');
+    let elemento = `{
     "name": "${inputNombre.value} ",
     "price": "${inputPrice.value}",
     "description": "${inputDescripcion.value}",
-    "inputImg": "${getBase64Image(inputImg)}" 
+    "inputImg": "${base64}" 
     
     }`;
     console.log(elemento);
-    datos .push( JSON.parse(elemento));
+    datos.push(JSON.parse(elemento));
     console.log(datos);
-    localStorage.setItem("datos", JSON.stringify(datos));
-}
+    localStorage.setItem('datos', JSON.stringify(datos));
+  }
 });
-
-
-
-
