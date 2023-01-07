@@ -27,7 +27,7 @@ body {
   margin-top: 20px;
   margin-bottom: 30px;
 }
-.margen {
+.needs-validation{
   width: 100%;
   font-family: 'Roboto', sans-serif;
   color: #bc0e73;

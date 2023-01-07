@@ -1,9 +1,43 @@
+* {
+  box-sizing: border-box;
+}
+html {
+  width: 100%;
+  height: 100%;
+}
+body {
+  width: 100%;
+  height: 100%;
+}
+.maincontainercreation {
+  display: flex;
+  flex-direction: column;
+  margin: 15px;
+  align-items: center;
+  }
+
+.alert-danger{
+  font-size: 15px;
+}
+
+
+.titlecreation {
+  font-family: 'Elsie', cursive;
+  font-size: 35px;
+  color: #bc0e73;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+
 .seleccionaImg{
   display: flex;
   flex-direction: column;
 }
 
-.needs-validation {
+.margen {
   width: 100%;
   font-family: 'Roboto', sans-serif;
   color: #bc0e73;
@@ -30,7 +64,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
-  }
+   }
   .btn-new {
     color: #fff;
     background-color: #e32f89;

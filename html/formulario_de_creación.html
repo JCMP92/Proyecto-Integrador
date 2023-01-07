@@ -74,7 +74,9 @@
         </ul>
       </nav>
     </nav>
-    <main>
+    <main class="maincontainercreation">
+      <h1 class="titlecreation"> Formulario de creación</h1>
+      <br>
       <form class = "margen">
         <div
           class="alert alert-danger"
@@ -82,10 +84,10 @@
           style="display: none"
           id="alertError"
         ></div>
+        <br>
         <div class="row mb-3">
           <label for="name" class="col-sm-2 col-form-label"
-            > Nombre Producto</label
-          >
+            ><h5>Nombre producto </h5></label>
           <div class="col-sm-10">
             <input
               type="text"
@@ -95,8 +97,9 @@
             />
           </div>
         </div>
+        <br>
         <div class="row mb-3">
-          <label for="price" class="col-sm-2 col-form-label">Precio</label>
+          <label for="price" class="col-sm-2 col-form-label"> <h5> Precio </h5> </label>
           <div class="col-sm-10">
             <input
               type="text"
@@ -106,9 +109,10 @@
             />
           </div>
         </div>
-        <div class="row mb-3">
+        <br>
+        <div class="row mb-3">  
           <label for="description" class="col-sm-2 col-form-label"
-            >Descripción</label
+            > <h5> Descripción </h5></label
           >
           <div class="col-sm-10">
             <input
@@ -119,6 +123,7 @@
             />
           </div>
         </div>
+        <br>
         <div class="seleccionaImg">
           <div class="input-group">
             <input type="file" class="form-control" id="inputImg" />
@@ -133,11 +138,13 @@
             
           </div>
       </div>
+      <br>
         <div class="btnCrear">
-        <button type="submit"  class="btn btn-new btn-primary" id="btnEnviar">
+        <button type="submit"  class="btn btn-new btn-lg btn-primary" id="btnEnviar">
           Crear
         </button>
       </div>
+      <br>
       <textarea
       rows="20"
       class="form-control"
