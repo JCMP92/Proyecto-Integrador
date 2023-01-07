@@ -1,0 +1,33 @@
+
+
+
+
+
+
+/* Boton rosa */
+.btnCrear {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .btn-new {
+    color: #fff;
+    background-color: #e32f89;
+    border-color: #e32f89;
+    border-radius: 50px;
+  }
+  
+  .btn-new:hover,
+  .btn-new:active {
+    color: #fff;
+    background-color: #c5116b;
+    border-color: #c5116b;
+  }
+  
+  .btn-new.focus,
+  .btn-new:focus {
+    color: #fff;
+    background-color: #c5116b;
+    border-color: #c5116b;
+    box-shadow: 0 0 0 0.2rem rgb(227 47 137 / 50%);
+  }

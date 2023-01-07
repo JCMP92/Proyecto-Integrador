@@ -24,6 +24,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="/css/styleNavBar.css" />
+    <link rel="stylesheet" href="/css/styleFormCreacion.css">
   </head>
   <body>
     <nav class="navBar">
@@ -83,7 +84,7 @@
         ></div>
         <div class="row mb-3">
           <label for="name" class="col-sm-2 col-form-label"
-            >Nombre Producto</label
+            > Nombre Producto</label
           >
           <div class="col-sm-10">
             <input
@@ -118,22 +119,24 @@
             />
           </div>
         </div>
-
-        <div class="input-group">
-          <input type="file" class="form-control" id="inputImg" />
-          <br />
-          <img
-            id="imageFile"
-            name="imageFile"
-            src=""
-            alt="Vista previa de la imagen"
-            title="Vista previa de la imagen"
-          />
-        </div>
-
-        <button type="submit" class="btn btn-primary" id="btnEnviar">
+        <div class="seleccionaImg">
+          <div class="input-group">
+            <input type="file" class="form-control" id="inputImg" />
+            <br />
+            <img
+              id="imageFile"
+              name="imageFile"
+              src=""
+              alt="Vista previa de la imagen"
+              title="Vista previa de la imagen"
+            />
+          </div>
+      </div>
+        <div class="btnCrear">
+        <button type="submit" class="btn btn-new btn-primary" id="btnEnviar">
           Crear
         </button>
+      </div>
 
         <textarea
           rows="20"
