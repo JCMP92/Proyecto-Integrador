@@ -8,15 +8,15 @@ const regexImg = new RegExp(/[^\s]+(.*?).(jpg|jpeg|png|JPG|JPEG|PNG)$/);
 
 let fileImage = document.getElementById('inputImg');
 let imageFile = document.getElementById('imageFile');
+let preview= document.getElementById('imageFile');
 
 fileImage.addEventListener('change', function () {
-  previewFile('imageFile', 'inputImg', 'inputFile');
+  previewFile('inputImg', 'inputFile');
   //previewFile(id imagen, input type file , textArea);
 });
 
 //previewFile(id imagen, input type file , textArea);
-function previewFile(img, inputFile, input) {
-  let preview = document.getElementById(img);
+function previewFile(inputFile, input) {
   let file = document.getElementById(inputFile).files[0];
   let reader = new FileReader();
 
@@ -35,6 +35,7 @@ function previewFile(img, inputFile, input) {
   } // file
 } // previewFile
 
+
 btnenviar.addEventListener('click', function (event) {
   event.preventDefault();
   let inputNombre = document.getElementById('name');
@@ -42,11 +43,16 @@ btnenviar.addEventListener('click', function (event) {
   let inputDescripcion = document.getElementById('description');
   let inputImg = document.getElementById('inputImg');
   let alertError = document.getElementById('alertError');
+  let alertSuccess= document.getElementById('alertSuccess');
+  
+  alertSuccess.style.display='none';
+  alertSuccess.innerHTML='';
 
   alertError.style.display = 'none';
   alertError.innerHTML = '';
   validos = 0;
 
+  
   if (
     inputNombre.value.trim().replaceAll('  ', '').length < 3 ||
     inputPrice.value.match(priceRegex) == null ||
@@ -119,9 +125,29 @@ btnenviar.addEventListener('click', function (event) {
     "inputImg": "${base64}" 
     
     }`;
+    alertSuccess.style.display='block';
+      alertSuccess.innerHTML+='<br/>Producto creado con éxito.';
+    setTimeout(function () {
+      alertSuccess.style.display='none';
+      alertSuccess.innerHTML+='';
+    }, 3000);
+    
+
     console.log(elemento);
     datos.push(JSON.parse(elemento));
     console.log(datos);
     localStorage.setItem('datos', JSON.stringify(datos));
+    
+    inputNombre.value = '';
+    inputPrice.value = '';
+    inputDescripcion.value = '';
+    inputImg.value = '';
+    preview.src='';
+    console.log(inputImg.value);
+    inputNombre.focus();
+
+  
+    
+
   }
 });
