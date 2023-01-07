@@ -6,6 +6,8 @@ let base64 = '';
 const priceRegex = /^\$\d+(\.\d{2})?$/;
 const regexImg = new RegExp(/[^\s]+(.*?).(jpg|jpeg|png|JPG|JPEG|PNG)$/);
 
+let tabla = document.getElementById("tablaRegistrado");
+let cuerpoTabla = tabla.getElementsByTagName("tbody");
 let fileImage = document.getElementById('inputImg');
 let imageFile = document.getElementById('imageFile');
 let preview= document.getElementById('imageFile');
@@ -114,10 +116,10 @@ btnenviar.addEventListener('click', function (event) {
         inputTel.style.border = '';
         inputNombre.style.border = '';
       }, 3000);
-      console.log('ready');
+      // console.log('ready');
     }
   } else {
-    console.log('ok');
+    // console.log('ok');
     let elemento = `{
     "name": "${inputNombre.value} ",
     "price": "${inputPrice.value}",
@@ -133,9 +135,9 @@ btnenviar.addEventListener('click', function (event) {
     }, 3000);
     
 
-    console.log(elemento);
+    // console.log(elemento);
     datos.push(JSON.parse(elemento));
-    console.log(datos);
+    // console.log(datos);
     localStorage.setItem('datos', JSON.stringify(datos));
     
     inputNombre.value = '';
@@ -143,11 +145,35 @@ btnenviar.addEventListener('click', function (event) {
     inputDescripcion.value = '';
     inputImg.value = '';
     preview.src='';
-    console.log(inputImg.value);
+    // console.log(inputImg.value);
     inputNombre.focus();
 
+    
+    
+
+  
+
+    
   
     
 
   }
 });
+window.addEventListener("load", function(event) {
+      
+  let tmp= localStorage.getItem("datos");
+  if(tmp!=null){
+      datos = JSON.parse(tmp);
+      console.log(datos);
+     
+   datos.forEach(element => {
+         cuerpoTabla[0].innerHTML += `<tr>
+        <th> ${element.name} </th>
+        <td> ${element.price} </td>
+        <td> ${element.description} </td>
+        </tr> `;  
+      });
+
+  }//if
+
+} );
