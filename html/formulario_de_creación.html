@@ -24,7 +24,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="/css/styleNavBar.css" />
-    <link rel="stylesheet" href="/css/styleFormCreacion.css">
+    <link rel="stylesheet" href="/css/styleFormCreacion.css" />
   </head>
   <body>
     <nav class="navBar">
@@ -75,19 +75,20 @@
       </nav>
     </nav>
     <main class="maincontainercreation">
-      <h1 class="titlecreation"> Formulario de creación</h1>
-      <br>
-      <form class = "margen">
+      <h1 class="titlecreation">Formulario de creación</h1>
+      <br />
+      <form class="margen">
         <div
           class="alert alert-danger"
           role="alert"
           style="display: none"
           id="alertError"
         ></div>
-        <br>
+        <br />
         <div class="row mb-3">
           <label for="name" class="col-sm-2 col-form-label"
-            ><h5>Nombre producto </h5></label>
+            ><h5>Nombre producto</h5></label
+          >
           <div class="col-sm-10">
             <input
               type="text"
@@ -97,9 +98,11 @@
             />
           </div>
         </div>
-        <br>
+        <br />
         <div class="row mb-3">
-          <label for="price" class="col-sm-2 col-form-label"> <h5> Precio </h5> </label>
+          <label for="price" class="col-sm-2 col-form-label">
+            <h5>Precio</h5>
+          </label>
           <div class="col-sm-10">
             <input
               type="text"
@@ -109,10 +112,10 @@
             />
           </div>
         </div>
-        <br>
-        <div class="row mb-3">  
-          <label for="description" class="col-sm-2 col-form-label"
-            > <h5> Descripción </h5></label
+        <br />
+        <div class="row mb-3">
+          <label for="description" class="col-sm-2 col-form-label">
+            <h5>Descripción</h5></label
           >
           <div class="col-sm-10">
             <input
@@ -123,7 +126,7 @@
             />
           </div>
         </div>
-        <br>
+        <br />
         <div class="seleccionaImg">
           <div class="input-group">
             <input type="file" class="form-control" id="inputImg" />
@@ -134,30 +137,34 @@
               src=""
               alt="Vista previa"
               title="Vista previa"
+              height="100px"
+              width="auto"
             />
-            
           </div>
-      </div>
-      <br>
+        </div>
+        <br />
         <div class="btnCrear">
-        <button type="submit"  class="btn btn-new btn-lg btn-primary" id="btnEnviar">
-          Crear
-        </button>
-      </div>
-      <br>
-      <textarea
-      rows="20"
-      class="form-control"
-      data-toggle="tooltip"
-      data-placement="bottom"
-      id="inputFile"
-      name="inputFile"
-      value=""
-      placehodler="Imagen del curso"
-      title="Imagen"
-      style="display: block"
-    ></textarea>
-        
+          <button
+            type="submit"
+            class="btn btn-new btn-lg btn-primary"
+            id="btnEnviar"
+          >
+            Crear
+          </button>
+        </div>
+        <br />
+        <textarea
+          rows="20"
+          class="form-control"
+          data-toggle="tooltip"
+          data-placement="bottom"
+          id="inputFile"
+          name="inputFile"
+          value=""
+          placehodler="Imagen del curso"
+          title="Imagen"
+          style="display: none"
+        ></textarea>
       </form>
     </main>
     <script

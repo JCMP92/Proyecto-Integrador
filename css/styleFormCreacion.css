@@ -14,12 +14,11 @@ body {
   flex-direction: column;
   margin: 15px;
   align-items: center;
-  }
-
-.alert-danger{
-  font-size: 15px;
 }
 
+.alert-danger {
+  font-size: 15px;
+}
 
 .titlecreation {
   font-family: 'Elsie', cursive;
@@ -31,8 +30,7 @@ body {
   margin-bottom: 30px;
 }
 
-
-.seleccionaImg{
+.seleccionaImg {
   display: flex;
   flex-direction: column;
 }
@@ -61,28 +59,47 @@ body {
 
 /* Boton rosa */
 .btnCrear {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-   }
-  .btn-new {
-    color: #fff;
-    background-color: #e32f89;
-    border-color: #e32f89;
-    border-radius: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.btn-new {
+  color: #fff;
+  background-color: #e32f89;
+  border-color: #e32f89;
+  border-radius: 50px;
+}
+
+.btn-new:hover,
+.btn-new:active {
+  color: #fff;
+  background-color: #c5116b;
+  border-color: #c5116b;
+}
+
+.btn-new.focus,
+.btn-new:focus {
+  color: #fff;
+  background-color: #c5116b;
+  border-color: #c5116b;
+  box-shadow: 0 0 0 0.2rem rgb(227 47 137 / 50%);
+}
+
+.input-group {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+#inputImg {
+  max-width: 200px;
+  max-height: 36px;
+  border-radius: 12px;
+  margin-right: 20px;
+}
+
+@media (min-width: 1024px) {
+  #inputImg {
+    max-width: 300px;
   }
-  
-  .btn-new:hover,
-  .btn-new:active {
-    color: #fff;
-    background-color: #c5116b;
-    border-color: #c5116b;
-  }
-  
-  .btn-new.focus,
-  .btn-new:focus {
-    color: #fff;
-    background-color: #c5116b;
-    border-color: #c5116b;
-    box-shadow: 0 0 0 0.2rem rgb(227 47 137 / 50%);
-  }
+}
