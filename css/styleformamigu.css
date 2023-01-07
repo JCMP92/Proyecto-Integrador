@@ -27,7 +27,7 @@ body {
   margin-top: 20px;
   margin-bottom: 30px;
 }
-.needs-validation {
+.margen {
   width: 100%;
   font-family: 'Roboto', sans-serif;
   color: #bc0e73;
@@ -38,10 +38,7 @@ body {
   padding: 10px;
   margin-bottom: 20px;
 }
-.subtitleForm {
-  font-weight: bold;
-  font-size: 20px;
-}
+
 .form-select,
 .form-control {
   border: 1px solid #e32f89;
