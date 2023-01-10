@@ -174,13 +174,13 @@ a:hover {
   font-size: 1.5rem;
   line-height: 3em;
   height: 3em;
-  color: #369;
+  color: #bc0e73;
   text-transform: none;
   font-weight: bold;
 }
 .menuppal ul li a {
   text-decoration: none;
-  color: #369;
+  color: #bc0e73;
 }
 .menuppal ul li a:hover {
   text-decoration: none;

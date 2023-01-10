@@ -24,7 +24,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="/css/styleNavBar.css" />
-    <link rel="stylesheet" href="/css/styleCreacionUsuario.css">
+    <link rel="stylesheet" href="/css/styleCreacionUsuario.css" />
   </head>
   <body>
     <nav class="navBar">
@@ -76,54 +76,90 @@
     </nav>
     <main class="maincontainerRegistro">
       <div id="frutita">
-        <img src="/Logo-Iconos/FRUTITA_Mesa de trabajo 1 (1).svg" alt="">
+        <img src="/Logo-Iconos/FRUTITA_Mesa de trabajo 1 (1).svg" alt="" />
       </div>
       <h1 class="tituloRegistro">Registro de usuario</h1>
       <br />
       <div
-          class="alert alert-danger"
-          role="alert"
-          style="display: none"
-          id="alertError"
-        ></div>
-        <div class="alert alert-light" 
-        role="alert" 
+        class="alert alert-danger"
+        role="alert"
+        style="display: none"
+        id="alertError"
+      ></div>
+      <div
+        class="alert alert-light"
+        role="alert"
         id="alertSuccess"
         style="display: none"
-        >
-        
-        </div>
-      <div class="mb-3 row">
-        <label for="nombre" class="col-sm-2 col-form-label">Nombre completo</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" id="nombre" placeholder="Nombre completo">
+      ></div>
+      <form class="formularioCreaciónCuenta">
+        <div class="mb-3 row">
+          <label for="nombre" class="col-sm-2 col-form-label"
+            ><h3 class="subtitleForm">Nombre completo</h3></label
+          >
+          <div class="col-sm-10">
+            <input
+              type="text"
+              class="form-control"
+              id="nombre"
+              placeholder="Nombre completo"
+            />
+          </div>
         </div>
 
         <div class="mb-3 row">
-          <label for="telefono" class="col-sm-2 col-form-label">Número de teléfono</label>
+          <label for="telefono" class="col-sm-2 col-form-label"
+            ><h3 class="subtitleForm">Número de teléfono</h3></label
+          >
           <div class="col-sm-10">
-            <input type="tel" class="form-control" id="telefono" placeholder="Teléfono">
+            <input
+              type="tel"
+              class="form-control"
+              id="telefono"
+              placeholder="Teléfono"
+            />
           </div>
-
-          <div class="mb-3 row">
-            <label for="correo" class="col-sm-2 col-form-label">Correo</label>
-            <div class="col-sm-10">
-              <input type="email" class="form-control" id="correo" placeholder="email@ejemplo.com">
-            </div>
-
-      <div class="mb-3 row">
-        <label for="password" class="col-sm-2 col-form-label">Contraseña</label>
-        <div class="col-sm-10">
-          <input type="password" class="form-control" id="password" placeholder="Contraseña">
-        </div>
-      </div>
-
-      <div class="mb-3 row">
-        <label for="password02" class="col-sm-2 col-form-label">Confirmar contraseña</label>
-        <div class="col-sm-10">
-          <input type="password" class="form-control" id="password02" placeholder="Constraseña">
         </div>
 
+        <div class="mb-3 row">
+          <label for="correo" class="col-sm-2 col-form-label">Correo</label>
+          <div class="col-sm-10">
+            <input
+              type="email"
+              class="form-control"
+              id="correo"
+              placeholder="email@ejemplo.com"
+            />
+          </div>
+        </div>
+
+        <div class="mb-3 row">
+          <label for="password" class="col-sm-2 col-form-label"
+            ><h3 class="subtitleForm">Contraseña</h3></label
+          >
+          <div class="col-sm-10">
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              placeholder="Contraseña"
+            />
+          </div>
+        </div>
+
+        <div class="mb-3 row">
+          <label for="password02" class="col-sm-2 col-form-label"
+            ><h3 class="subtitleForm">Confirmar contraseña</h3></label
+          >
+          <div class="col-sm-10">
+            <input
+              type="password"
+              class="form-control"
+              id="password02"
+              placeholder="Constraseña"
+            />
+          </div>
+        </div>
         <div class="btnCrear">
           <button
             type="submit"
@@ -133,6 +169,7 @@
             Crear cuenta
           </button>
         </div>
+      </form>
     </main>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
