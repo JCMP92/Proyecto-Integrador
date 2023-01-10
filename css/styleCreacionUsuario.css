@@ -1,0 +1,88 @@
+* {
+    box-sizing: border-box;
+  }
+  html {
+    width: 100%;
+    height: 100%;
+  }
+  body {
+    width: 100%;
+    height: 100%;
+  }
+  #frutita{
+    width: 65px;
+    height: 92px;
+  }
+  .maincontainerRegistro{
+    width: 100%;
+    /* height: calc(100% - 70px); */
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+  }
+  .btnCrear {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+  }
+  .btn-new {
+    color: #fff;
+    background-color: #e32f89;
+    border-color: #e32f89;
+    border-radius: 50px;
+  }
+  
+  .btn-new:hover,
+  .btn-new:active {
+    color: #fff;
+    background-color: #c5116b;
+    border-color: #c5116b;
+  }
+  
+  .btn-new.focus,
+  .btn-new:focus {
+    color: #fff;
+    background-color: #c5116b;
+    border-color: #c5116b;
+    box-shadow: 0 0 0 0.2rem rgb(227 47 137 / 50%);
+
+  }
+
+.tituloRegistro{
+    font-family: 'Elsie', cursive;
+    font-size: 25px;
+    color: #bc0e73;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+
+
+  .margen {
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+    color: #bc0e73;
+    font-weight: bold;
+    font-size: 12px;
+    border: 2px solid #e32f89;
+    border-radius: 12px;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  .subtitleForm {
+    font-weight: bold;
+    font-size: 20px;
+  }
+  .form-select,
+  .form-control {
+    border: 1px solid #e32f89;
+    border-radius: 12px;
+    padding: 5px;
+    width: 300px;
+  }
+  
