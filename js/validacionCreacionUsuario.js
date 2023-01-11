@@ -75,63 +75,65 @@ btnenviar.addEventListener('click', function (event) {
     inputTel.style.border = 'solid green 1px';
     validos++;
   }
-  //que valide los caracteres/simbolos
-  if (pass1.value === pass2.value) {
-    // console.log("Las contraseñas coinciden");
-    inputPassword.style.border = 'solid green 1px';
-    validos++;
-  } else {
+  //revisa que los campos de la contraseña coincidan y que los campos no estén vacíos
+  if(pass1.value.length == 0 || pass2.value.length == 0){
+    alertError.style.display = 'block';
+    alertError.innerHTML += '<br/>Se requiere una contraseña';
+    inputPassword.style.border = 'solid red 1px';
+  }else  if (pass1.value != pass2.value) {
     alertError.style.display = 'block';
     alertError.innerHTML += '<br/>Las contraseñas no coiciden';
     inputPassword.style.border = 'solid red 1px';
-    // console.log("Las contraseñas no coinciden");
+  } else {
+    inputPassword.style.border = 'solid green 1px';
+    validos++;
   }
   //
 
-  function checkPasswordStrength(pass1) {
-    // Initialize variables
-    let strength = 0;
-    let tips = "";
+  // function checkPasswordStrength(pass1) {
+  //   // Initialize variables
+  //   let strength = 0;
+  //   let tips = "";
 
-    // Check password length
-    if (pass1.length < 8) {
-      tips += "Make the password longer. ";
-    } else {
-      strength += 1;
-    }
+  //   // Check password length
+  //   if (pass1.length < 8) {
+  //     tips += "Make the password longer. ";
+  //   } else {
+  //     strength += 1;
+  //   }
 
-    // Check for mixed case
-    if (pass1.match(/[a-z]/) && pass1.match(/[A-Z]/)) {
-      strength += 1;
-    } else {
-      tips += "Use both lowercase and uppercase letters. ";
-    }
+  //   // Check for mixed case
+  //   if (pass1.match(/[a-z]/) && pass1.match(/[A-Z]/)) {
+  //     strength += 1;
+  //   } else {
+  //     tips += "Use both lowercase and uppercase letters. ";
+  //   }
 
-    // Check for numbers
-    if (pass1.match(/\d/)) {
-      strength += 1;
-    } else {
-      tips += "Include at least one number. ";
-    }
+  //   // Check for numbers
+  //   if (pass1.match(/\d/)) {
+  //     strength += 1;
+  //   } else {
+  //     tips += "Include at least one number. ";
+  //   }
 
-    // Check for special characters
-    if (pass1.match(/[^a-zA-Z\d]/)) {
-      strength += 1;
-    } else {
-      tips += "Include at least one special character. ";
-    }
+  //   // Check for special characters
+  //   if (pass1.match(/[^a-zA-Z\d]/)) {
+  //     strength += 1;
+  //   } else {
+  //     tips += "Include at least one special character. ";
+  //   }
 
-    // Return results
-    if (strength < 2) {
-      return "Easy to guess. " + tips;
-    } else if (strength === 2) {
-      return "Medium difficulty. " + tips;
-    } else if (strength === 3) {
-      return "Difficult. " + tips;
-    } else {
-      return "Extremely difficult. " + tips;
-    }
-  }
+  //   // Return results
+  //   if (strength < 2) {
+  //     return "Easy to guess. " + tips;
+  //   } else if (strength === 2) {
+  //     return "Medium difficulty. " + tips;
+  //   } else if (strength === 3) {
+  //     return "Difficult. " + tips;
+  //   } else {
+  //     return "Extremely difficult. " + tips;
+  //   }
+  // }
 
   if (idTimeout != undefined && idTimeout != null) {
     clearTimeout(idTimeout);
