@@ -16,7 +16,7 @@ h2 {
   justify-content: center;
   max-height: 100%;
   max-width: 100%;
-  background-image: url('/Images/fotos/fototemp.png');
+  background-image: url('/Images/fotos/fondoContacto.jpeg');
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -27,13 +27,15 @@ h2 {
   top: 50px;
   width: 290px;
   height: 310px;
-  background-color: #b2b2b2;
+  background-color: #F4C8E3;
+  opacity: .9;
   /* background-color: rgb(178, 178, 178, 0.5); Cambio tentativo para fondo de tarjeta*/
   color: #bc0e73;
   text-align: center;
   font-weight: bold;
   font-size: 12px;
   justify-content: flex-start;
+  
 }
 .card-body {
   display: flex;
@@ -59,8 +61,8 @@ h2 {
 @media (min-width: 770px) {
   #tarjetaContacto {
     top: 80px;
-    width: 932px;
-    height: 500px;
+    width: 750px;
+    height: 350px;
     font-size: 20px;
   }
   .card-text {
@@ -72,6 +74,7 @@ h2 {
 }
 
 @media (min-width: 900px) {
+  
   #contacto {
     height: calc(100% - 100px);
   }
@@ -82,7 +85,7 @@ h2 {
     font-size: 50px;
   }
   .card-text {
-    width: 759px;
+    width: 620px;
     margin-bottom: 50px;
   }
   .icons-container {
