@@ -15,7 +15,7 @@ body {
   margin: 15px;
   align-items: center;
 }
-.alert-danger{
+.alert-danger {
   font-size: 15px;
 }
 .titleForm {
@@ -27,7 +27,7 @@ body {
   margin-top: 20px;
   margin-bottom: 30px;
 }
-.needs-validation{
+.needs-validation {
   width: 100%;
   font-family: 'Roboto', sans-serif;
   color: #bc0e73;
@@ -44,6 +44,11 @@ body {
   border: 1px solid #e32f89;
   border-radius: 12px;
   padding: 5px;
+}
+
+.subtitleForm {
+  font-weight: bold;
+  font-size: 20px;
 }
 
 /* Boton rosa */
