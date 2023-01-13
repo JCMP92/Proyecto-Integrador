@@ -56,6 +56,22 @@ body {
   border-radius: 12px;
   padding: 5px;
 }
+.table{
+  padding: 10px;
+  margin-bottom: 20px;
+  font-family: 'Roboto', sans-serif;
+ 
+
+}
+.tablab{
+  width: 100%;
+  height: auto;
+  border: 2px solid #e32f89;
+  border-radius: 12px;
+}
+th{
+  color: #bc0e73;
+}
 
 /* Boton rosa */
 .btnCrear {
