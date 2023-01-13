@@ -140,6 +140,12 @@ btnenviar.addEventListener('click', function (event) {
     // console.log(datos);
     localStorage.setItem('datos', JSON.stringify(datos));
     
+    cuerpoTabla[0].innerHTML += `<tr>
+    <th> ${inputNombre.value} </th>
+    <td> ${inputPrice.value} </td>
+    <td> ${inputDescripcion.value} </td>
+    </tr> `;  
+
     inputNombre.value = '';
     inputPrice.value = '';
     inputDescripcion.value = '';
@@ -148,19 +154,11 @@ btnenviar.addEventListener('click', function (event) {
     // console.log(inputImg.value);
     inputNombre.focus();
 
-    
-    
-
-  
-
-    
-  
-    
-
+   
   }
 });
 window.addEventListener("load", function(event) {
-      
+     
   let tmp= localStorage.getItem("datos");
   if(tmp!=null){
       datos = JSON.parse(tmp);
@@ -175,5 +173,4 @@ window.addEventListener("load", function(event) {
       });
 
   }//if
-
-} );
+} ); 

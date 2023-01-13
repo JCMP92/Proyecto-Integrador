@@ -1,6 +1,6 @@
 let btnenviar = document.getElementById('btnEnviar');
 let idTimeout;
-let datos = [];
+let datosUsuario = [];
 
 function valicel(numero) {
   // Crear un objeto para almacenar la cantidad de veces que se repite cada dígito
@@ -156,9 +156,9 @@ btnenviar.addEventListener('click', function (event) {
     "password": "${inputPassword.value}" 
     }`;
   
-   datos.push(JSON.parse(elemento));
-  console.log(datos);
-localStorage.setItem('datos', JSON.stringify(datos));
+    datosUsuario.push(JSON.parse(elemento));
+  console.log(datosUsuario);
+localStorage.setItem('datosUsuario', JSON.stringify(datosUsuario));
   }
    
 
