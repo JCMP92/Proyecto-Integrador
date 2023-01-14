@@ -41,7 +41,7 @@ btnenviar.addEventListener('click', function (event) {
     /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   let telefonorex = /^\+52 \d{2} \d{4} \d{4}$/;
 
-  let regex = /^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{8,16}$/;
+  let regex = /(?=(.*[0-9]))(?=.*[\!@#$%^&*()\\[\]{}\-_+=|:;"'<>,./?])(?=.*[a-z])(?=(.*[A-Z]))(?=(.*)).{8,}/;
 
   alertError.style.display = 'none';
   alertError.innerHTML = '';
@@ -76,7 +76,7 @@ btnenviar.addEventListener('click', function (event) {
     validos++;
   }
   //revisa que los campos de la contraseña coincidan y que los campos no estén vacíos
-  if(pass1.value.length == 0 || pass2.value.length == 0){
+  if(pass1.value.length == 0 ){
     alertError.style.display = 'block';
     alertError.innerHTML += '<br/>Se requiere una contraseña';
     inputPassword.style.border = 'solid red 1px';
@@ -88,52 +88,15 @@ btnenviar.addEventListener('click', function (event) {
     inputPassword.style.border = 'solid green 1px';
     validos++;
   }
-  //
-
-  // function checkPasswordStrength(pass1) {
-  //   // Initialize variables
-  //   let strength = 0;
-  //   let tips = "";
-
-  //   // Check password length
-  //   if (pass1.length < 8) {
-  //     tips += "Make the password longer. ";
-  //   } else {
-  //     strength += 1;
-  //   }
-
-  //   // Check for mixed case
-  //   if (pass1.match(/[a-z]/) && pass1.match(/[A-Z]/)) {
-  //     strength += 1;
-  //   } else {
-  //     tips += "Use both lowercase and uppercase letters. ";
-  //   }
-
-  //   // Check for numbers
-  //   if (pass1.match(/\d/)) {
-  //     strength += 1;
-  //   } else {
-  //     tips += "Include at least one number. ";
-  //   }
-
-  //   // Check for special characters
-  //   if (pass1.match(/[^a-zA-Z\d]/)) {
-  //     strength += 1;
-  //   } else {
-  //     tips += "Include at least one special character. ";
-  //   }
-
-  //   // Return results
-  //   if (strength < 2) {
-  //     return "Easy to guess. " + tips;
-  //   } else if (strength === 2) {
-  //     return "Medium difficulty. " + tips;
-  //   } else if (strength === 3) {
-  //     return "Difficult. " + tips;
-  //   } else {
-  //     return "Extremely difficult. " + tips;
-  //   }
-  // }
+  if(pass1.value.match(regex)== null){
+    alertError.style.display = 'block';
+    alertError.innerHTML += '<br/>La contraseña debe contener más de 8 caracteres, un caracter especial (mayúscula, números, símbolos)';
+    inputPassword.style.border = 'solid red 1px';
+  }else{
+    inputPassword.style.border = 'solid green 1px';
+    pass2.style.border = 'solid green 1px';
+    validos++;
+  }
 
   if (idTimeout != undefined && idTimeout != null) {
     clearTimeout(idTimeout);
