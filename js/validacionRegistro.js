@@ -1,16 +1,118 @@
 let btnenviar = document.getElementById('btnEnviar');
 let idTimeout;
 let validos = 0;
-let datos = [];
 let base64 = '';
 const priceRegex = /^\$\d+(\.\d{2})?$/;
 const regexImg = new RegExp(/[^\s]+(.*?).(jpg|jpeg|png|JPG|JPEG|PNG)$/);
-
-let tabla = document.getElementById("tablaRegistrado");
-let cuerpoTabla = tabla.getElementsByTagName("tbody");
+let tabla = document.getElementById('tablaRegistrado');
+let cuerpoTabla = tabla.getElementsByTagName('tbody');
 let fileImage = document.getElementById('inputImg');
 let imageFile = document.getElementById('imageFile');
-let preview= document.getElementById('imageFile');
+let preview = document.getElementById('imageFile');
+
+let productosPB = [
+  {
+    // Nombre de la libreta
+    name: 'Libreta Gato Alicia',
+    // Precio de la libreta
+    price: 200,
+    // Descripción de la libreta (tamaño, tipo de hoja, número de hojas, tipo de encuadernación)
+    description: 'Libreta cosida, tamaño media carta, 100 hojas rayadas',
+    // Ubicación de la imagen de la libreta
+    image: '/Images/libretasImg/gatoalicia.jpg',
+  },
+  {
+    // Nombre de la libreta
+    name: 'Libreta Girasoles',
+    // Precio de la libreta
+    price: 200,
+    // Descripción de la libreta (tamaño, tipo de hoja, número de hojas, tipo de encuadernación)
+    description: 'Libreta de arillo, tamaño media carta, 100 hojas rayadas',
+    // Ubicación de la imagen de la libreta
+    image: '/Images/libretasImg/girasoles.jpg',
+  },
+  {
+    // Nombre de la libreta
+    name: 'Libreta Gravity Falls',
+    // Precio de la libreta
+    price: 200,
+    // Descripción de la libreta (tamaño, tipo de hoja, número de hojas, tipo de encuadernación)
+    description: 'Libreta cosida, tamaño media carta, 100 hojas rayadas',
+    // Ubicación de la imagen de la libreta
+    image: '/Images/libretasImg/gravity.jpg',
+  },
+  {
+    // Nombre de la libreta
+    name: 'Libreta Pink Floyd',
+    // Precio de la libreta
+    price: 200,
+    // Descripción de la libreta (tamaño, tipo de hoja, número de hojas, tipo de encuadernación)
+    description: 'Libreta de arillo, tamaño media carta, 100 hojas rayadas',
+    // Ubicación de la imagen de la libreta
+    image: '/Images/libretasImg/pinkfloyd.jpg',
+  },
+  {
+    // Nombre de la libreta
+    name: 'Libreta El principito',
+    // Precio de la libreta
+    price: 200,
+    // Descripción de la libreta (tamaño, tipo de hoja, número de hojas, tipo de encuadernación)
+    description: 'Libreta cosida, tamaño media carta, 100 hojas rayadas',
+    // Ubicación de la imagen de la libreta
+    image: '/Images/libretasImg/principito.jpg',
+  },
+  {
+    // Nombre del amigurumi
+    name: 'Aguacates',
+    // Precio del amigurumi
+    price: 300,
+    // Descripción
+    description: 'Dos aguacates tejidos de 15 cm de altura',
+    // Ubicación de la imagen
+    image: '/Images/amiguImg/aguacates.jpg',
+  },
+  {
+    // Nombre del amigurumi
+    name: 'Conejo Evan',
+    // Precio del amigurumi
+    price: 200,
+    // Descripción
+    description: 'Conejo tejido de 15 cm de altura',
+    // Ubicación de la imagen
+    image: '/Images/amiguImg/conejoEvan.jpg',
+  },
+  {
+    // Nombre del amigurumi
+    name: 'Monkey',
+    // Precio del amigurumi
+    price: 200,
+    // Descripción
+    description: 'Mono tejido de 15 cm de altura',
+    // Ubicación de la imagen
+    image: '/Images/amiguImg/monkey.jpg',
+  },
+  {
+    // Nombre del amigurumi
+    name: 'Monster Inc',
+    // Precio del amigurumi
+    price: 250,
+    // Descripción
+    description:
+      'Figuras tejidas de Mike y Sully de Monsters Inc, 15 cm de altura',
+    // Ubicación de la imagen
+    image: '/Images/amiguImg/monster.jpg',
+  },
+  {
+    // Nombre del amigurumi
+    name: 'Spiderman',
+    // Precio del amigurumi
+    price: 200,
+    // Descripción
+    description: 'Spiderman tejido de 15 cm de altura',
+    // Ubicación de la imagen
+    image: '/Images/amiguImg/spiderman.jpg',
+  },
+];
 
 fileImage.addEventListener('change', function () {
   previewFile('inputImg', 'inputFile');
@@ -37,7 +139,6 @@ function previewFile(inputFile, input) {
   } // file
 } // previewFile
 
-
 btnenviar.addEventListener('click', function (event) {
   event.preventDefault();
   let inputNombre = document.getElementById('name');
@@ -45,16 +146,15 @@ btnenviar.addEventListener('click', function (event) {
   let inputDescripcion = document.getElementById('description');
   let inputImg = document.getElementById('inputImg');
   let alertError = document.getElementById('alertError');
-  let alertSuccess= document.getElementById('alertSuccess');
-  
-  alertSuccess.style.display='none';
-  alertSuccess.innerHTML='';
+  let alertSuccess = document.getElementById('alertSuccess');
 
+  alertSuccess.style.display = 'none';
+  alertSuccess.innerHTML = '';
   alertError.style.display = 'none';
   alertError.innerHTML = '';
   validos = 0;
 
-  
+  //if General
   if (
     inputNombre.value.trim().replaceAll('  ', '').length < 3 ||
     inputPrice.value.match(priceRegex) == null ||
@@ -116,10 +216,8 @@ btnenviar.addEventListener('click', function (event) {
         inputTel.style.border = '';
         inputNombre.style.border = '';
       }, 3000);
-      // console.log('ready');
     }
   } else {
-    // console.log('ok');
     let elemento = `{
     "name": "${inputNombre.value} ",
     "price": "${inputPrice.value}",
@@ -127,50 +225,42 @@ btnenviar.addEventListener('click', function (event) {
     "inputImg": "${base64}" 
     
     }`;
-    alertSuccess.style.display='block';
-      alertSuccess.innerHTML+='<br/>Producto creado con éxito.';
+    alertSuccess.style.display = 'block';
+    alertSuccess.innerHTML += '<br/>Producto creado con éxito.';
     setTimeout(function () {
-      alertSuccess.style.display='none';
-      alertSuccess.innerHTML+='';
+      alertSuccess.style.display = 'none';
+      alertSuccess.innerHTML += '';
     }, 3000);
-    
 
-    // console.log(elemento);
-    datos.push(JSON.parse(elemento));
-    // console.log(datos);
-    localStorage.setItem('datos', JSON.stringify(datos));
-    
+    productosPB.push(JSON.parse(elemento));
+    localStorage.setItem('productosPB', JSON.stringify(productosPB));
+
     cuerpoTabla[0].innerHTML += `<tr>
     <th> ${inputNombre.value} </th>
     <td> ${inputPrice.value} </td>
     <td> ${inputDescripcion.value} </td>
-    </tr> `;  
+    </tr> `;
 
     inputNombre.value = '';
     inputPrice.value = '';
     inputDescripcion.value = '';
     inputImg.value = '';
-    preview.src='';
-    // console.log(inputImg.value);
+    preview.src = '';
     inputNombre.focus();
-
-   
   }
-});
-window.addEventListener("load", function(event) {
-     
-  let tmp= localStorage.getItem("datos");
-  if(tmp!=null){
-      datos = JSON.parse(tmp);
-      console.log(datos);
-     
-   datos.forEach(element => {
-         cuerpoTabla[0].innerHTML += `<tr>
+}); //Event listener de btnenviar
+
+window.addEventListener('load', function (event) {
+  let tmp = localStorage.getItem('productosPB');
+  if (tmp != null) {
+    productosPB = JSON.parse(tmp);
+    console.log(productosPB);
+  } //if
+  productosPB.forEach((element) => {
+    cuerpoTabla[0].innerHTML += `<tr>
         <th> ${element.name} </th>
         <td> ${element.price} </td>
         <td> ${element.description} </td>
-        </tr> `;  
-      });
-
-  }//if
-} ); 
+        </tr> `;
+  });
+});
