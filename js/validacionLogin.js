@@ -17,16 +17,6 @@ btnenviar.addEventListener('click', function (event) {
   alertError.innerHTML = '';
   validos = 0;
 
-//   if (inputUsuario.value.trim().replaceAll('  ', '').length < 3) {
-//     alertError.innerHTML += 'Ingresa un usuario válido.';
-//     alertError.style.display = 'block';
-//     inputNombre.focus();
-//     inputNombre.select();
-//     inputNombre.style.border = 'solid red 1px';
-//   } else {
-//     inputNombre.style.border = 'solid green 1px';
-//     validos++;
-//   }
   if (inputUsuario.value.match(email) == null && pass1.value.length == 0 ) {
     alertError.style.display = 'block';
     alertError.innerHTML += '<br/>Datos inválidos.';
@@ -40,18 +30,17 @@ btnenviar.addEventListener('click', function (event) {
   }
   
 
-  //revisa que los campos de la contraseña coincidan y que los campos no estén vacíos
-  // if(pass1.value.length == 0 ){
-  //   alertError.style.display = 'block';
-  //   alertError.innerHTML += '<br/>La contraseña no es válida';
-  //   inputPassword.style.border = 'solid red 1px';
-  // } else {
-  //   inputPassword.style.border = 'solid green 1px';
-  //   validos++;
-  // }
-
-
-
+  function login(username,password) {
+    let users = JSON.parse(localStorage.getItem("datosUsuario"));
+    for (let i = 0; i < users.length; i++) {
+    if (users[i].correo == username && users[i].password == password) {
+    sessionStorage.setItem("currentUser", username);
+    window.location.href = "index.html";
+    return;
+    }
+    }
+    alertError.innerHTML += '<br/>Usuario o contraseña incorrectos.';
+    }
   btnenviar.addEventListener('click', function (event) {
     let tmp = localStorage.getItem('datosUsuario');
     if (tmp != null) {
@@ -59,17 +48,7 @@ btnenviar.addEventListener('click', function (event) {
       let inputUsuario = document.getElementById('usuario');
   let inputPassword = document.getElementById('password');
 
-  function login(inputUsuario.value,inputPassword.value) {
-    var users = JSON.parse(localStorage.getItem("users"));
-    for (var i = 0; i < users.length; i++) {
-    if (users[i].username == username && users[i].password == password) {
-    sessionStorage.setItem("currentUser", username);
-    window.location.href = "index.html";
-    return;
-    }
-    }
-    alert("Usuario o contraseña incorrectos");
-    }
+  login(inputUsuario.value,inputPassword.value);
    
     // console.log(datosUsuario[0].correo);
     // console.log(datosUsuario[0].password);

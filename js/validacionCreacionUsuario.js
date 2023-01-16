@@ -45,7 +45,7 @@ btnenviar.addEventListener('click', function (event) {
 
   alertError.style.display = 'none';
   alertError.innerHTML = '';
-  validos = 0;
+  let validos = 0;
 
   if (inputNombre.value.trim().replaceAll('  ', '').length < 3) {
     alertError.innerHTML += 'El nombre debe contener 3 caracteres o más.';
