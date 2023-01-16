@@ -35,13 +35,14 @@ btnenviar.addEventListener('click', function (event) {
     for (let i = 0; i < users.length; i++) {
     if (users[i].correo == username && users[i].password == password) {
     sessionStorage.setItem("currentUser", username);
-    window.location.href = "index.html";
+    window.location.href = "../index.html";
     return;
     }
     }
     alertError.innerHTML += '<br/>Usuario o contraseña incorrectos.';
     }
   btnenviar.addEventListener('click', function (event) {
+    event.preventDefault;
     let tmp = localStorage.getItem('datosUsuario');
     if (tmp != null) {
       datosUsuario = JSON.parse(tmp);
