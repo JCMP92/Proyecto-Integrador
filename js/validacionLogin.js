@@ -56,7 +56,28 @@ btnenviar.addEventListener('click', function (event) {
     let tmp = localStorage.getItem('datosUsuario');
     if (tmp != null) {
       datosUsuario = JSON.parse(tmp);
-      console.log(datosUsuario);
+      let inputUsuario = document.getElementById('usuario');
+  let inputPassword = document.getElementById('password');
+
+  function login(inputUsuario.value,inputPassword.value) {
+    var users = JSON.parse(localStorage.getItem("users"));
+    for (var i = 0; i < users.length; i++) {
+    if (users[i].username == username && users[i].password == password) {
+    sessionStorage.setItem("currentUser", username);
+    window.location.href = "index.html";
+    return;
+    }
+    }
+    alert("Usuario o contraseña incorrectos");
+    }
+   
+    // console.log(datosUsuario[0].correo);
+    // console.log(datosUsuario[0].password);
+    
+
+
+
+      
     
     }
   })
