@@ -39,10 +39,52 @@
           <div class="navBtns">
             <a href="/html/aboutUs.html">Nosotros</a>
             <a href="/html/Tienda.html">Tienda</a>
-            <a href="/html/amigurumis.html">Pedidos</a>
+            <button
+              class="btn dropdown-toggle"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Pedidos
+            </button>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="/html/amigurumis.html" class="dropdown-item"
+                  >Amigurumis</a
+                >
+              </li>
+              <li>
+                <a href="/html/libretas.html" class="dropdown-item">Libretas</a>
+              </li>
+            </ul>
             <a href="/html/carrito_compra.html">Carrito</a>
             <a href="/html/contacto.html">Contacto</a>
-            <a href="/html/login.html">Mi Cuenta</a>
+            <button
+              class="btn dropdown-toggle"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Mi Cuenta
+            </button>
+            <ul class="dropdown-menu">
+              <li id="bntLogin">
+                <a href="/html/login.html">Log in</a>
+              </li>
+              <li>
+                <a href="/html/registro.html">Crear cuenta</a>
+              </li>
+              <li>
+                <button
+                  id="btnLogout"
+                  type="button"
+                  class="btn btn-primary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal"
+                >
+                  Log out
+                </button>
+              </li>
+            </ul>
+
             <a href="/html/aboutTeam.html">Equipo</a>
           </div>
           <div class="hamburger">
@@ -58,8 +100,18 @@
               <li><a href="/html/libretas.html">Pedidos Libretas</a></li>
               <li><a href="/html/carrito_compra.html">Carrito</a></li>
               <li><a href="/html/contacto.html">Contacto</a></li>
-              <li><a href="/html/login.html">Mi Cuenta</a></li>
               <li><a href="/html/aboutTeam.html">Equipo</a></li>
+              <li><a href="/html/registro.html">Crear Cuenta</a></li>
+              <li id="bntLoginMob"><a href="/html/login.html">Log in</a></li>
+              <button
+                id="btnLogoutMob"
+                type="button"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+              >
+                Log out
+              </button>
             </ul>
           </nav>
         </nav>
@@ -68,40 +120,61 @@
 
     <section class="container-Tablet-Desktop">
       <div class="pic">
-        <a href="/html/aboutUs.html" class="indexAnchor"><div class="textHome">NOSOTROS</div></a>
+        <a href="/html/aboutUs.html" class="indexAnchor"
+          ><div class="textHome">NOSOTROS</div></a
+        >
         <div class="img" id="imgUno"></div>
       </div>
       <div class="pic">
-        <a href="/html/Tienda.html" class="indexAnchor"><div class="textHome">TIENDA</div></a>
+        <a href="/html/Tienda.html" class="indexAnchor"
+          ><div class="textHome">TIENDA</div></a
+        >
         <div class="img" id="imgDos"></div>
       </div>
       <div class="pic">
-        <a href="/html/contacto.html" class="indexAnchor"><div class="textHome">CONTACTO</div></a>
+        <a href="/html/contacto.html" class="indexAnchor"
+          ><div class="textHome">CONTACTO</div></a
+        >
         <div class="img" id="imgTres"></div>
       </div>
       <div class="pic">
-        <a href="/html/libretas.html" class="indexAnchor"><div class="textHome">PEDIDOS PERSONALIZADOS</div></a
+        <a href="/html/libretas.html" class="indexAnchor"
+          ><div class="textHome">PEDIDOS PERSONALIZADOS</div></a
         >
         <div class="img" id="imgCuatro"></div>
       </div>
       <div class="pic">
-        <a href="/html/carrito_compra.html" class="indexAnchor"><div class="textHome">CARRITO</div></a>
+        <a href="/html/carrito_compra.html" class="indexAnchor"
+          ><div class="textHome">CARRITO</div></a
+        >
         <div class="img" id="imgCinco"></div>
       </div>
       <div class="pic">
-        <a href="/html/login.html"class="indexAnchor"><div class="textHome">MI CUENTA</div></a>
+        <a href="/html/login.html" class="indexAnchor"
+          ><div class="textHome">MI CUENTA</div></a
+        >
         <div class="img" id="imgSeis"></div>
       </div>
     </section>
 
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
       <div class="modal-dialog">
         <div class="modal-content">
-          <div class="modal-body">
-            Se ha cerrado la sesión
-          </div>
+          <div class="modal-body">Se ha cerrado la sesión</div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cerrar
+            </button>
           </div>
         </div>
       </div>
