@@ -2,7 +2,7 @@ let btnenviar = document.getElementById('btnEnviar');
 let idTimeout;
 let validos = 0;
 let base64 = '';
-const priceRegex = /^\$\d+(\.\d{2})?$/;
+const priceRegex = /^\d+(\.\d{2})?$/;
 const regexImg = new RegExp(/[^\s]+(.*?).(jpg|jpeg|png|JPG|JPEG|PNG)$/);
 let tabla = document.getElementById('tablaRegistrado');
 let cuerpoTabla = tabla.getElementsByTagName('tbody');

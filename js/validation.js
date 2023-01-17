@@ -63,11 +63,11 @@ btnenviar.addEventListener('click', function (event) {
     inputMail.style.border = 'solid green 1px';
     validos++;
   }
-  let telefonorex = /^\+52 \d{2} \d{4} \d{4}$/;
+  let telefonorex = /^\+52 \d{10}$/;
   if (inputTel.value.match(telefonorex) == null || valicel(inputTel.value) == true) {
     alertError.style.display = 'block';
     alertError.innerHTML +=
-      '<br/>El formato de teléfono no es válido ejemplo: +52 65 6192 0273';
+      '<br/>El formato de teléfono no es válido ejemplo: +52 6561920273';
     inputTel.style.border = 'solid red 1px';
   } else {
     inputTel.style.border = 'solid green 1px';
