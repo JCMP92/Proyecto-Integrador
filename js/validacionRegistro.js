@@ -175,7 +175,7 @@ btnenviar.addEventListener('click', function (event) {
     }
 
     //Precio
-    if (inputPrice.value.match(priceRegex) == null) {
+    if (inputPrice.value.match(priceRegex) == null||inputPrice.value<1.00) {
       alertError.style.display = 'block';
       alertError.innerHTML += '<br/>El formato de precio no es válido.';
       inputPrice.style.border = 'solid red 1px';
