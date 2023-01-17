@@ -2,6 +2,7 @@ let logoutbtn = document.getElementById('btnLogout');
 let logoutbtnMob = document.getElementById('btnLogoutMob');
 let loginbtn = document.getElementById('bntLogin');
 let loginbtnMob = document.getElementById('bntLoginMob');
+// let exampleModal = document.getElementById('exampleModal');
 
 //Boolean login
 let isLogged = sessionStorage.getItem('currentUser');
@@ -20,15 +21,20 @@ if (!isLogged) {
 function logout() {
   sessionStorage.removeItem('currentUser');
   exampleModal.style.display;
-  window.location.href = '../index.html';
 }
 
 logoutbtn.addEventListener('click', function (e) {
   e.preventDefault;
   logout();
+  setTimeout(() => {
+    window.location.href = '../index.html';
+  }, 1500);
 });
 
 logoutbtnMob.addEventListener('click', function (e) {
   e.preventDefault;
   logout();
+  setTimeout(() => {
+    window.location.href = '../index.html';
+  }, 1500);
 });
