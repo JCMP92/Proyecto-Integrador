@@ -161,10 +161,19 @@ a:hover {
   font-family: 'Elsie', cursive;
   color: #bc0e73;
   text-align: center;
-}
-#descripcionTech {
-  text-align: center;
-}
+  font-size: 55px;
+  cursor: pointer;
+  width: fit-content;
+  margin: 0 auto 48px;
+  z-index: 0;
+  transition: all 500ms ease; 
+  }
+
+  #EquipoTech:hover {
+    letter-spacing: 0.30em;
+  }
+  
+
 .div-alon {
   grid-area: alon;
 }
@@ -288,6 +297,9 @@ a:hover {
   --bs-btn-disabled-bg: #f9e0ef;
   --bs-btn-disabled-border-color: #f9e0ef;
 }
+
+
+
 /* @media (max-width: 330px) {
   .container .card .imgContainer {
     left: -2px;

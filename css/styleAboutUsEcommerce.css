@@ -80,6 +80,9 @@ body {
   .contenedorMainAboutUs {
     padding: 10%;
   }
+  .contenedorAuTexto > p {
+    font-size: 19px;
+  }
 }
 
 .btn-secondary {
