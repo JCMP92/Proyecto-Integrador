@@ -7,6 +7,7 @@ btnenviar.addEventListener('click', function (event) {
   let inputUsuario = document.getElementById('usuario');
   let inputPassword = document.getElementById('password');
   let alertError = document.getElementById('alertError');
+  let alertSuccess = document.getElementById('alertSuccess');
 
   let pass1 = document.getElementById('password');
   let email =
@@ -14,8 +15,9 @@ btnenviar.addEventListener('click', function (event) {
 
   alertError.style.display = 'none';
   alertError.innerHTML = '';
+  alertSuccess.style.display = 'none';
+  alertSuccess.innerHTML = '';
   validos = 0;
-
   if (inputUsuario.value.match(email) == null && pass1.value.length == 0) {
     alertError.style.display = 'block';
     alertError.innerHTML += '<br/>Datos inválidos.';
@@ -33,19 +35,22 @@ btnenviar.addEventListener('click', function (event) {
     for (let i = 0; i < users.length; i++) {
       if (users[i].correo == username && users[i].password == password) {
         sessionStorage.setItem('currentUser', username);
-        window.location.href = '../index.html';
+        alertSuccess.style.display = 'block';
+        alertSuccess.innerHTML += '<br/>Se realizo el inicio de sesion con exito.';
+        setTimeout(() => {
+          window.location.href = '../index.html'; 
+        }, 2000);
         return;
-      }
+      } 
     }
+    
     alertError.innerHTML += '<br/>Usuario o contraseña incorrectos.';
   }
-
   let tmp = localStorage.getItem('datosUsuario');
   if (tmp != null) {
     datosUsuario = JSON.parse(tmp);
     let inputUsuario = document.getElementById('usuario');
     let inputPassword = document.getElementById('password');
-
     login(inputUsuario.value, inputPassword.value);
   }
 });

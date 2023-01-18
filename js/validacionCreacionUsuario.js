@@ -148,9 +148,10 @@ btnenviar.addEventListener('click', function (event) {
     alertSuccess.style.display = 'block';
     alertSuccess.innerHTML += '<br/>Registro exitoso';
     setTimeout(function () {
+      window.location.href = '../html/login.html'; 
       alertSuccess.style.display = 'none';
       alertSuccess.innerHTML += '';
-    }, 5000);
+    }, 1500);
   }
 
     
