@@ -51,7 +51,7 @@
             <a href="/html/libretas.html" class="dropdown-item">Libretas</a>
           </li>
         </ul>
-      
+        
         <a href="/html/contacto.html">Contacto</a>
         <button
           class="btn dropdown-toggle"
@@ -68,10 +68,11 @@
             <a href="/html/registro.html">Crear cuenta</a>
           </li>
           <li>
+            
             <button
               id="btnLogout"
               type="button"
-              class="btn btn-primary"
+              class="btn btn-secondary"
               data-bs-toggle="modal"
               data-bs-target="#exampleModal"
             >
@@ -81,15 +82,15 @@
         </ul>
 
         <a href="/html/aboutTeam.html">Equipo</a>
-        
-         <!-- Carrito -->
-         <a href="/html/carrito_compra.html">
-          <img
-          src ="/Logo-Iconos/shopping.svg"
-          alt="shopping"
-          style="width: 28px; height: auto" 
-          />
-        </a>
+       <!-- Carrito -->
+       <a href="/html/carrito_compra.html">
+        <img
+        src ="/Logo-Iconos/shopping.svg"
+        alt="shopping"
+        style="width: 28px; height: auto" 
+        />
+      </a>
+      
       </div>
       <div class="hamburger">
         <div class="_layer -top"></div>
@@ -104,17 +105,6 @@
           <li><a href="/html/libretas.html">Pedidos Libretas</a></li>
           <li><a href="/html/contacto.html">Contacto</a></li>
           <li><a href="/html/aboutTeam.html">Equipo</a></li>
-          <li><a href="/html/registro.html">Crear Cuenta</a></li>
-          <li id="bntLoginMob"><a href="/html/login.html">Log in</a></li>
-          <button
-            id="btnLogoutMob"
-            type="button"
-            class="btn btn-primary"
-            data-bs-toggle="modal"
-            data-bs-target="#exampleModal"
-          >
-            Log out
-          </button>
           <!-- Carrito hamburguesa -->
           <li><a href="/html/carrito_compra.html">
             <img
@@ -123,42 +113,21 @@
             style="width: 28px; height: auto" 
             />
           </a>
-        </li>
+          </li>
+          <li><a href="/html/registro.html">Crear Cuenta</a></li>
+          <li id="bntLoginMob"><a href="/html/login.html">Log in</a></li>
+         <button
+            id="btnLogoutMob"
+            type="button"
+            class="btn btn-light"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal">
+            Log out 
+          </a>
+          </button>
         </ul>
       </nav>
     </nav>
-    <main class="maincontainerRegistro">
-      <div id="frutita">
-        <img src="/Logo-Iconos/FRUTITA_Mesa de trabajo 1 (1).svg" alt="" />
-      </div>
-      <h1 class="tituloRegistro">Registro de usuario</h1>
-      <br />
-      <div
-        class="alert alert-danger"
-        role="alert"
-        style="display: none"
-        id="alertError"
-      ></div>
-      <div
-        class="alert alert-light"
-        role="alert"
-        id="alertSuccess"
-        style="display: none"
-      ></div>
-      <form class="formularioCreaciónCuenta">
-        <div class="mb-3 row">
-          <label for="nombre" class="col-sm-2 col-form-label"
-            ><h3 class="subtitleForm">Nombre completo</h3></label
-          >
-          <div class="col-sm-10">
-            <input
-              type="text"
-              class="form-control"
-              id="nombre"
-              placeholder="Nombre completo"
-            />
-          </div>
-        </div>
 
         <div class="mb-3 row">
           <label for="telefono" class="col-sm-2 col-form-label"
