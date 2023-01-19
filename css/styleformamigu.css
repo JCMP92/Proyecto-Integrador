@@ -79,6 +79,11 @@ body {
   box-shadow: 0 0 0 0.2rem rgb(227 47 137 / 50%);
 }
 
+.seleccionaImg {
+  width: 60%;
+  margin-bottom: 20%;
+}
+
 @media (min-width: 770px) {
   #mainContainerAmig {
     height: calc(100% -100 px);
@@ -90,4 +95,37 @@ body {
   .titleForm {
     font-size: 35px;
   }
+
+}
+
+#inputImg {
+  max-width: 200px;
+  max-height: 36px;
+  border-radius: 12px;
+  margin-right: 20px;
+}
+
+@media (min-width: 1024px) {
+  #inputImg {
+    max-width: 300px;
+  }
+}
+
+.input-group {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.seleccionaImg {
+  display: flex;
+  flex-direction: column;
+}
+
+#imageFile {
+  padding-top: 20%;
+  padding-left: 60%;
+  width: 110%;
+  height: auto;
+ 
 }

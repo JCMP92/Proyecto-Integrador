@@ -139,6 +139,13 @@
           style="display: none"
           id="alertError"
         ></div>
+        <div 
+          class="alert alert-success" 
+          role="alert" 
+          id="alertSuccess" 
+          style="display: none">
+        </div>
+        <br />
         <fieldset>
           <div class="mb-3">
             <label for="validationCustom04" class="form-label">
@@ -213,6 +220,21 @@
               rows="3"
             ></textarea>
           </div>
+          <br />
+        <div class="seleccionaImg">
+          <div class="input-group">
+            <input type="file" class="form-control" id="inputImg" />
+            <img
+              id="imageFile"
+              name="imageFile"
+              src=""
+              alt="Vista previa"
+              title="Vista previa"
+              width="auto"
+            />
+          </div>
+        </div>
+          <br>
         </fieldset>
 
         <!--<div class="input-group mb-3">
@@ -224,6 +246,19 @@
             Enviar
           </button>
         </div>
+        <br />
+        <textarea
+          rows="20"
+          class="form-control"
+          data-toggle="tooltip"
+          data-placement="bottom"
+          id="inputFile"
+          name="inputFile"
+          value=""
+          placehodler="Imagen del curso"
+          title="Imagen"
+          style="display: none"
+        ></textarea>
       </form>
     </main>
 

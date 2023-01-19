@@ -1,5 +1,11 @@
 let btnenviar = document.getElementById('btnEnviar');
 let idTimeout;
+let fileImage = document.getElementById('inputImg');
+let imageFile = document.getElementById('imageFile');
+let preview = document.getElementById('imageFile');
+const regexImg = new RegExp(/[^\s]+(.*?).(jpg|jpeg|png|JPG|JPEG|PNG)$/);
+
+let base64 = '';
 
 function valicel(numero) {
   // Crear un objeto para almacenar la cantidad de veces que se repite cada dígito
@@ -27,15 +33,41 @@ function valicel(numero) {
   return false;
 }
 
+fileImage.addEventListener('change', function () {
+  previewFile('inputImg', 'inputFile');
+  //previewFile(id imagen, input type file , textArea);
+});
+
+//previewFile(id imagen, input type file , textArea);
+function previewFile(inputFile, input) {
+  let file = document.getElementById(inputFile).files[0];
+  let reader = new FileReader();
+
+  reader.addEventListener(
+    'load',
+    function () {
+      document.getElementById(input).value = reader.result;
+      preview.src = reader.result;
+      base64 = reader.result;
+    },
+    false
+  );
+
+  if (file) {
+    reader.readAsDataURL(file);
+  } // file
+  } // previewFile
 
 btnenviar.addEventListener('click', function (event) {
   event.preventDefault();
+  let inputTamano = document.getElementById('validationCustom04')
   let inputNombre = document.getElementById('nombre');
   let inputMail = document.getElementById('correo');
   let inputTel = document.getElementById('telefono');
   let inputMensaje = document.getElementById('especificaciones');
   let alertError = document.getElementById('alertError');
-  let inputImagen = document.getElementById('imagen');
+  let inputImg = document.getElementById('inputImg');
+  let alertSuccess = document.getElementById('alertSuccess');
 
   let email =
     /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -43,6 +75,9 @@ btnenviar.addEventListener('click', function (event) {
   alertError.style.display = 'none';
   alertError.innerHTML = '';
   validos = 0;
+  
+  inputTamano.style.border = 'solid green 1px';
+  
 
   if (inputNombre.value.trim().replaceAll('  ', '').length < 3) {
     alertError.innerHTML += 'El nombre debe contener 3 caracteres o más.';
@@ -84,30 +119,34 @@ btnenviar.addEventListener('click', function (event) {
   } else {
     inputMensaje.style.border = 'solid green 1px';
     validos++;
-  } 
+  }
+  
+  if (inputImg.value.match(regexImg) == null) {
+      alertError.style.display = 'block';
+      alertError.innerHTML += '<br/>Tipo inválido de imagen.';
+      inputImg.style.border = 'solid red 1px';
+    } else {
+      inputImg.style.border = 'solid green 1px';
+      validos++;
+    }
+
+    if (idTimeout != undefined && idTimeout != null) {
+      clearTimeout(idTimeout);
+    }
+    if (validos == 4) {
+      setTimeout(function () {
+        inputMail.style.border = '';
+        inputMensaje.style.border = '';
+        inputTel.style.border = '';
+        inputNombre.style.border = '';
+      }, 3000);
+    }
 
   if (idTimeout != undefined && idTimeout != null) {
     clearTimeout(idTimeout);
   }
-  //   tuve que comentar la validación de Image, porque arrojaba un error en la consola ----------------------------------------------------------------------------->
-  //   let regex = new RegExp(/[^\s]+(.*?).(jpg|jpeg|png|JPG|JPEG|PNG)$/);
-  //   if (inputImagen.value.match(regex) == null) {
-  //     alertError.style.display = 'block';
-  //     alertError.innerHTML +=
-  //       '<br/> El formato de imagen es invalido solo agregar archivos .jpg o .png';
-  //     inputImagen.style.border = 'solid red 1px';
-  //   } else {
-  //     inputImagen.style.border = 'solid green 1px';
-  //     validos++;
-  //   }
-
-  //if Ternario
-  //alertError.innerHTML += (!flexCheckDefault.checked)?"<br/>Debes aceptar los terminos y condiciones":"";
-
-  /*if (!flexCheckDefault.checked){
-        alertError.innerHTML += "<br/>Debes aceptar los terminos y condiciones";
-    }*/
-  if (validos == 4) {
+  
+  if (validos == 5) {
     setTimeout(function () {
       inputMail.style.border = '';
       inputMensaje.style.border = '';
@@ -121,7 +160,14 @@ btnenviar.addEventListener('click', function (event) {
       From: inputMail.value,
       Subject: 'Pedido',
       Body: inputMensaje.value,
+    
     }).then((message) => alert('E-mail sent'));
+    alertSuccess.style.display = 'block';
+    alertSuccess.innerHTML += '<br/>Cotización enviada con éxito.';
+    setTimeout(function () {
+      alertSuccess.style.display = 'none';
+      alertSuccess.innerHTML += '';
+    }, 3000);
   }
 }); //JC validaciones
 
