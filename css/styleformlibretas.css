@@ -89,3 +89,28 @@ body {
     font-size: 35px;
   }
 }
+
+#inputImg {
+  max-width: 200px;
+  max-height: 36px;
+  border-radius: 12px;
+  margin-right: 20px;
+}
+
+.seleccionaImg {
+  display: flex;
+  flex-direction: column;
+}
+
+#imageFile {
+  padding-top: 20%;
+  padding-left: 60%;
+  width: 110%;
+  height: auto;
+ 
+}
+
+.seleccionaImg {
+  width: 60%;
+  margin-bottom: 20%;
+}
