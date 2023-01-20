@@ -1,7 +1,8 @@
 let btnenviar = document.getElementById('btnEnviar');
+let btnregistrar = document.getElementById('btnEnviar02');
 let idTimeout;
 let datosUsuario = [];
-
+let validos = 0;
 btnenviar.addEventListener('click', function (event) {
   event.preventDefault();
   let inputUsuario = document.getElementById('usuario');
@@ -17,23 +18,31 @@ btnenviar.addEventListener('click', function (event) {
   alertError.innerHTML = '';
   alertSuccess.style.display = 'none';
   alertSuccess.innerHTML = '';
-  validos = 0;
-  if (inputUsuario.value.match(email) == null && pass1.value.length == 0) {
+  
+  if (inputUsuario.value.match(email) == null || pass1.value.length == 0) {
     alertError.style.display = 'block';
-    alertError.innerHTML += '<br/>Datos inválidos.';
+    alertError.innerHTML += 'Datos inválidos. Por favor rellene ambos campos';
     inputUsuario.style.border = 'solid red 1px';
     inputPassword.style.border = 'solid red 1px';
-  } else {
-    inputUsuario.style.border = 'solid green 1px';
-    inputPassword.style.border = 'solid green 1px';
-    //Modal
-    validos++;
   }
+else{
+  alertError.style.display = 'block';
+  inputUsuario.style.border = 'solid red 1px';
+    inputPassword.style.border = 'solid red 1px';
+    alertError.innerHTML += 'Usuario o contraseña incorrectos.';
+ }
+    //Modal
+  
 
   function login(username, password) {
     let users = JSON.parse(localStorage.getItem('datosUsuario'));
     for (let i = 0; i < users.length; i++) {
       if (users[i].correo == username && users[i].password == password) {
+        validos++;
+        alertError.style.display = 'none';
+        alertError.innerHTML += '';
+        inputUsuario.style.border = 'solid green 1px';
+        inputPassword.style.border = 'solid green 1px';
         sessionStorage.setItem('currentUser', username);
         alertSuccess.style.display = 'block';
         alertSuccess.innerHTML += '<br/>Se realizo el inicio de sesion con exito.';
@@ -44,7 +53,6 @@ btnenviar.addEventListener('click', function (event) {
       } 
     }
     
-    alertError.innerHTML += '<br/>Usuario o contraseña incorrectos.';
   }
   let tmp = localStorage.getItem('datosUsuario');
   if (tmp != null) {
@@ -54,7 +62,10 @@ btnenviar.addEventListener('click', function (event) {
     login(inputUsuario.value, inputPassword.value);
   }
 });
-
+btnregistrar.addEventListener('click', function (event) {
+  event.preventDefault();
+  window.location.href = '../html/Registro.html'; 
+});
 // btnenviar.addEventListener('click', function (event) {
 //   event.preventDefault;
 //   let tmp = localStorage.getItem('datosUsuario');
