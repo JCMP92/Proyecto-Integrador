@@ -22,14 +22,19 @@ btnenviar.addEventListener('click', function (event) {
   if (inputUsuario.value.match(email) == null || pass1.value.length == 0) {
     alertError.style.display = 'block';
     alertError.innerHTML += 'Datos inválidos. Por favor rellene ambos campos';
-    inputUsuario.style.border = 'solid red 1px';
-    inputPassword.style.border = 'solid red 1px';
+    inputUsuario.style.background = '#f8d7da';
+    inputUsuario.style.border = 'solid red 3px';
+    inputPassword.style.background = '#f8d7da';
+    inputPassword.style.border = 'solid red 3px';
   }
 else{
-  alertError.style.display = 'block';
-  inputUsuario.style.border = 'solid red 1px';
-    inputPassword.style.border = 'solid red 1px';
-    alertError.innerHTML += 'Usuario o contraseña incorrectos.';
+    alertError.style.display = 'block';
+    alertError.innerHTML += 'Datos inválidos. Por favor rellene ambos campos.';
+    inputUsuario.style.background = '#f8d7da';
+    inputUsuario.style.border = 'solid red 3px';
+    inputPassword.style.background = '#f8d7da';
+    inputPassword.style.border = 'solid red 3px';
+    
  }
     //Modal
   
@@ -41,11 +46,13 @@ else{
         validos++;
         alertError.style.display = 'none';
         alertError.innerHTML += '';
-        inputUsuario.style.border = 'solid green 1px';
-        inputPassword.style.border = 'solid green 1px';
+        inputUsuario.style.background = '#fff';
+        inputUsuario.style.border = 'solid green 3px';
+        inputPassword.style.background = '#fff';
+        inputPassword.style.border = 'solid green 3px';
         sessionStorage.setItem('currentUser', username);
         alertSuccess.style.display = 'block';
-        alertSuccess.innerHTML += '<br/>Se realizo el inicio de sesion con exito.';
+        alertSuccess.innerHTML += '<br/>Inicio de sesión exitoso.';
         setTimeout(() => {
           window.location.href = '../index.html'; 
         }, 2000);

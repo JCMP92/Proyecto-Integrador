@@ -77,26 +77,30 @@ btnenviar.addEventListener('click', function (event) {
   alertError.innerHTML = '';
   validos = 0;
 
-  inputTamano.style.border = 'solid green 1px';
-  inputHojas.style.border = 'solid green 1px';
+  inputTamano.style.border = 'solid green 3px';
+  inputHojas.style.border = 'solid green 3px';
 
   if (inputNombre.value.trim().replaceAll('  ', '').length < 3) {
     alertError.innerHTML += 'El nombre debe contener 3 caracteres o más.';
     alertError.style.display = 'block';
     inputNombre.focus();
     inputNombre.select();
-    inputNombre.style.border = 'solid red 1px';
+    inputNombre.style.background = '#f8d7da';
+    inputNombre.style.border = 'solid red 3px';
   } else {
-    inputNombre.style.border = 'solid green 1px';
+    inputNombre.style.background = '#fff';
+    inputNombre.style.border = 'solid green 3px';
     validos++;
   }
   
   if (inputMail.value.match(email) == null) {
     alertError.style.display = 'block';
     alertError.innerHTML += '<br/>El correo electrónico no es válido.';
-    inputMail.style.border = 'solid red 1px';
+    inputMail.style.background = '#f8d7da';
+    inputMail.style.border = 'solid red 3px';
   } else {
-    inputMail.style.border = 'solid green 1px';
+    inputMail.style.background = '#fff';
+    inputMail.style.border = 'solid green 3px';
     validos++;
   }
   let telefonorex = /^\+52 \d{10}$/;
@@ -104,9 +108,11 @@ btnenviar.addEventListener('click', function (event) {
     alertError.style.display = 'block';
     alertError.innerHTML +=
       '<br/>El formato de teléfono no es válido ejemplo: +52 6561920273';
-    inputTel.style.border = 'solid red 1px';
+    inputTel.style.background = '#f8d7da';
+    inputTel.style.border = 'solid red 3px';
   } else {
-    inputTel.style.border = 'solid green 1px';
+    inputTel.style.background = '#fff';
+    inputTel.style.border = 'solid green 3px';
     validos++;
   }
  
@@ -116,42 +122,49 @@ btnenviar.addEventListener('click', function (event) {
     alertError.style.display = 'block';
     inputMensaje.focus();
     inputMensaje.select();
-    inputMensaje.style.border = 'solid red 1px';
+    inputMensaje.style.background = '#f8d7da';
+    inputMensaje.style.border = 'solid red 3px';
   } else {
-    inputMensaje.style.border = 'solid green 1px';
+    inputMensaje.style.background = '#fff';
+    inputMensaje.style.border = 'solid green 3px';
     validos++;
   } 
 
   if (inputImg.value.match(regexImg) == null) {
     alertError.style.display = 'block';
     alertError.innerHTML += '<br/>Tipo inválido de imagen.';
-    inputImg.style.border = 'solid red 1px';
+    inputImg.style.background = '#f8d7da';
+    inputImg.style.border = 'solid red 3px';
   } else {
-    inputImg.style.border = 'solid green 1px';
+    inputImg.style.background = '#fff';
+    inputImg.style.border = 'solid green 3px';
     validos++;
   }
 
-  if (idTimeout != undefined && idTimeout != null) {
-    clearTimeout(idTimeout);
-  }
-  if (validos == 4) {
-    setTimeout(function () {
-      inputMail.style.border = '';
-      inputMensaje.style.border = '';
-      inputTel.style.border = '';
-      inputNombre.style.border = '';
-    }, 3000);
-  }
 
   if (idTimeout != undefined && idTimeout != null) {
     clearTimeout(idTimeout);
   }
   if (validos == 5) {
     setTimeout(function () {
-      inputMail.style.border = '';
-      inputMensaje.style.border = '';
-      inputTel.style.border = '';
+      inputNombre.value = '';
       inputNombre.style.border = '';
+      inputNombre.style.background = '#fff';
+      inputMail.value = '';
+      inputMail.style.border = '';
+      inputMail.style.background = '#fff';
+      inputTel.value = '';
+      inputTel.style.border = '';
+      inputTel.style.background = '#fff';
+      inputMensaje.value = '';
+      inputMensaje.style.border = '';
+      inputMensaje.style.background = '#fff';
+      inputImg.value = '';
+      inputImg.style.background = '#fff';
+      inputImg.style.border = '';
+      imageFile.style.display = 'none';
+      inputTamano.style.border = '';
+      inputHojas.style.border = '';
     }, 3000);
     console.log('ready');
     Email.send({

@@ -164,13 +164,15 @@ btnenviar.addEventListener('click', function (event) {
   ) {
     //Nombre
     if (inputNombre.value.trim().replaceAll('  ', '').length < 3) {
-      alertError.innerHTML += 'El nombre debe contener 3 caracteres o más.';
       alertError.style.display = 'block';
+      alertError.innerHTML += 'El nombre debe contener 3 caracteres o más.';
       inputNombre.focus();
       inputNombre.select();
-      inputNombre.style.border = 'solid red 1px';
+      inputNombre.style.backgroud = '#f8d7da';
+      inputNombre.style.border = 'solid red 3px';
     } else {
-      inputNombre.style.border = 'solid green 1px';
+      inputNombre.style.backgroud = '#fff';
+      inputNombre.style.border = 'solid green 3px';
       validos++;
     }
 
@@ -178,9 +180,11 @@ btnenviar.addEventListener('click', function (event) {
     if (inputPrice.value.match(priceRegex) == null||inputPrice.value<1.00) {
       alertError.style.display = 'block';
       alertError.innerHTML += '<br/>El formato de precio no es válido.';
-      inputPrice.style.border = 'solid red 1px';
+      inputPrice.style.backgroud = '#f8d7da';
+      inputPrice.style.border = 'solid red 3px';
     } else {
-      inputPrice.style.border = 'solid green 1px';
+      inputPrice.style.backgroud = '#fff';
+      inputPrice.style.border = 'solid green 3px';
       validos++;
     }
 
@@ -189,20 +193,22 @@ btnenviar.addEventListener('click', function (event) {
       alertError.innerHTML +=
         '<br/>El mensaje debe contener 20 caracteres o más.';
       alertError.style.display = 'block';
-      inputDescripcion.focus();
-      inputDescripcion.select();
-      inputDescripcion.style.border = 'solid red 1px';
+      inputDescripcion.style.backgroud = '#f8d7da';
+      inputDescripcion.style.border = 'solid red 3px';
     } else {
-      inputDescripcion.style.border = 'solid green 1px';
+      inputDescripcion.style.backgroud = '#fff';
+      inputDescripcion.style.border = 'solid green 3px';
       validos++;
     }
     //imagen
     if (inputImg.value.match(regexImg) == null) {
-      alertError.style.display = 'block';
       alertError.innerHTML += '<br/>Tipo inválido de imagen.';
-      inputImg.style.border = 'solid red 1px';
+      alertError.style.display = 'block';
+      inputImg.style.backgroud = '#f8d7da';
+      inputImg.style.border = 'solid red 3px';
     } else {
-      inputImg.style.border = 'solid green 1px';
+      inputImg.style.style.backgroud = '#fff';
+      inputImg.style.border = 'solid green 3px';
       validos++;
     }
 
@@ -211,10 +217,14 @@ btnenviar.addEventListener('click', function (event) {
     }
     if (validos == 4) {
       setTimeout(function () {
-        inputMail.style.border = '';
-        inputMensaje.style.border = '';
-        inputTel.style.border = '';
         inputNombre.style.border = '';
+        inputNombre.style.backgroud = '#fff';
+        inputPrice.style.border = '';
+        inputPrice.style.backgroud = '#fff';
+        inputDescripcion.style.border = '';
+        inputDescripcion.style.backgroud = '#fff';
+        inputImg.style.border = '';
+        inputImg.style.style.backgroud = '#fff';
       }, 3000);
     }
   } else {

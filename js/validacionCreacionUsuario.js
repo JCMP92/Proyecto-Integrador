@@ -63,17 +63,21 @@ btnenviar.addEventListener('click', function (event) {
       alertError.style.display = 'block';
       inputNombre.focus();
       inputNombre.select();
-      inputNombre.style.border = 'solid red 1px';
+      inputNombre.style.background = '#f8d7da';
+      inputNombre.style.border = 'solid red 3px';
     } else {
-      inputNombre.style.border = 'solid green 1px';
+      inputNombre.style.background = '#fff';
+      inputNombre.style.border = 'solid green 3px';
       validos++;
     }
     if (inputMail.value.match(email) == null) {
       alertError.style.display = 'block';
       alertError.innerHTML += '<br/>El correo electrónico no es válido.';
-      inputMail.style.border = 'solid red 1px';
+      inputMail.style.background = '#f8d7da';
+      inputMail.style.border = 'solid red 3px';
     } else {
-      inputMail.style.border = 'solid green 1px';
+      inputMail.style.background = '#fff';
+      inputMail.style.border = 'solid green 3px';
       validos++;
     }
     if (
@@ -83,49 +87,80 @@ btnenviar.addEventListener('click', function (event) {
       alertError.style.display = 'block';
       alertError.innerHTML +=
         '<br/>El formato de teléfono no es válido ejemplo: +52 6561920273';
-      inputTel.style.border = 'solid red 1px';
+      inputTel.style.background = '#f8d7da';
+      inputTel.style.border = 'solid red 3px';
     } else {
-      inputTel.style.border = 'solid green 1px';
+      inputTel.style.background = '#fff';
+      inputTel.style.border = 'solid green 3px';
       validos++;
     }
     //revisa que los campos de la contraseña coincidan y que los campos no estén vacíos
     if (pass1.value.length == 0) {
       alertError.style.display = 'block';
       alertError.innerHTML += '<br/>Se requiere una contraseña';
-      inputPassword.style.border = 'solid red 1px';
+      inputPassword.style.background = '#f8d7da';
+      inputPassword.style.border = 'solid red 3px';
     } else if (pass1.value != pass2.value) {
       alertError.style.display = 'block';
       alertError.innerHTML += '<br/>Las contraseñas no coiciden';
-      inputPassword.style.border = 'solid red 1px';
+      inputPassword.style.background = '#f8d7da';
+      inputPassword.style.border = 'solid red 3px';
     } else {
-      inputPassword.style.border = 'solid green 1px';
+      inputPassword.style.background = '#fff';
+      inputPassword.style.border = 'solid green 3px';
       validos++;
     }
+    if (pass2.value.length == 0) {
+      pass2.style.background = '#f8d7da';
+      pass2.style.border = 'solid red 3px';
+    } else {
+      pass2.style.background = '#fff';
+      pass2.style.border = 'solid green 3px';
+      validos++;
+    }
+
+    
     if (pass1.value.match(regex) == null) {
       alertError.style.display = 'block';
       alertError.innerHTML +=
         '<br/>La contraseña debe contener más de 8 caracteres, un caracter especial (mayúscula, números, símbolos)';
-      inputPassword.style.border = 'solid red 1px';
+      inputPassword.style.background = '#f8d7da';
+      inputPassword.style.border = 'solid red 3px';
     } else {
-      inputPassword.style.border = 'solid green 1px';
-      pass2.style.border = 'solid green 1px';
+      inputPassword.style.background = '#fff';
+      inputPassword.style.border = 'solid green 3px';
       validos++;
     }
 
+    if (validos == 5) {
+      setTimeout(function () {
+      inputNombre.value = '';
+      inputNombre.style.border = '';
+      inputNombre.style.background = '#fff';
+      inputMail.value = '';
+      inputMail.style.border = '';
+      inputMail.style.background = '#fff';
+      inputTel.value = '';
+      inputTel.style.border = '';
+      inputTel.style.background = '#fff';
+      inputPassword.value= '';
+      inputPassword.style.border = '';
+      inputPassword.style.background = '#fff';
+      pass2.value= '';
+      pass2.style.border = '';
+      pass2.style.background = '#fff';
+      
+    }, 3000);
+
+      console.log('ready');
+    }
 
   } else {
     if (idTimeout != undefined && idTimeout != null) {
       clearTimeout(idTimeout);
     }
 
-    if (validos == 5) {
-      inputMail.style.border = '';
-      inputPassword.style.border = '';
-      inputTel.style.border = '';
-      inputNombre.style.border = '';
-
-      console.log('ready');
-    }
+    
 
     let elemento = `{
     "nombre": "${inputNombre.value} ",
