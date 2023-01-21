@@ -56,11 +56,11 @@ function previewFile(inputFile, input) {
   if (file) {
     reader.readAsDataURL(file);
   } // file
-  } // previewFile
+} // previewFile
 
 btnenviar.addEventListener('click', function (event) {
   event.preventDefault();
-  let inputTamano = document.getElementById('validationCustom04')
+  let inputTamano = document.getElementById('validationCustom04');
   let inputNombre = document.getElementById('nombre');
   let inputMail = document.getElementById('correo');
   let inputTel = document.getElementById('telefono');
@@ -75,9 +75,8 @@ btnenviar.addEventListener('click', function (event) {
   alertError.style.display = 'none';
   alertError.innerHTML = '';
   validos = 0;
-  
+
   inputTamano.style.border = 'solid green 1px';
-  
 
   if (inputNombre.value.trim().replaceAll('  ', '').length < 3) {
     alertError.innerHTML += 'El nombre debe contener 3 caracteres o más.';
@@ -89,7 +88,7 @@ btnenviar.addEventListener('click', function (event) {
     inputNombre.style.border = 'solid green 1px';
     validos++;
   }
-  
+
   if (inputMail.value.match(email) == null) {
     alertError.style.display = 'block';
     alertError.innerHTML += '<br/>El correo electrónico no es válido.';
@@ -99,7 +98,10 @@ btnenviar.addEventListener('click', function (event) {
     validos++;
   }
   let telefonorex = /^\+52 \d{10}$/;
-  if (inputTel.value.match(telefonorex) == null || valicel(inputTel.value) == true) {
+  if (
+    inputTel.value.match(telefonorex) == null ||
+    valicel(inputTel.value) == true
+  ) {
     alertError.style.display = 'block';
     alertError.innerHTML +=
       '<br/>El formato de teléfono no es válido ejemplo: +52 6561920273';
@@ -108,10 +110,10 @@ btnenviar.addEventListener('click', function (event) {
     inputTel.style.border = 'solid green 1px';
     validos++;
   }
- 
 
   if (inputMensaje.value.trim().replaceAll('  ', '').length < 20) {
-    alertError.innerHTML += '<br/>El mensaje debe contener 20 caracteres o más.';
+    alertError.innerHTML +=
+      '<br/>El mensaje debe contener 20 caracteres o más.';
     alertError.style.display = 'block';
     inputMensaje.focus();
     inputMensaje.select();
@@ -120,32 +122,32 @@ btnenviar.addEventListener('click', function (event) {
     inputMensaje.style.border = 'solid green 1px';
     validos++;
   }
-  
-  if (inputImg.value.match(regexImg) == null) {
-      alertError.style.display = 'block';
-      alertError.innerHTML += '<br/>Tipo inválido de imagen.';
-      inputImg.style.border = 'solid red 1px';
-    } else {
-      inputImg.style.border = 'solid green 1px';
-      validos++;
-    }
 
-    if (idTimeout != undefined && idTimeout != null) {
-      clearTimeout(idTimeout);
-    }
-    if (validos == 4) {
-      setTimeout(function () {
-        inputMail.style.border = '';
-        inputMensaje.style.border = '';
-        inputTel.style.border = '';
-        inputNombre.style.border = '';
-      }, 3000);
-    }
+  if (inputImg.value.match(regexImg) == null) {
+    alertError.style.display = 'block';
+    alertError.innerHTML += '<br/>Tipo inválido de imagen.';
+    inputImg.style.border = 'solid red 1px';
+  } else {
+    inputImg.style.border = 'solid green 1px';
+    validos++;
+  }
 
   if (idTimeout != undefined && idTimeout != null) {
     clearTimeout(idTimeout);
   }
-  
+  if (validos == 4) {
+    setTimeout(function () {
+      inputMail.style.border = '';
+      inputMensaje.style.border = '';
+      inputTel.style.border = '';
+      inputNombre.style.border = '';
+    }, 3000);
+  }
+
+  if (idTimeout != undefined && idTimeout != null) {
+    clearTimeout(idTimeout);
+  }
+
   if (validos == 5) {
     setTimeout(function () {
       inputMail.style.border = '';
@@ -154,14 +156,27 @@ btnenviar.addEventListener('click', function (event) {
       inputNombre.style.border = '';
     }, 3000);
     console.log('ready');
-    Email.send({
-      SecureToken: '7a76b5a8-f99a-4d7e-8bcc-8c238b70f9bd',
-      To: 'patspruebaberry@gmail.com',
-      From: inputMail.value,
-      Subject: 'Pedido',
-      Body: inputMensaje.value,
-    
-    }).then((message) => alert('E-mail sent'));
+
+    function sendMail() {
+      let params = {
+        name: inputNombre.value,
+        email: inputMail.value,
+        message: `Especificaciones: ${inputMensaje.value}`,
+      };
+      const serviceId = 'service_e0jnp5r';
+      const templateId = 'template_eebgs5k';
+
+      emailjs.send(serviceId, templateId, params).then((res) => {
+        document.getElementById('nombre').value = '';
+        document.getElementById('correo').value = '';
+        document.getElementById('especificaciones').value = '';
+        console.log(res);
+        console.log('message sent');
+      });
+    }
+
+    sendMail();
+
     alertSuccess.style.display = 'block';
     alertSuccess.innerHTML += '<br/>Cotización enviada con éxito.';
     setTimeout(function () {
@@ -170,4 +185,3 @@ btnenviar.addEventListener('click', function (event) {
     }, 3000);
   }
 }); //JC validaciones
-

@@ -152,20 +152,19 @@ a:hover {
   text-align: justify;
 }
 
-.div-description{
+.div-description {
   padding-left: 15%;
   padding-right: 15%;
   margin: 5% 0;
   width: 100%;
 }
 
-.tittleteam{
+.titleteam {
   width: 100%;
   display: flex;
   justify-content: center;
-
-
 }
+
 #EquipoTech {
   font-family: 'Elsie', cursive;
   color: #bc0e73;
@@ -175,30 +174,40 @@ a:hover {
   width: fit-content;
 
   z-index: 0;
-  transition: all 500ms ease; 
-  }
-
-  #EquipoTech:hover {
-    letter-spacing: 0.30em;
-  }
-
-
-
-  #descripcionTech{
-    text-align: justify;
-    font-size: 15px;
-  }
-  
-.card-body > h4 {
-text-align: center;  
+  transition: all 500ms ease;
 }
 
-.iconosredes{
-  display:flex;
+#EquipoTech:hover {
+  letter-spacing: 0.3em;
+}
+
+#descripcionTech {
+  text-align: justify;
+  font-size: 15px;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: 1000ms;
+}
+
+.card-body > h4 {
+  text-align: center;
+}
+
+.card-body:hover {
+  background-color: rgba(244, 200, 227, 0.56);
+  color: #676767;
+  transition: 1000ms;
+}
+
+.iconosredes {
+  display: flex;
   justify-content: center;
   width: 100%;
 }
-
 
 .div-alon {
   grid-area: alon;
@@ -215,14 +224,13 @@ text-align: center;
 .div-carlos {
   grid-area: carlos;
 }
-
 .div-mildred {
   grid-area: mildred;
 }
 
 .myGrid {
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
     'desc desc'
@@ -231,30 +239,28 @@ text-align: center;
     'gaby gaby'
     'tannya tannya'
     'carlos carlos'
-    'jonathan jonathan'
     'mildred mildred';
-  gap: 5px;
+  gap: 15px;
   height: 100%;
 }
 
 @media (min-width: 600px) {
-  .card{
+  .card {
     min-height: 657px;
   }
   .myGrid {
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-areas:
       'desc desc desc desc'
       'alon alon juan juan'
       'gaby gaby tannya tannya'
-      'carlos carlos  jonathan jonathan'
-      '. mildred mildred .';
+      'carlos carlos  mildred mildred';
   }
 }
 
 @media (min-width: 900px) {
-  .card{
+  .card {
     min-height: 664px;
   }
   .navBar {
@@ -269,17 +275,21 @@ text-align: center;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-areas:
       '. . desc desc desc desc . .'
-      'alon alon juan juan gaby gaby tannya tannya'
-      '.carlos carlos jonathan jonathan mildred mildred .';
+      '. alon alon juan juan gaby gaby .'
+      '. tannya tannya carlos carlos mildred mildred .';
   }
 }
 
-@media (min-width: 1700px){
-  .card{
-    min-height: 845px;
+@media (min-width: 1700px) {
+  .card {
+    min-height: 800px;
+  }
+
+  #EquipoTech {
+    font-size: 55px;
+  }
+
+  #descripcionTech {
+    font-size: 20px;
   }
 }
-
-
-
-

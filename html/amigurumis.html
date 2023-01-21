@@ -52,7 +52,7 @@
             <a href="/html/libretas.html" class="dropdown-item">Libretas</a>
           </li>
         </ul>
-        
+
         <a href="/html/contacto.html">Contacto</a>
         <button
           class="btn dropdown-toggle"
@@ -69,7 +69,6 @@
             <a href="/html/registro.html">Crear cuenta</a>
           </li>
           <li>
-            
             <button
               id="btnLogout"
               type="button"
@@ -83,15 +82,14 @@
         </ul>
 
         <a href="/html/aboutTeam.html">Equipo</a>
-       <!-- Carrito -->
-       <a href="/html/carrito_compra.html">
-        <img
-        src ="/Logo-Iconos/shopping.svg"
-        alt="shopping"
-        style="width: 28px; height: auto" 
-        />
-      </a>
-      
+        <!-- Carrito -->
+        <a href="/html/carrito_compra.html">
+          <img
+            src="/Logo-Iconos/shopping.svg"
+            alt="shopping"
+            style="width: 28px; height: auto"
+          />
+        </a>
       </div>
       <div class="hamburger">
         <div class="_layer -top"></div>
@@ -107,24 +105,25 @@
           <li><a href="/html/contacto.html">Contacto</a></li>
           <li><a href="/html/aboutTeam.html">Equipo</a></li>
           <!-- Carrito hamburguesa -->
-          <li><a href="/html/carrito_compra.html">
-            <img
-            src ="/Logo-Iconos/shopping.svg"
-            alt="shopping"
-            style="width: 28px; height: auto" 
-            />
-          </a>
+          <li>
+            <a href="/html/carrito_compra.html">
+              <img
+                src="/Logo-Iconos/shopping.svg"
+                alt="shopping"
+                style="width: 28px; height: auto"
+              />
+            </a>
           </li>
           <li><a href="/html/registro.html">Crear Cuenta</a></li>
           <li id="bntLoginMob"><a href="/html/login.html">Log in</a></li>
-         <button
+          <button
             id="btnLogoutMob"
             type="button"
             class="btn btn-light"
             data-bs-toggle="modal"
-            data-bs-target="#exampleModal">
-            Log out 
-          </a>
+            data-bs-target="#exampleModal"
+          >
+            Log out
           </button>
         </ul>
       </nav>
@@ -139,12 +138,12 @@
           style="display: none"
           id="alertError"
         ></div>
-        <div 
-          class="alert alert-success" 
-          role="alert" 
-          id="alertSuccess" 
-          style="display: none">
-        </div>
+        <div
+          class="alert alert-success"
+          role="alert"
+          id="alertSuccess"
+          style="display: none"
+        ></div>
         <br />
         <fieldset>
           <div class="mb-3">
@@ -221,20 +220,20 @@
             ></textarea>
           </div>
           <br />
-        <div class="seleccionaImg">
-          <div class="input-group">
-            <input type="file" class="form-control" id="inputImg" />
-            <img
-              id="imageFile"
-              name="imageFile"
-              src=""
-              alt="Vista previa"
-              title="Vista previa"
-              width="auto"
-            />
+          <div class="seleccionaImg">
+            <div class="input-group">
+              <input type="file" class="form-control" id="inputImg" />
+              <img
+                id="imageFile"
+                name="imageFile"
+                src=""
+                alt="Vista previa"
+                title="Vista previa"
+                width="auto"
+              />
+            </div>
           </div>
-        </div>
-          <br>
+          <br />
         </fieldset>
 
         <!--<div class="input-group mb-3">
@@ -295,5 +294,15 @@
     ></script>
     <script src="/js/main.js"></script>
     <script src="/js/logout.js"></script>
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init('rK4q03xI9ykLX2Bo3');
+      })();
+    </script>
   </body>
 </html>
