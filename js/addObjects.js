@@ -115,10 +115,14 @@ window.addEventListener('load', function (event) {
 });
 
 function addItem(item) {
+  let imgSrc = item.image;
+  if(item.inputImg) {
+    imgSrc = item.inputImg;
+  }
   const itemHTML = `<div class="card" id="${item.name
     .toLowerCase()
     .replace(/ /g, '-')}"> 
-         <img src=${item.image} class="card-img-top" alt="image">
+         <img src=${imgSrc} class="card-img-top" alt="image">
           <div class="card-body" >
               <h5 class="card-title">${item.name}</h5>
                 <p class="card-price">$ ${item.price} MXN</p>
@@ -129,3 +133,4 @@ function addItem(item) {
   const itemsContainer = document.getElementById('list-items');
   itemsContainer.insertAdjacentHTML('beforeend', itemHTML);
 }
+
