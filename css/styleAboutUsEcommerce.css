@@ -1,6 +1,5 @@
 * {
   box-sizing: border-box;
-
 }
 html {
   width: 100%;
@@ -11,58 +10,63 @@ body {
   height: 100%;
 }
 
-
-
 /*main-------------------------------------------------------------------------------------------*/
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
 
-
-#AbtPatt{
+#AbtPatt {
   text-align: center;
 }
-.card-text{
-text-align: center;
-font-family: 'Roboto', sans-serif;
-font-weight: bold;
+.card-text {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
 }
-p{
-  color: rgb(103,103,103);
+p {
+  color: rgb(103, 103, 103);
 }
 
-.card-title{
+.card-title {
   color: rgb(188, 14, 115);
   text-align: center;
   font-family: 'Elsie', cursive;
-
 }
 
-.SobrePatts{
+.SobrePatts {
   display: grid;
   justify-content: center;
   align-items: center;
-
 }
 
-img{
+img {
   border-radius: 15px;
 }
-#FrutImg{
+#FrutImg {
   animation-name: opening-FrutImg;
   animation-duration: 1.6s;
   animation-timing-function: ease-in-out;
   background-color: transparent;
   width: 100px;
   height: auto;
-  margin:10px auto;
-display:block;
+  margin: 10px auto;
+  display: block;
 }
 
-@keyframes opening-FrutImg{
-  0%{
-      transform: scale(0);
+@keyframes opening-FrutImg {
+  0% {
+    transform: scale(0);
   }
-  100%{
-      transform: scale(1);
+  100% {
+    transform: scale(1);
   }
 }
 
-
+@media (min-width: 1024px) {
+  main {
+    height: calc(100% - 100px);
+  }
+}
