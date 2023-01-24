@@ -105,28 +105,27 @@ section {
 }
 
 #imgUno {
-  background-image: url('/Images/fotos/babyblue\ \(1\).jpg');
+  background-image: url('/Images/fotos/babyblue.webp');
   background-size: cover;
 }
 #imgDos {
-  background-image: url('/Images/fotos/WhatsApp\ Image\ 2022-12-06\ at\ 14.50.46.jpeg');
+  background-image: url('/Images/fotos/helga.webp');
   background-size: cover;
 }
 #imgTres {
-  background-image: url('/Images/fotos/lila\ \(1\).webp');
+  background-image: url('/Images/fotos/lila.webp');
   background-size: cover;
 }
 #imgCuatro {
-  background-image: url('/Images/fotos/libreta1\ \(1\).jpg');
+  background-image: url('/Images/fotos/libreta1.webp');
   background-size: cover;
 }
 #imgCinco {
-  background-image: url('/Images/fotos/pink2\ \(1\).jpg');
+  background-image: url('/Images/fotos/pink2.webp');
   background-size: cover;
-  background-position: right;
 }
 #imgSeis {
-  background-image: url('/Images/fotos/blue\ \(1\).jpg');
+  background-image: url('/Images/fotos/blue.webp');
   background-size: cover;
 }
 /* .pic:hover {
