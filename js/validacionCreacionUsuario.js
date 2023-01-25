@@ -37,26 +37,28 @@ btnenviar.addEventListener('click', function (event) {
   let alertSuccess = document.getElementById('alertSuccess');
   let pass1 = document.getElementById('password');
   let pass2 = document.getElementById('password02');
-  let email =
-    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  let emailRegex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   let telefonorex = /^\+52 \d{10}$/;
 
   let regex =
     /(?=(.*[0-9]))(?=.*[\!@#$%^&*()\\[\]{}\-_+=|:;"'<>,./?])(?=.*[a-z])(?=(.*[A-Z]))(?=(.*)).{8,}/;
 
+  
+
+
   alertError.style.display = 'none';
   alertError.innerHTML = '';
 
-  if (
-    inputNombre.value.trim().replaceAll('  ', '').length < 3 ||
-    inputMail.value.match(email) == null ||
-    inputTel.value.match(telefonorex) == null ||
-    valicel(inputTel.value) == true ||
-    pass1.value.length == 0 ||
-    pass1.value != pass2.value ||
-    pass1.value.match(regex) == null
-  ) {
-    alertSuccess.innerHTML += ''; //Previene la aparicion de alerta de Success si alguno de los campos es inválido
+    if (
+      inputNombre.value.trim().replaceAll('  ', '').length < 3 ||
+      inputMail.value.match(emailRegex) == null ||
+      inputTel.value.match(telefonorex) == null ||
+      valicel(inputTel.value) == true ||
+      pass1.value.length == 0 ||
+      pass1.value != pass2.value ||
+      pass1.value.match(regex) == null
+    ) {
+      alertSuccess.innerHTML += ''; //Previene la aparicion de alerta de Success si alguno de los campos es inválido
    
     if (inputNombre.value.trim().replaceAll('  ', '').length < 3) {
       alertError.innerHTML += 'El nombre debe contener 3 caracteres o más.';
@@ -70,16 +72,7 @@ btnenviar.addEventListener('click', function (event) {
       inputNombre.style.border = 'solid green 3px';
       validos++;
     }
-    if (inputMail.value.match(email) == null) {
-      alertError.style.display = 'block';
-      alertError.innerHTML += '<br/>El correo electrónico no es válido.';
-      inputMail.style.background = '#f8d7da';
-      inputMail.style.border = 'solid red 3px';
-    } else {
-      inputMail.style.background = '#fff';
-      inputMail.style.border = 'solid green 3px';
-      validos++;
-    }
+
     if (
       inputTel.value.match(telefonorex) == null ||
       valicel(inputTel.value) == true
@@ -94,7 +87,7 @@ btnenviar.addEventListener('click', function (event) {
       inputTel.style.border = 'solid green 3px';
       validos++;
     }
-    //revisa que los campos de la contraseña coincidan y que los campos no estén vacíos
+//revisa que los campos de la contraseña coincidan y que los campos no estén vacíos
     if (pass1.value.length == 0) {
       alertError.style.display = 'block';
       alertError.innerHTML += '<br/>Se requiere una contraseña';
@@ -116,10 +109,9 @@ btnenviar.addEventListener('click', function (event) {
     } else {
       pass2.style.background = '#fff';
       pass2.style.border = 'solid green 3px';
-      validos++;
     }
 
-    
+
     if (pass1.value.match(regex) == null) {
       alertError.style.display = 'block';
       alertError.innerHTML +=
@@ -132,7 +124,43 @@ btnenviar.addEventListener('click', function (event) {
       validos++;
     }
 
-    if (validos == 5) {
+//Verifica que el email sea válido.
+    let datosUsuario = JSON.parse(localStorage.getItem("datosUsuario"));
+    if (!emailRegex.test(inputMail.value)) {
+      alertError.style.display = 'block';
+      alertError.innerHTML += '<br/>El correo electrónico no es válido.';
+      inputMail.style.background = '#f8d7da';
+      inputMail.style.border = 'solid red 3px';
+      return false;
+    }
+    
+//Verificar si el correo electrónico ya está registrado
+    if (datosUsuario) {
+      for (let i = 0; i < datosUsuario.length; i++) {
+        if (datosUsuario[i].correo === inputMail.value) {
+          alertError.style.display = 'block';
+          alertError.innerHTML += '<br/> Este correo electrónico ya está registrado. Por favor, ingrese otro.'
+          inputMail.focus();
+          inputMail.select();
+          inputMail.style.background = '#f8d7da';
+          inputMail.style.border = 'solid red 3px';
+          return false;
+        } else {
+          inputMail.style.background = '#fff';
+          inputMail.style.border = 'solid green 3px';
+          validos++;
+        }
+      }
+    } else {
+      // No hay datos guardados en el almacenamiento local
+      inputMail.style.background = '#fff';
+      inputMail.style.border = 'solid green 3px';
+      validos++;
+    }
+
+    
+
+    if (validos === 6) {
       setTimeout(function () {
       inputNombre.value = '';
       inputNombre.style.border = '';
@@ -149,18 +177,15 @@ btnenviar.addEventListener('click', function (event) {
       pass2.value= '';
       pass2.style.border = '';
       pass2.style.background = '#fff';
-      
-    }, 3000);
+    }, 2000);
 
       console.log('ready');
     }
 
-  } else {
+    } else {
     if (idTimeout != undefined && idTimeout != null) {
       clearTimeout(idTimeout);
     }
-
-    
 
     let elemento = `{
     "nombre": "${inputNombre.value} ",
@@ -168,7 +193,7 @@ btnenviar.addEventListener('click', function (event) {
     "telefono": "${inputTel.value}",
     "password": "${inputPassword.value}" 
     }`;
-
+    
     datosUsuario.push(JSON.parse(elemento));
     console.log(datosUsuario);
     localStorage.setItem('datosUsuario', JSON.stringify(datosUsuario));
@@ -188,9 +213,6 @@ btnenviar.addEventListener('click', function (event) {
       alertSuccess.innerHTML += '';
     }, 1500);
   }
-
-    
-
 
 }); //JC validaciones
 
