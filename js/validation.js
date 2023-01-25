@@ -67,7 +67,7 @@ btnenviar.addEventListener('click', function (event) {
   let inputMensaje = document.getElementById('especificaciones');
   let alertError = document.getElementById('alertError');
   let inputImg = document.getElementById('inputImg');
-  let alertSuccess = document.getElementById('alertSuccess');
+ 
 
   let email =
     /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -100,14 +100,14 @@ btnenviar.addEventListener('click', function (event) {
     inputMail.style.border = 'solid green 3px';
     validos++;
   }
-  let telefonorex = /^\+52 \d{10}$/;
+  let telefonorex = /^\d{10}$/;
   if (
     inputTel.value.match(telefonorex) == null ||
     valicel(inputTel.value) == true
   ) {
     alertError.style.display = 'block';
     alertError.innerHTML +=
-      '<br/>El formato de teléfono no es válido ejemplo: +52 6561920273';
+      '<br/>El formato de teléfono no es válido ejemplo: 5511223344';
     inputTel.style.background = '#f8d7da';
     inputTel.style.border = 'solid red 3px';
     } else {
@@ -188,11 +188,6 @@ btnenviar.addEventListener('click', function (event) {
 
     sendMail();
 
-    alertSuccess.style.display = 'block';
-    alertSuccess.innerHTML += '<br/>Cotización enviada con éxito.';
-    setTimeout(function () {
-      alertSuccess.style.display = 'none';
-      alertSuccess.innerHTML += '';
-    }, 3000);
+    Swal.fire('Se ha enviado la cotización con exito.', '', 'success')
   }
 }); //JC validaciones

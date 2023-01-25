@@ -146,10 +146,8 @@ btnenviar.addEventListener('click', function (event) {
   let inputDescripcion = document.getElementById('description');
   let inputImg = document.getElementById('inputImg');
   let alertError = document.getElementById('alertError');
-  let alertSuccess = document.getElementById('alertSuccess');
+  
 
-  alertSuccess.style.display = 'none';
-  alertSuccess.innerHTML = '';
   alertError.style.display = 'none';
   alertError.innerHTML = '';
   validos = 0;
@@ -235,12 +233,7 @@ btnenviar.addEventListener('click', function (event) {
     "inputImg": "${base64}" 
     
     }`;
-    alertSuccess.style.display = 'block';
-    alertSuccess.innerHTML += '<br/>Producto creado con éxito.';
-    setTimeout(function () {
-      alertSuccess.style.display = 'none';
-      alertSuccess.innerHTML += '';
-    }, 3000);
+    Swal.fire('Se ha registro el objeto con exito.', '', 'success')
 
     productosPB.push(JSON.parse(elemento));
     localStorage.setItem('productosPB', JSON.stringify(productosPB));

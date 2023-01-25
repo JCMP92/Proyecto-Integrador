@@ -8,7 +8,6 @@ btnenviar.addEventListener('click', function (event) {
   let inputUsuario = document.getElementById('usuario');
   let inputPassword = document.getElementById('password');
   let alertError = document.getElementById('alertError');
-  let alertSuccess = document.getElementById('alertSuccess');
 
   let pass1 = document.getElementById('password');
   let email =
@@ -16,8 +15,6 @@ btnenviar.addEventListener('click', function (event) {
 
   alertError.style.display = 'none';
   alertError.innerHTML = '';
-  alertSuccess.style.display = 'none';
-  alertSuccess.innerHTML = '';
   
   if (inputUsuario.value.match(email) == null || pass1.value.length == 0) {
     alertError.style.display = 'block';
@@ -51,8 +48,7 @@ else{
         inputPassword.style.background = '#fff';
         inputPassword.style.border = 'solid green 3px';
         sessionStorage.setItem('currentUser', username);
-        alertSuccess.style.display = 'block';
-        alertSuccess.innerHTML += '<br/>Inicio de sesión exitoso.';
+        Swal.fire('Se ha iniciado sesión con exito.', '', 'success')
         setTimeout(() => {
           window.location.href = '../index.html'; 
         }, 2000);

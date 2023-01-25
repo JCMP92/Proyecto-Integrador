@@ -34,12 +34,11 @@ btnenviar.addEventListener('click', function (event) {
   let inputPassword = document.getElementById('password');
   let inputPassword2 = document.getElementById('password02');
   let alertError = document.getElementById('alertError');
-  let alertSuccess = document.getElementById('alertSuccess');
   let pass1 = document.getElementById('password');
   let pass2 = document.getElementById('password02');
 
   let emailRegex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  let telefonorex = /^\+52 \d{10}$/;
+  let telefonorex = /^\d{10}$/;
 
   let regex =
     /(?=(.*[0-9]))(?=.*[\!@#$%^&*()\\[\]{}\-_+=|:;"'<>,./?])(?=.*[a-z])(?=(.*[A-Z]))(?=(.*)).{8,}/;
@@ -68,7 +67,7 @@ btnenviar.addEventListener('click', function (event) {
     ) {
       alertError.style.display = 'block';
       alertError.innerHTML +=
-        '<br/>El formato de teléfono no es válido ejemplo: +52 6561920273';
+        '<br/>El formato de teléfono no es válido ejemplo: 5511223344';
       inputTel.style.background = '#f8d7da';
       inputTel.style.border = 'solid red 3px';
     } else {
@@ -190,13 +189,9 @@ btnenviar.addEventListener('click', function (event) {
     inputNombre.value = '';
     inputPassword2.value='';
     inputNombre.focus();
-
-    alertSuccess.style.display = 'block';
-    alertSuccess.innerHTML += '<br/>Registro exitoso';
+    Swal.fire('Se ha creado el usuario con exito.', '', 'success')
     setTimeout(function () {
       window.location.href = '../html/login.html'; 
-      alertSuccess.style.display = 'none';
-      alertSuccess.innerHTML += '';
     }, 1500);
   }
 
