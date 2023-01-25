@@ -15,7 +15,10 @@ btnenviar.addEventListener('click', function (event) {
 
   alertError.style.display = 'none';
   alertError.innerHTML = '';
-  
+  if (sessionStorage.getItem('currentUser')) {
+    alertError.style.display = 'block';
+    alertError.innerHTML += 'Ya existe una sesión activa. Por favor cierra sesión antes de iniciar sesión nuevamente.';
+  } else {
   if (inputUsuario.value.match(email) == null || pass1.value.length == 0) {
     alertError.style.display = 'block';
     alertError.innerHTML += 'Datos inválidos. Por favor rellene ambos campos';
@@ -64,7 +67,7 @@ else{
     let inputPassword = document.getElementById('password');
     login(inputUsuario.value, inputPassword.value);
   }
-});
+}});
 btnregistrar.addEventListener('click', function (event) {
   event.preventDefault();
   window.location.href = '../html/Registro.html'; 

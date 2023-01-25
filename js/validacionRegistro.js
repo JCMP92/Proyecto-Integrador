@@ -205,7 +205,7 @@ btnenviar.addEventListener('click', function (event) {
       inputImg.style.backgroud = '#f8d7da';
       inputImg.style.border = 'solid red 3px';
     } else {
-      inputImg.style.style.backgroud = '#fff';
+      inputImg.style.backgroud = '#fff';
       inputImg.style.border = 'solid green 3px';
       validos++;
     }

@@ -190,4 +190,6 @@ btnenviar.addEventListener('click', function (event) {
 
     Swal.fire('Se ha enviado la cotización con exito.', '', 'success')
   }
+   //focusNombre
+   alertError.scrollIntoView();
 }); //JC validaciones
