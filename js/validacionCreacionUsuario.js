@@ -1,7 +1,7 @@
 let btnenviar = document.getElementById('btnEnviar');
 let idTimeout;
 let datosUsuario = [];
-let validos = 0;
+
 
 function valicel(numero) {
   // Crear un objeto para almacenar la cantidad de veces que se repite cada dígito
@@ -37,28 +37,17 @@ btnenviar.addEventListener('click', function (event) {
   let alertSuccess = document.getElementById('alertSuccess');
   let pass1 = document.getElementById('password');
   let pass2 = document.getElementById('password02');
+
   let emailRegex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   let telefonorex = /^\+52 \d{10}$/;
 
   let regex =
     /(?=(.*[0-9]))(?=.*[\!@#$%^&*()\\[\]{}\-_+=|:;"'<>,./?])(?=.*[a-z])(?=(.*[A-Z]))(?=(.*)).{8,}/;
 
-  
-
-
   alertError.style.display = 'none';
   alertError.innerHTML = '';
-
-    if (
-      inputNombre.value.trim().replaceAll('  ', '').length < 3 ||
-      inputMail.value.match(emailRegex) == null ||
-      inputTel.value.match(telefonorex) == null ||
-      valicel(inputTel.value) == true ||
-      pass1.value.length == 0 ||
-      pass1.value != pass2.value ||
-      pass1.value.match(regex) == null
-    ) {
-      alertSuccess.innerHTML += ''; //Previene la aparicion de alerta de Success si alguno de los campos es inválido
+  validos = 0;
+    
    
     if (inputNombre.value.trim().replaceAll('  ', '').length < 3) {
       alertError.innerHTML += 'El nombre debe contener 3 caracteres o más.';
@@ -132,6 +121,10 @@ btnenviar.addEventListener('click', function (event) {
       inputMail.style.background = '#f8d7da';
       inputMail.style.border = 'solid red 3px';
       return false;
+    } else {
+      inputMail.style.background = '#fff';
+      inputMail.style.border = 'solid green 3px';
+      validos++;
     }
     
 //Verificar si el correo electrónico ya está registrado
@@ -144,23 +137,20 @@ btnenviar.addEventListener('click', function (event) {
           inputMail.select();
           inputMail.style.background = '#f8d7da';
           inputMail.style.border = 'solid red 3px';
-          return false;
-        } else {
-          inputMail.style.background = '#fff';
-          inputMail.style.border = 'solid green 3px';
-          validos++;
+          validos--;
+          return false;  
         }
-      }
-    } else {
-      // No hay datos guardados en el almacenamiento local
-      inputMail.style.background = '#fff';
-      inputMail.style.border = 'solid green 3px';
-      validos++;
+        }  
+        }else {
+        inputMail.style.background = '#fff';
+        inputMail.style.border = 'solid green 3px';
+        validos++;
     }
 
-    
-
-    if (validos === 6) {
+    if (idTimeout != undefined && idTimeout != null) {
+      clearTimeout(idTimeout);
+    }
+    if (validos == 5) {
       setTimeout(function () {
       inputNombre.value = '';
       inputNombre.style.border = '';
@@ -177,26 +167,22 @@ btnenviar.addEventListener('click', function (event) {
       pass2.value= '';
       pass2.style.border = '';
       pass2.style.background = '#fff';
-    }, 2000);
-
-      console.log('ready');
-    }
-
-    } else {
-    if (idTimeout != undefined && idTimeout != null) {
-      clearTimeout(idTimeout);
-    }
-
-    let elemento = `{
-    "nombre": "${inputNombre.value} ",
-    "correo": "${inputMail.value}",
-    "telefono": "${inputTel.value}",
-    "password": "${inputPassword.value}" 
-    }`;
+    }, 3000);
+    console.log('ready');
     
-    datosUsuario.push(JSON.parse(elemento));
-    console.log(datosUsuario);
-    localStorage.setItem('datosUsuario', JSON.stringify(datosUsuario));
+
+    
+    let elemento = `{
+        "nombre": "${inputNombre.value} ",
+        "correo": "${inputMail.value}",
+        "telefono": "${inputTel.value}",
+        "password": "${inputPassword.value}" 
+        }`;
+
+        datosUsuario.push(JSON.parse(elemento));
+        console.log(datosUsuario);
+        localStorage.setItem('datosUsuario', JSON.stringify(datosUsuario));
+    
 
     inputMail.value = '';
     inputPassword.value = '';
