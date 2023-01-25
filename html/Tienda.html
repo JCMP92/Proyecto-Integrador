@@ -83,13 +83,25 @@
 
         <a href="/html/aboutTeam.html">Equipo</a>
         <!-- Carrito -->
-        <a href="/html/carrito_compra.html">
+        <button
+          class="btn dropdown-toggle"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
           <img
             src="/Logo-Iconos/shopping.svg"
             alt="shopping"
             style="width: 28px; height: auto"
           />
-        </a>
+        </button>
+        <ul class="dropdown-menu">
+          <li id="bntLogin">
+            <a href="/html/login.html" class="dropdown-item">Log in</a>
+          </li>
+          <li>
+            <a href="/html/registro.html" class="dropdown-item">Crear cuenta</a>
+          </li>
+        </ul>
       </div>
       <div class="hamburger">
         <div class="_layer -top"></div>

@@ -1,3 +1,4 @@
+let carritoPB = [];
 let productosPB = [
   {
     // Nombre de la libreta
@@ -116,21 +117,60 @@ window.addEventListener('load', function (event) {
 
 function addItem(item) {
   let imgSrc = item.image;
-  if(item.inputImg) {
+  if (item.inputImg) {
     imgSrc = item.inputImg;
   }
-  const itemHTML = `<div class="card" id="${item.name
-    .toLowerCase()
-    .replace(/ /g, '-')}"> 
-         <img src=${imgSrc} class="card-img-top" alt="image">
-          <div class="card-body" >
-              <h5 class="card-title">${item.name}</h5>
-                <p class="card-price">$ ${item.price} MXN</p>
-              <p class="card-text">${item.description}</p>
-              <a href="#" class="btn btn-primary">Añadir</a>
-          </div>
-      </div>`;
-  const itemsContainer = document.getElementById('list-items');
-  itemsContainer.insertAdjacentHTML('beforeend', itemHTML);
-}
 
+  const itemCard = document.createElement('div');
+  const itemImg = document.createElement('img');
+  const itemBody = document.createElement('div');
+  const itemTilte = document.createElement('h5');
+  const itemPrice = document.createElement('p');
+  const itemDescr = document.createElement('p');
+  const addBtn = document.createElement('button');
+
+  itemCard.setAttribute(
+    'id',
+    `${item.name.toLowerCase().trim().replace(/ /g, '-')}`
+  );
+  itemCard.classList.add('card');
+  itemImg.classList.add('card-img-top');
+  itemBody.classList.add('card-body');
+  itemTilte.classList.add('card-title');
+  itemPrice.classList.add('card-price');
+  itemDescr.classList.add('card-text');
+  addBtn.classList.add('btn', 'btn-primary', 'btnTienda');
+
+  itemImg.src = `${imgSrc}`;
+  itemTilte.textContent = `${item.name}`;
+  itemPrice.textContent = `$ ${item.price} MXN`;
+  itemDescr.textContent = `${item.description}`;
+  addBtn.textContent = 'Añadir';
+
+  // Event Listeners -------------------------------------------------------------------->
+  addBtn.addEventListener('click', function (e) {
+    e.preventDefault;
+    console.log(e.target.parentNode.parentNode.id);
+
+    let itemToCart = `{
+    "name": "${itemTilte.textContent}",
+    "price": "${itemPrice.textContent}",
+    "description": "${itemDescr.textContent}",
+    "inputImg": "${imgSrc}" 
+    }`;
+
+    carritoPB.push(JSON.parse(itemToCart));
+    localStorage.setItem('carritoPB', JSON.stringify(carritoPB));
+  });
+
+  itemBody.append(itemTilte);
+  itemBody.append(itemPrice);
+  itemBody.append(itemDescr);
+  itemBody.append(addBtn);
+
+  itemCard.append(itemImg);
+  itemCard.append(itemBody);
+
+  const itemsContainer = document.getElementById('list-items');
+  itemsContainer.append(itemCard);
+}
