@@ -72,17 +72,3 @@ btnregistrar.addEventListener('click', function (event) {
   event.preventDefault();
   window.location.href = '../html/Registro.html'; 
 });
-// btnenviar.addEventListener('click', function (event) {
-//   event.preventDefault;
-//   let tmp = localStorage.getItem('datosUsuario');
-//   if (tmp != null) {
-//     datosUsuario = JSON.parse(tmp);
-//     let inputUsuario = document.getElementById('usuario');
-//     let inputPassword = document.getElementById('password');
-
-//     login(inputUsuario.value, inputPassword.value);
-
-//     // console.log(datosUsuario[0].correo);
-//     // console.log(datosUsuario[0].password);
-//   }
-// });

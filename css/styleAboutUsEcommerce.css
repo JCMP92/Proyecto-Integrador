@@ -16,6 +16,7 @@ main {
   flex-direction: column;
   justify-content: center;
   width: 100%;
+  margin-top: 50px;
 }
 
 #AbtPatt {
@@ -40,6 +41,7 @@ p {
   display: grid;
   justify-content: center;
   align-items: center;
+  margin-top: 30px;
 }
 
 img {
@@ -65,8 +67,4 @@ img {
   }
 }
 
-@media (min-width: 1024px) {
-  main {
-    height: calc(100% - 100px);
-  }
-}
+

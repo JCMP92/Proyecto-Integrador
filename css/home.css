@@ -128,28 +128,7 @@ section {
   background-image: url('/Images/fotos/blue.webp');
   background-size: cover;
 }
-/* .pic:hover {
-  opacity: 0.3;
-  transform: scale(0.9, 0.9);
-}
 
-.textHome {
-  font-family: 'Roboto', sans-serif;
-  color: #676767;
-  font-size: 120%;
-  font-weight: bolder;
-  text-align: center;
-}
-
- */
-/* @keyframes text {
-  from {
-    right: 50%;
-  }
-  to {
-    right: 50%;
-  }
-} */
 
 /* Mediaquery ------------------------------------------------------------------------------------------------------------------------*/
 

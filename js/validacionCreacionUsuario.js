@@ -103,7 +103,7 @@ btnenviar.addEventListener('click', function (event) {
     if (pass1.value.match(regex) == null) {
       alertError.style.display = 'block';
       alertError.innerHTML +=
-        '<br/>La contraseña debe contener más de 8 caracteres, un caracter especial (mayúscula, números, símbolos)';
+        '<br/>La contraseña debe contener más de 8 caracteres, un caracter especial';
       inputPassword.style.background = '#f8d7da';
       inputPassword.style.border = 'solid red 3px';
     } else {
