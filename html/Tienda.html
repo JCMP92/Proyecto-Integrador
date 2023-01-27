@@ -16,6 +16,8 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap"
       rel="stylesheet"
     />
+    <script src="sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="sweetalert2.min.css">
     <link rel="stylesheet" href="/css/styleCarrito.css">
     <link rel="stylesheet" href="/css/normalize.css" />
     <link
@@ -83,24 +85,14 @@
         </ul>
         <a href="/html/aboutTeam.html">Equipo</a>
   <!-- Carrito -->
-        <button
-          class="btn dropdown-toggle"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-        >
-          <img
-            src="/Logo-Iconos/shopping.svg"
-            alt="shopping"
-            style="width: 28px; height: auto"
-          />
-        </button>
-        <ul class="dropdown-menu">
-          <li id="bntLogin">
-            
-          </li>
-        </ul>
-      </div>
-
+  <a href="/html/carrito_compra.html">
+    <img
+      src="/Logo-Iconos/shopping.svg"
+      alt="shopping"
+      style="width: 28px; height: auto"
+    />
+  </a>
+        
 <!--termina carrito-->
 
       <div class="hamburger">
@@ -142,42 +134,8 @@
       </nav>
     </nav>
 <!--main-->
-<header>
-  <h1>Tienda</h1>
-  <div class="container-icon">
-    
-    <button
-      class="btn dropdown-toggle btnCesta"
-      data-bs-toggle="dropdown"
-      aria-expanded="false">
-    <img src="/Logo-Iconos/cesta.png" alt="">
-    <div class="count-products">
-      <span id="contador-productos">0</span>
-    </div>
-    </button>
-      <ul class="dropdown-menu">
-        <li id="bntLogin">
-          <div id="carrito" >
-            <table id="lista-carrito" class="table">
-                <thead>
-                    <tr>
-                        <th>imagen</th>
-                        <th>Nombre</th>
-                        <th>Precio</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
-            <a href="#" id="vaciar-carrito" class="btn btn-primary btn-block">Vaciar Carrito</a>
-            <a href="#" id="procesar-pedido" class="btn btn-danger btn-block">Procesar
-                Compra</a>
-        </div>
-        </li>
-      </ul>
-  </div>
-</header>
 
+  <h1>Tienda</h1>
     <main>
       <div id="list-items"></div>
     </main>
@@ -211,6 +169,7 @@
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
       crossorigin="anonymous"
     ></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- <script src="/js/validacionRegistro.js"></script> -->
     <script src="/js/addObjects.js"></script>
     <script src="/js/main.js"></script>

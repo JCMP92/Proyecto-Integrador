@@ -1,0 +1,14 @@
+h1 {
+    font-family: 'Elsie', cursive;
+    font-size: 25px;
+    color: #bc0e73;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    
+}
+
+.cuerpoListaCarrito{
+    color: rgb(103, 103, 103);
+}
