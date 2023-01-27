@@ -2,6 +2,8 @@ let logoutbtn = document.getElementById('btnLogout');
 let logoutbtnMob = document.getElementById('btnLogoutMob');
 let loginbtn = document.getElementById('bntLogin');
 let loginbtnMob = document.getElementById('bntLoginMob');
+let bntCreateAc = document.getElementById('bntCreateAc');
+let bntCreateAcMob = document.getElementById('bntCreateAcMob');
 // let exampleModal = document.getElementById('exampleModal');
 
 //Boolean login
@@ -16,6 +18,8 @@ if (!isLogged) {
 } else if (isLogged) {
   loginbtn.style.display = 'none';
   loginbtnMob.style.display = 'none';
+  bntCreateAc.style.display = 'none';
+  bntCreateAcMob.style.display = 'none';
 }
 
 function logout() {
