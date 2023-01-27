@@ -103,6 +103,18 @@ let productosPB = [
   },
 ];
 
+const Toast = Swal.mixin({
+  toast: true,
+  position: 'top-end',
+  showConfirmButton: false,
+  timer: 2000,
+  timerProgressBar: true,
+  didOpen: (toast) => {
+    toast.addEventListener('mouseenter', Swal.stopTimer);
+    toast.addEventListener('mouseleave', Swal.resumeTimer);
+  },
+});
+
 window.addEventListener('load', function (event) {
   let tmp = localStorage.getItem('productosPB');
   if (tmp != null) {
@@ -113,6 +125,13 @@ window.addEventListener('load', function (event) {
   productosPB.forEach((producto) => {
     addItem(producto);
   });
+});
+window.addEventListener('load', function (event) {
+  let tmp = localStorage.getItem('carritoPB');
+  if (tmp != null) {
+    carritoPB = JSON.parse(tmp);
+    console.log(productosPB);
+  } //if
 });
 
 function addItem(item) {
@@ -154,18 +173,17 @@ function addItem(item) {
 
     let itemToCart = `{
     "name": "${itemTilte.textContent}",
-    "price": "${itemPrice.textContent}",
+    "price": "${item.price}",
     "description": "${itemDescr.textContent}",
     "inputImg": "${imgSrc}" 
     }`;
 
     carritoPB.push(JSON.parse(itemToCart));
     localStorage.setItem('carritoPB', JSON.stringify(carritoPB));
-    
-    
+
     Toast.fire({
       icon: 'success',
-      title: '¡Agregado al carrito!'
+      title: '¡Agregado al carrito!',
     });
   });
 
@@ -180,16 +198,3 @@ function addItem(item) {
   const itemsContainer = document.getElementById('list-items');
   itemsContainer.append(itemCard);
 }
-
-const Toast = Swal.mixin({
-  toast: true,
-  position: 'top-end',
-  showConfirmButton: false,
-  timer: 2000,
-  timerProgressBar: true,
-  didOpen: (toast) => {
-    toast.addEventListener('mouseenter', Swal.stopTimer)
-    toast.addEventListener('mouseleave', Swal.resumeTimer)
-  }
-})
-
