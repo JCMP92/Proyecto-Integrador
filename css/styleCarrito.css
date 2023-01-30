@@ -1,14 +1,130 @@
-h1 {
-    font-family: 'Elsie', cursive;
-    font-size: 25px;
-    color: #bc0e73;
-    text-align: center;
-    font-weight: bold;
-    margin-top: 20px;
-    margin-bottom: 30px;
-    
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.cuerpoListaCarrito{
-    color: rgb(103, 103, 103);
+main {
+  height: 85%;
+  width: auto;
+  margin: 15px; 
+  padding: 25px;
+  border: 4px solid #f4c8e3;
+  border-radius: 15px;
+  overflow: scroll;
+  }
+
+h1 {
+  font-family: "Elsie", "cursive";
+  font-size: 25px;
+  color: #bc0e73;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  padding-top: 20px;
+}
+
+h2 {
+  font-family: "Elsie", cursive;
+  color: #bc0e73;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.itemListaImg {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+
+}
+
+.itemListaElement {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
+.itemListaElement:hover{
+    border: #bc0e73 solid;
+    border-radius: 10px;
+     }
+
+
+.cuerpoListaCarrito {
+  color: rgb(103, 103, 103);
+  display: grid;
+  /* width: 50%; */
+  grid-template-columns: 50% 50%;   
+ gap: 30px;
+ border-bottom: 20px;
+ 
+}
+
+
+
+/*-------------------------------------------*/
+
+@media (min-width: 640px) {
+  #list-items {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  h1 {
+    font-size: 35px;
+  }
+}
+
+@media (min-width: 800px) {
+  .card {
+    width: 380px;
+    height: 250px;
+  }
+
+  .card-title {
+    font-size: 16px;
+  }
+
+  .card-price {
+    font-size: 14px;
+  }
+
+  .card-text {
+    font-size: 12px;
+  }
+
+  .card-body {
+    padding: 7px;
+  }
+}
+
+@media (min-width: 1300px) {
+  #list-items {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+  }
+
+  .card {
+    width: 420px;
+    height: 280px;
+  }
+
+  .card-title {
+    font-size: 18px;
+  }
+
+  .card-price {
+    font-size: 16px;
+  }
+
+  .card-text {
+    font-size: 14px;
+  }
+
+  .card-body {
+    padding: 9px;
+  }
 }
