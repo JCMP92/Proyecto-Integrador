@@ -1,11 +1,17 @@
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
+}
+html {
+  width: 100%;
+  height: 100%;
+}
+body {
+  width: 100%;
+  height: 100%;
 }
 
 h1 {
-  font-family: "Elsie", "cursive";
+  font-family: 'Elsie', 'cursive';
   font-size: 25px;
   color: #bc0e73;
   text-align: center;
@@ -16,12 +22,17 @@ h1 {
 }
 
 h2 {
-  font-family: "Elsie", cursive;
+  font-family: 'Elsie', cursive;
   color: #bc0e73;
   font-weight: bold;
   margin-top: 20px;
   margin-bottom: 30px;
   text-align: center;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .itemListaDelete {
@@ -37,13 +48,12 @@ h2 {
   width: 100px;
   height: 100px;
   border-radius: 10px;
-  margin: 10px ;
-
+  margin: 10px;
 }
 
 .itemListaElement {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   align-items: center;
 }
 
@@ -55,11 +65,11 @@ h2 {
 .cuerpoListaCarrito {
   display: grid;
   grid-auto-rows: 15rem;
-  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); 
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
   gap: 10px;
   border: 4px solid #f4c8e3;
   height: 70%;
-  width: auto;
+  width: 80%;
   margin: 15px;
   padding-top: 25px;
   padding-bottom: 50px;
@@ -67,19 +77,18 @@ h2 {
   overflow: scroll;
 }
 
-.Totalcompra{
+.totalCompra {
+  display: flex;
+  justify-content: space-around;
   border: 5px solid #f4c8e3;
   height: 100%;
-  width: auto;
-   margin: 15px; 
+  width: 80%;
+  margin: 15px;
   padding-top: 50px;
   padding-bottom: 50px;
   border-radius: 15px;
-  align-items:center;
-
-  
+  align-items: center;
 }
-
 
 /*-------------------------------------------*/
 
@@ -114,6 +123,9 @@ h2 {
 
   .card-body {
     padding: 7px;
+  }
+  .totalCompra {
+    max-width: 500px;
   }
 }
 

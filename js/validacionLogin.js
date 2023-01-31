@@ -17,58 +17,57 @@ btnenviar.addEventListener('click', function (event) {
   alertError.innerHTML = '';
   if (sessionStorage.getItem('currentUser')) {
     alertError.style.display = 'block';
-    alertError.innerHTML += 'Ya existe una sesión activa. Por favor cierra sesión antes de iniciar sesión nuevamente.';
+    alertError.innerHTML +=
+      'Ya existe una sesión activa. Por favor cierra sesión antes de iniciar sesión nuevamente.';
   } else {
-  if (inputUsuario.value.match(email) == null || pass1.value.length == 0) {
-    alertError.style.display = 'block';
-    alertError.innerHTML += 'Datos inválidos. Por favor rellene ambos campos';
-    inputUsuario.style.background = '#f8d7da';
-    inputUsuario.style.border = 'solid red 3px';
-    inputPassword.style.background = '#f8d7da';
-    inputPassword.style.border = 'solid red 3px';
-  }
-else{
-    alertError.style.display = 'block';
-    alertError.innerHTML += 'Datos inválidos. Por favor rellene ambos campos.';
-    inputUsuario.style.background = '#f8d7da';
-    inputUsuario.style.border = 'solid red 3px';
-    inputPassword.style.background = '#f8d7da';
-    inputPassword.style.border = 'solid red 3px';
-    
- }
-    //Modal
-  
-
-  function login(username, password) {
-    let users = JSON.parse(localStorage.getItem('datosUsuario'));
-    for (let i = 0; i < users.length; i++) {
-      if (users[i].correo == username && users[i].password == password) {
-        validos++;
-        alertError.style.display = 'none';
-        alertError.innerHTML += '';
-        inputUsuario.style.background = '#fff';
-        inputUsuario.style.border = 'solid green 3px';
-        inputPassword.style.background = '#fff';
-        inputPassword.style.border = 'solid green 3px';
-        sessionStorage.setItem('currentUser', username);
-        Swal.fire('Se ha iniciado sesión con exito.', '', 'success')
-        setTimeout(() => {
-          window.location.href = '../index.html'; 
-        }, 2000);
-        return;
-      } 
+    if (inputUsuario.value.match(email) == null || pass1.value.length == 0) {
+      alertError.style.display = 'block';
+      alertError.innerHTML += 'Datos inválidos. Por favor rellene ambos campos';
+      inputUsuario.style.background = '#f8d7da';
+      inputUsuario.style.border = 'solid red 3px';
+      inputPassword.style.background = '#f8d7da';
+      inputPassword.style.border = 'solid red 3px';
+    } else {
+      alertError.style.display = 'block';
+      alertError.innerHTML +=
+        'Datos inválidos. Por favor rellene ambos campos.';
+      inputUsuario.style.background = '#f8d7da';
+      inputUsuario.style.border = 'solid red 3px';
+      inputPassword.style.background = '#f8d7da';
+      inputPassword.style.border = 'solid red 3px';
     }
-    
+    //Modal
+
+    function login(username, password) {
+      let users = JSON.parse(localStorage.getItem('datosUsuario'));
+      for (let i = 0; i < users.length; i++) {
+        if (users[i].correo == username && users[i].password == password) {
+          validos++;
+          alertError.style.display = 'none';
+          alertError.innerHTML += '';
+          inputUsuario.style.background = '#fff';
+          inputUsuario.style.border = 'solid green 3px';
+          inputPassword.style.background = '#fff';
+          inputPassword.style.border = 'solid green 3px';
+          sessionStorage.setItem('currentUser', username);
+          Swal.fire('Se ha iniciado sesión con éxito.', '', 'success');
+          setTimeout(() => {
+            window.location.href = '../index.html';
+          }, 2000);
+          return;
+        }
+      }
+    }
+    let tmp = localStorage.getItem('datosUsuario');
+    if (tmp != null) {
+      datosUsuario = JSON.parse(tmp);
+      let inputUsuario = document.getElementById('usuario');
+      let inputPassword = document.getElementById('password');
+      login(inputUsuario.value, inputPassword.value);
+    }
   }
-  let tmp = localStorage.getItem('datosUsuario');
-  if (tmp != null) {
-    datosUsuario = JSON.parse(tmp);
-    let inputUsuario = document.getElementById('usuario');
-    let inputPassword = document.getElementById('password');
-    login(inputUsuario.value, inputPassword.value);
-  }
-}});
+});
 btnregistrar.addEventListener('click', function (event) {
   event.preventDefault();
-  window.location.href = '../html/Registro.html'; 
+  window.location.href = '../html/Registro.html';
 });

@@ -67,7 +67,6 @@ btnenviar.addEventListener('click', function (event) {
   let inputMensaje = document.getElementById('especificaciones');
   let alertError = document.getElementById('alertError');
   let inputImg = document.getElementById('inputImg');
- 
 
   let email =
     /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -110,11 +109,11 @@ btnenviar.addEventListener('click', function (event) {
       '<br/>El formato de teléfono no es válido ejemplo: 5511223344';
     inputTel.style.background = '#f8d7da';
     inputTel.style.border = 'solid red 3px';
-    } else {
+  } else {
     inputTel.style.background = '#fff';
     inputTel.style.border = 'solid green 3px';
     validos++;
-    }
+  }
 
   if (inputMensaje.value.trim().replaceAll('  ', '').length < 20) {
     alertError.innerHTML +=
@@ -168,28 +167,16 @@ btnenviar.addEventListener('click', function (event) {
     }, 1);
     console.log('ready');
 
-    function sendMail() {
-      let params = {
-        name: inputNombre.value,
-        email: inputMail.value,
-        message: `Especificaciones: ${inputMensaje.value}`,
-      };
-      const serviceId = 'service_e0jnp5r';
-      const templateId = 'template_eebgs5k';
+    Email.send({
+      SecureToken: '7a76b5a8-f99a-4d7e-8bcc-8c238b70f9bd',
+      To: 'patspruebaberry@gmail.com',
+      From: inputMail.value,
+      Subject: 'Pedido',
+      Body: inputMensaje.value,
+    }).then(Swal.fire('Se ha enviado la cotización con éxito.', '', 'success'));
 
-      emailjs.send(serviceId, templateId, params).then((res) => {
-        document.getElementById('nombre').value = '';
-        document.getElementById('correo').value = '';
-        document.getElementById('especificaciones').value = '';
-        console.log(res);
-        console.log('message sent');
-      });
-    }
-
-    sendMail();
-
-    Swal.fire('Se ha enviado la cotización con exito.', '', 'success')
+    Swal.fire('Se ha enviado la cotización con éxito.', '', 'success');
   }
-   //focusNombre
-   alertError.scrollIntoView();
+  //focusNombre
+  alertError.scrollIntoView();
 }); //JC validaciones

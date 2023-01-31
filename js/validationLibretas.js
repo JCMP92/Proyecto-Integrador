@@ -56,19 +56,18 @@ function previewFile(inputFile, input) {
   if (file) {
     reader.readAsDataURL(file);
   } // file
-  } // previewFile
+} // previewFile
 
 btnenviar.addEventListener('click', function (event) {
   event.preventDefault();
-  let inputTamano = document.getElementById ('validationCustom04');
-  let inputHojas = document.getElementById ('validationCustom05')
+  let inputTamano = document.getElementById('validationCustom04');
+  let inputHojas = document.getElementById('validationCustom05');
   let inputNombre = document.getElementById('nombre');
   let inputMail = document.getElementById('correo');
   let inputTel = document.getElementById('telefono');
   let inputMensaje = document.getElementById('especificaciones');
   let alertError = document.getElementById('alertError');
   let inputImg = document.getElementById('inputImg');
-  
 
   let email =
     /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -92,7 +91,7 @@ btnenviar.addEventListener('click', function (event) {
     inputNombre.style.border = 'solid green 3px';
     validos++;
   }
-  
+
   if (inputMail.value.match(email) == null) {
     alertError.style.display = 'block';
     alertError.innerHTML += '<br/>El correo electrónico no es válido.';
@@ -104,7 +103,10 @@ btnenviar.addEventListener('click', function (event) {
     validos++;
   }
   let telefonorex = /^\d{10}$/;
-  if (inputTel.value.match(telefonorex) == null || valicel(inputTel.value) == true) {
+  if (
+    inputTel.value.match(telefonorex) == null ||
+    valicel(inputTel.value) == true
+  ) {
     alertError.style.display = 'block';
     alertError.innerHTML +=
       '<br/>El formato de teléfono no es válido ejemplo: ';
@@ -115,10 +117,10 @@ btnenviar.addEventListener('click', function (event) {
     inputTel.style.border = 'solid green 3px';
     validos++;
   }
- 
 
   if (inputMensaje.value.trim().replaceAll('  ', '').length < 20) {
-    alertError.innerHTML += '<br/>El mensaje debe contener 20 caracteres o más.';
+    alertError.innerHTML +=
+      '<br/>El mensaje debe contener 20 caracteres o más.';
     alertError.style.display = 'block';
     inputMensaje.focus();
     inputMensaje.select();
@@ -128,7 +130,7 @@ btnenviar.addEventListener('click', function (event) {
     inputMensaje.style.background = '#fff';
     inputMensaje.style.border = 'solid green 3px';
     validos++;
-  } 
+  }
 
   if (inputImg.value.match(regexImg) == null) {
     alertError.style.display = 'block';
@@ -140,7 +142,6 @@ btnenviar.addEventListener('click', function (event) {
     inputImg.style.border = 'solid green 3px';
     validos++;
   }
-
 
   if (idTimeout != undefined && idTimeout != null) {
     clearTimeout(idTimeout);
@@ -173,9 +174,8 @@ btnenviar.addEventListener('click', function (event) {
       From: inputMail.value,
       Subject: 'Pedido',
       Body: inputMensaje.value,
-    }).then (Swal.fire('Se ha enviado la cotización con exito.', '', 'success'));
-    }
-    //focusNombre
-   alertError.scrollIntoView();
+    }).then(Swal.fire('Se ha enviado la cotización con éxito.', '', 'success'));
+  }
+  //focusNombre
+  alertError.scrollIntoView();
 }); //JC validaciones
-

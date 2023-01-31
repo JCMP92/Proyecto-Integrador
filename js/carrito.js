@@ -2,6 +2,8 @@ let prodCarrito = [];
 let btnCesta = document.getElementById('btnCesta');
 let totalCost = document.getElementById('totalCost');
 let costoTotal = 0;
+let btnComprar = document.getElementById('btnComprarFin');
+let btnCancelar = document.getElementById('btnCancelarFin');
 
 window.addEventListener('load', function (event) {
   let tmp = localStorage.getItem('carritoPB');
@@ -65,3 +67,55 @@ function showProducts(item) {
   costoTotal += parseInt(`${item.price}`);
   totalCost.textContent = costoTotal;
 }
+
+btnComprar.addEventListener('click', function (e) {
+  e.preventDefault;
+  let cartFull = localStorage.getItem('carritoPB');
+  if (cartFull) {
+    Swal.fire('Se ha realizado la compra con éxito.', '', 'success');
+    setTimeout(() => {
+      prodCarrito = [];
+      localStorage.removeItem('carritoPB');
+      costoTotal = parseInt('0');
+      totalCost.textContent = costoTotal;
+      const cuerpoListaCarrito = document.getElementById('cuerpoListaCarrito');
+      cuerpoListaCarrito.innerHTML = '';
+    }, 1500);
+  } else if (!cartFull) {
+    Swal.fire({
+      title: 'No tienes ningún producto en tu carrito.',
+      showClass: {
+        popup: 'animate__animated animate__fadeInDown',
+      },
+      hideClass: {
+        popup: 'animate__animated animate__fadeOutUp',
+      },
+    });
+  }
+});
+
+btnCancelar.addEventListener('click', function (e) {
+  e.preventDefault;
+  let cartFull = localStorage.getItem('carritoPB');
+  if (cartFull) {
+    Swal.fire('Se ha vciado tu carrito de compra con éxito.', '', 'success');
+    setTimeout(() => {
+      prodCarrito = [];
+      localStorage.removeItem('carritoPB');
+      costoTotal = parseInt('0');
+      totalCost.textContent = costoTotal;
+      const cuerpoListaCarrito = document.getElementById('cuerpoListaCarrito');
+      cuerpoListaCarrito.innerHTML = '';
+    }, 1500);
+  } else if (!cartFull) {
+    Swal.fire({
+      title: 'No tienes ningún producto en tu carrito.',
+      showClass: {
+        popup: 'animate__animated animate__fadeInDown',
+      },
+      hideClass: {
+        popup: 'animate__animated animate__fadeOutUp',
+      },
+    });
+  }
+});

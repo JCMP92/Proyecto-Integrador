@@ -146,7 +146,6 @@ btnenviar.addEventListener('click', function (event) {
   let inputDescripcion = document.getElementById('description');
   let inputImg = document.getElementById('inputImg');
   let alertError = document.getElementById('alertError');
-  
 
   alertError.style.display = 'none';
   alertError.innerHTML = '';
@@ -175,7 +174,7 @@ btnenviar.addEventListener('click', function (event) {
     }
 
     //Precio
-    if (inputPrice.value.match(priceRegex) == null||inputPrice.value<1.00) {
+    if (inputPrice.value.match(priceRegex) == null || inputPrice.value < 1.0) {
       alertError.style.display = 'block';
       alertError.innerHTML += '<br/>El formato de precio no es válido.';
       inputPrice.style.backgroud = '#f8d7da';
@@ -233,7 +232,7 @@ btnenviar.addEventListener('click', function (event) {
     "inputImg": "${base64}" 
     
     }`;
-    Swal.fire('Se ha registro el objeto con exito.', '', 'success')
+    Swal.fire('Se ha registro el objeto con éxito.', '', 'success');
 
     productosPB.push(JSON.parse(elemento));
     localStorage.setItem('productosPB', JSON.stringify(productosPB));
