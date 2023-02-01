@@ -1,68 +1,68 @@
 let carritoPB = [];
 //----CÓDIGO ORIGINAL ----------------------------------------------------------------------------------------->
-// let productosPB = [
-//   {
-//     name: 'Libreta Gato Alicia',
-//     price: 200,
-//     description: 'Libreta cosida, tamaño media carta, 100 hojas rayadas',
-//     image: '/Images/libretasImg/gatoalicia.jpg',
-//   },
-//   {
-//     name: 'Libreta Girasoles',
-//     price: 200,
-//     description: 'Libreta de arillo, tamaño media carta, 100 hojas rayadas',
-//     image: '/Images/libretasImg/girasoles.jpg',
-//   },
-//   {
-//     name: 'Libreta Gravity Falls',
-//     price: 200,
-//     description: 'Libreta cosida, tamaño media carta, 100 hojas rayadas',
-//     image: '/Images/libretasImg/gravity.jpg',
-//   },
-//   {
-//     name: 'Libreta Pink Floyd',
-//     price: 200,
-//     description: 'Libreta de arillo, tamaño media carta, 100 hojas rayadas',
-//     image: '/Images/libretasImg/pinkfloyd.jpg',
-//   },
-//   {
-//     name: 'Libreta El principito',
-//     price: 200,
-//     description: 'Libreta cosida, tamaño media carta, 100 hojas rayadas',
-//     image: '/Images/libretasImg/principito.jpg',
-//   },
-//   {
-//     name: 'Aguacates',
-//     price: 300,
-//     description: 'Dos aguacates tejidos de 15 cm de altura',
-//     image: '/Images/amiguImg/aguacates.jpg',
-//   },
-//   {
-//     name: 'Conejo Evan',
-//     price: 200,
-//     description: 'Conejo tejido de 15 cm de altura',
-//     image: '/Images/amiguImg/conejoEvan.jpg',
-//   },
-//   {
-//     name: 'Monkey',
-//     price: 200,
-//     description: 'Mono tejido de 15 cm de altura',
-//     image: '/Images/amiguImg/monkey.jpg',
-//   },
-//   {
-//     name: 'Monster Inc',
-//     price: 250,
-//     description:
-//       'Figuras tejidas de Mike y Sully de Monsters Inc, 15 cm de altura',
-//     image: '/Images/amiguImg/monster.jpg',
-//   },
-//   {
-//     name: 'Spiderman',
-//     price: 200,
-//     description: 'Spiderman tejido de 15 cm de altura',
-//     image: '/Images/amiguImg/spiderman.jpg',
-//   },
-// ];
+let productosPB = [
+  //   {
+  //     name: 'Libreta Gato Alicia',
+  //     price: 200,
+  //     description: 'Libreta cosida, tamaño media carta, 100 hojas rayadas',
+  //     image: '/Images/libretasImg/gatoalicia.jpg',
+  //   },
+  //   {
+  //     name: 'Libreta Girasoles',
+  //     price: 200,
+  //     description: 'Libreta de arillo, tamaño media carta, 100 hojas rayadas',
+  //     image: '/Images/libretasImg/girasoles.jpg',
+  //   },
+  //   {
+  //     name: 'Libreta Gravity Falls',
+  //     price: 200,
+  //     description: 'Libreta cosida, tamaño media carta, 100 hojas rayadas',
+  //     image: '/Images/libretasImg/gravity.jpg',
+  //   },
+  //   {
+  //     name: 'Libreta Pink Floyd',
+  //     price: 200,
+  //     description: 'Libreta de arillo, tamaño media carta, 100 hojas rayadas',
+  //     image: '/Images/libretasImg/pinkfloyd.jpg',
+  //   },
+  //   {
+  //     name: 'Libreta El principito',
+  //     price: 200,
+  //     description: 'Libreta cosida, tamaño media carta, 100 hojas rayadas',
+  //     image: '/Images/libretasImg/principito.jpg',
+  //   },
+  //   {
+  //     name: 'Aguacates',
+  //     price: 300,
+  //     description: 'Dos aguacates tejidos de 15 cm de altura',
+  //     image: '/Images/amiguImg/aguacates.jpg',
+  //   },
+  //   {
+  //     name: 'Conejo Evan',
+  //     price: 200,
+  //     description: 'Conejo tejido de 15 cm de altura',
+  //     image: '/Images/amiguImg/conejoEvan.jpg',
+  //   },
+  //   {
+  //     name: 'Monkey',
+  //     price: 200,
+  //     description: 'Mono tejido de 15 cm de altura',
+  //     image: '/Images/amiguImg/monkey.jpg',
+  //   },
+  //   {
+  //     name: 'Monster Inc',
+  //     price: 250,
+  //     description:
+  //       'Figuras tejidas de Mike y Sully de Monsters Inc, 15 cm de altura',
+  //     image: '/Images/amiguImg/monster.jpg',
+  //   },
+  //   {
+  //     name: 'Spiderman',
+  //     price: 200,
+  //     description: 'Spiderman tejido de 15 cm de altura',
+  //     image: '/Images/amiguImg/spiderman.jpg',
+  //   },
+];
 //----CÓDIGO ORIGINAL ----------------------------------------------------------------------------------------->
 
 //----PRUEBA CÓDIGO UNIÓN JS----------------------------------------------------------------------------------->
@@ -76,8 +76,8 @@ function fetchAndAdd() {
       response.json().then(function (json) {
         console.log(json);
         console.log(json.length);
-        productos = json;
-        Array.from(json).forEach((producto) => {
+        productosPB = json;
+        productosPB.forEach((producto) => {
           addItem(producto);
         }); // foreach
       }); //then
