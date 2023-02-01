@@ -1,5 +1,5 @@
 let carritoPB = [];
-//----CÓDIGO ORIGINAL ----------------------------------------------------------------------------------------->
+
 let productosPB = [
   //   {
   //     name: 'Libreta Gato Alicia',
@@ -63,7 +63,6 @@ let productosPB = [
   //     image: '/Images/amiguImg/spiderman.jpg',
   //   },
 ];
-//----CÓDIGO ORIGINAL ----------------------------------------------------------------------------------------->
 
 //----PRUEBA CÓDIGO UNIÓN JS----------------------------------------------------------------------------------->
 const URL_MAIN = '/api/productos/';
@@ -80,6 +79,7 @@ function fetchAndAdd() {
         productosPB.forEach((producto) => {
           addItem(producto);
         }); // foreach
+        console.log(productosPB);
       }); //then
     })
     .catch(function (err) {
@@ -98,19 +98,13 @@ const Toast = Swal.mixin({
     toast.addEventListener('mouseleave', Swal.resumeTimer);
   },
 });
-//----PRUEBA CÓDIGO UNIÓN JS----------------------------------------------------------------------------------->
-window.addEventListener('load', function (event) {
-  // let tmp = localStorage.getItem('productosPB');
-  // if (tmp != null) {
-  //   productosPB = JSON.parse(tmp);
-  //   console.log(productosPB);
-  // } //if
-  // productosPB.forEach((producto) => {
-  //   addItem(producto);
-  // });
-  fetchAndAdd();
-});
 
+//----PRUEBA CÓDIGO UNIÓN JS----------------------------------------------------------------------------------->
+// window.addEventListener('load', function (event) {
+//   fetchAndAdd();
+// });
+
+//True addItem---------------------------------------------------------------------------------------------------------------------------------->
 function addItem(item) {
   let imgSrc = item.image;
   if (item.inputImg) {
@@ -152,7 +146,7 @@ function addItem(item) {
     "name": "${itemTilte.textContent}",
     "price": "${item.price}",
     "description": "${itemDescr.textContent}",
-    "inputImg": "${imgSrc}" 
+    "inputImg": "${imgSrc}"
     }`;
 
     carritoPB.push(JSON.parse(itemToCart));
