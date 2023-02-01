@@ -1,107 +1,91 @@
 let carritoPB = [];
-let productosPB = [
-  {
-    // Nombre de la libreta
-    name: 'Libreta Gato Alicia',
-    // Precio de la libreta
-    price: 200,
-    // Descripción de la libreta (tamaño, tipo de hoja, número de hojas, tipo de encuadernación)
-    description: 'Libreta cosida, tamaño media carta, 100 hojas rayadas',
-    // Ubicación de la imagen de la libreta
-    image: '/Images/libretasImg/gatoalicia.jpg',
-  },
-  {
-    // Nombre de la libreta
-    name: 'Libreta Girasoles',
-    // Precio de la libreta
-    price: 200,
-    // Descripción de la libreta (tamaño, tipo de hoja, número de hojas, tipo de encuadernación)
-    description: 'Libreta de arillo, tamaño media carta, 100 hojas rayadas',
-    // Ubicación de la imagen de la libreta
-    image: '/Images/libretasImg/girasoles.jpg',
-  },
-  {
-    // Nombre de la libreta
-    name: 'Libreta Gravity Falls',
-    // Precio de la libreta
-    price: 200,
-    // Descripción de la libreta (tamaño, tipo de hoja, número de hojas, tipo de encuadernación)
-    description: 'Libreta cosida, tamaño media carta, 100 hojas rayadas',
-    // Ubicación de la imagen de la libreta
-    image: '/Images/libretasImg/gravity.jpg',
-  },
-  {
-    // Nombre de la libreta
-    name: 'Libreta Pink Floyd',
-    // Precio de la libreta
-    price: 200,
-    // Descripción de la libreta (tamaño, tipo de hoja, número de hojas, tipo de encuadernación)
-    description: 'Libreta de arillo, tamaño media carta, 100 hojas rayadas',
-    // Ubicación de la imagen de la libreta
-    image: '/Images/libretasImg/pinkfloyd.jpg',
-  },
-  {
-    // Nombre de la libreta
-    name: 'Libreta El principito',
-    // Precio de la libreta
-    price: 200,
-    // Descripción de la libreta (tamaño, tipo de hoja, número de hojas, tipo de encuadernación)
-    description: 'Libreta cosida, tamaño media carta, 100 hojas rayadas',
-    // Ubicación de la imagen de la libreta
-    image: '/Images/libretasImg/principito.jpg',
-  },
-  {
-    // Nombre del amigurumi
-    name: 'Aguacates',
-    // Precio del amigurumi
-    price: 300,
-    // Descripción
-    description: 'Dos aguacates tejidos de 15 cm de altura',
-    // Ubicación de la imagen
-    image: '/Images/amiguImg/aguacates.jpg',
-  },
-  {
-    // Nombre del amigurumi
-    name: 'Conejo Evan',
-    // Precio del amigurumi
-    price: 200,
-    // Descripción
-    description: 'Conejo tejido de 15 cm de altura',
-    // Ubicación de la imagen
-    image: '/Images/amiguImg/conejoEvan.jpg',
-  },
-  {
-    // Nombre del amigurumi
-    name: 'Monkey',
-    // Precio del amigurumi
-    price: 200,
-    // Descripción
-    description: 'Mono tejido de 15 cm de altura',
-    // Ubicación de la imagen
-    image: '/Images/amiguImg/monkey.jpg',
-  },
-  {
-    // Nombre del amigurumi
-    name: 'Monster Inc',
-    // Precio del amigurumi
-    price: 250,
-    // Descripción
-    description:
-      'Figuras tejidas de Mike y Sully de Monsters Inc, 15 cm de altura',
-    // Ubicación de la imagen
-    image: '/Images/amiguImg/monster.jpg',
-  },
-  {
-    // Nombre del amigurumi
-    name: 'Spiderman',
-    // Precio del amigurumi
-    price: 200,
-    // Descripción
-    description: 'Spiderman tejido de 15 cm de altura',
-    // Ubicación de la imagen
-    image: '/Images/amiguImg/spiderman.jpg',
-  },
-];
+//----CÓDIGO ORIGINAL ----------------------------------------------------------------------------------------->
+// let productosPB = [
+//   {
+//     name: 'Libreta Gato Alicia',
+//     price: 200,
+//     description: 'Libreta cosida, tamaño media carta, 100 hojas rayadas',
+//     image: '/Images/libretasImg/gatoalicia.jpg',
+//   },
+//   {
+//     name: 'Libreta Girasoles',
+//     price: 200,
+//     description: 'Libreta de arillo, tamaño media carta, 100 hojas rayadas',
+//     image: '/Images/libretasImg/girasoles.jpg',
+//   },
+//   {
+//     name: 'Libreta Gravity Falls',
+//     price: 200,
+//     description: 'Libreta cosida, tamaño media carta, 100 hojas rayadas',
+//     image: '/Images/libretasImg/gravity.jpg',
+//   },
+//   {
+//     name: 'Libreta Pink Floyd',
+//     price: 200,
+//     description: 'Libreta de arillo, tamaño media carta, 100 hojas rayadas',
+//     image: '/Images/libretasImg/pinkfloyd.jpg',
+//   },
+//   {
+//     name: 'Libreta El principito',
+//     price: 200,
+//     description: 'Libreta cosida, tamaño media carta, 100 hojas rayadas',
+//     image: '/Images/libretasImg/principito.jpg',
+//   },
+//   {
+//     name: 'Aguacates',
+//     price: 300,
+//     description: 'Dos aguacates tejidos de 15 cm de altura',
+//     image: '/Images/amiguImg/aguacates.jpg',
+//   },
+//   {
+//     name: 'Conejo Evan',
+//     price: 200,
+//     description: 'Conejo tejido de 15 cm de altura',
+//     image: '/Images/amiguImg/conejoEvan.jpg',
+//   },
+//   {
+//     name: 'Monkey',
+//     price: 200,
+//     description: 'Mono tejido de 15 cm de altura',
+//     image: '/Images/amiguImg/monkey.jpg',
+//   },
+//   {
+//     name: 'Monster Inc',
+//     price: 250,
+//     description:
+//       'Figuras tejidas de Mike y Sully de Monsters Inc, 15 cm de altura',
+//     image: '/Images/amiguImg/monster.jpg',
+//   },
+//   {
+//     name: 'Spiderman',
+//     price: 200,
+//     description: 'Spiderman tejido de 15 cm de altura',
+//     image: '/Images/amiguImg/spiderman.jpg',
+//   },
+// ];
+//----CÓDIGO ORIGINAL ----------------------------------------------------------------------------------------->
+
+//----PRUEBA CÓDIGO UNIÓN JS----------------------------------------------------------------------------------->
+const URL_MAIN = '/api/productos/';
+
+function fetchAndAdd() {
+  fetch(URL_MAIN, {
+    method: 'get',
+  })
+    .then(function (response) {
+      response.json().then(function (json) {
+        console.log(json);
+        console.log(json.length);
+        productos = json;
+        Array.from(json).forEach((producto) => {
+          addItem(producto);
+        }); // foreach
+      }); //then
+    })
+    .catch(function (err) {
+      console.log(err);
+    });
+} // addItems
 
 const Toast = Swal.mixin({
   toast: true,
@@ -114,31 +98,24 @@ const Toast = Swal.mixin({
     toast.addEventListener('mouseleave', Swal.resumeTimer);
   },
 });
-
+//----PRUEBA CÓDIGO UNIÓN JS----------------------------------------------------------------------------------->
 window.addEventListener('load', function (event) {
-  let tmp = localStorage.getItem('productosPB');
-  if (tmp != null) {
-    productosPB = JSON.parse(tmp);
-    console.log(productosPB);
-  } //if
-
-  productosPB.forEach((producto) => {
-    addItem(producto);
-  });
-});
-window.addEventListener('load', function (event) {
-  let tmp = localStorage.getItem('carritoPB');
-  if (tmp != null) {
-    carritoPB = JSON.parse(tmp);
-    console.log(productosPB);
-  } //if
+  // let tmp = localStorage.getItem('productosPB');
+  // if (tmp != null) {
+  //   productosPB = JSON.parse(tmp);
+  //   console.log(productosPB);
+  // } //if
+  // productosPB.forEach((producto) => {
+  //   addItem(producto);
+  // });
+  fetchAndAdd();
 });
 
 function addItem(item) {
   let imgSrc = item.image;
   if (item.inputImg) {
     imgSrc = item.inputImg;
-  }
+  } //if
 
   const itemCard = document.createElement('div');
   const itemImg = document.createElement('img');
@@ -185,7 +162,7 @@ function addItem(item) {
       icon: 'success',
       title: '¡Agregado al carrito!',
     });
-  });
+  }); //addBtn EventListener
 
   itemBody.append(itemTilte);
   itemBody.append(itemPrice);
@@ -197,4 +174,4 @@ function addItem(item) {
 
   const itemsContainer = document.getElementById('list-items');
   itemsContainer.append(itemCard);
-}
+} //functionAddItem
