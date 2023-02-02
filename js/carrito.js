@@ -98,7 +98,7 @@ btnCancelar.addEventListener('click', function (e) {
   e.preventDefault;
   let cartFull = localStorage.getItem('carritoPB');
   if (cartFull) {
-    Swal.fire('Se ha vciado tu carrito de compra con éxito.', '', 'success');
+    Swal.fire('Se ha vaciado tu carrito de compra con éxito.', '', 'success');
     setTimeout(() => {
       prodCarrito = [];
       localStorage.removeItem('carritoPB');
