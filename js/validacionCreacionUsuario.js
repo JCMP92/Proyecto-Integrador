@@ -82,7 +82,7 @@ btnenviar.addEventListener('click', function (event) {
     ) {
       alertError.style.display = 'block';
       alertError.innerHTML +=
-        '<br/>El formato de teléfono no es válido ejemplo: +52 6561920273';
+        '<br/>El formato de teléfono no es válido ejemplo: 5561920273';
       inputTel.style.border = 'solid red 1px';
     } else {
       inputTel.style.border = 'solid green 1px';
@@ -104,7 +104,7 @@ btnenviar.addEventListener('click', function (event) {
     if (pass1.value.match(regex) == null) {
       alertError.style.display = 'block';
       alertError.innerHTML +=
-        '<br/>La contraseña debe contener más de 8 caracteres, un caracter especial (mayúscula, números, símbolos)';
+        '<br/>La contraseña debe contener más de 8 caracteres, un caracter especial (mayúscula, números, @$!%*?&)';
       inputPassword.style.border = 'solid red 1px';
       console.log(pass1.value);
       console.log(pass2.value);
